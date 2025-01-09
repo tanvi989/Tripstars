@@ -1,0 +1,227 @@
+import styled from "styled-components";
+// import Title from "../../../components/common/SectionTitle";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Australia from "../../../assets/PopularDestination/Australia.png";
+import Bali from "../../../assets/PopularDestination/Bali.png";
+import Dubai from "../../../assets/PopularDestination/Dubai.png";
+import Europe from "../../../assets/PopularDestination/Europe.png";
+import HongKong from "../../../assets/PopularDestination/Hong kong.png";
+import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
+import Singapore from "../../../assets/PopularDestination/Singapore.png";
+import Thailand from "../../../assets/PopularDestination/Thailand.png";
+import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
+import { useRef } from "react";
+import { Navigation } from "swiper/modules";
+
+const Container = styled.div`
+  padding: 0 15rem;
+  @media (max-width: 1340px) {
+    padding: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+`;
+
+const CardsWrapper = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const Card = styled.div`
+  height: 100%;
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const SectionTitle = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+
+  @media (max-width: 1340px) {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+`;
+
+const TitileHeading = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  @media (max-width: 1080px) {
+    font-size: 2.3rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const NavIcons = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  .left_btn,
+  button {
+    cursor: pointer;
+    border: 1px solid #000;
+    /* background-color: #000; */
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 0.8rem;
+      path {
+        fill: #000;
+      }
+    }
+  }
+`;
+
+const popularDestinationsData = [
+  {
+    name: "Australia",
+    imgUrl: Australia,
+  },
+  {
+    name: "Bali",
+    imgUrl: Bali,
+  },
+  {
+    name: "Dubai",
+    imgUrl: Dubai,
+  },
+  {
+    name: "Europe",
+    imgUrl: Europe,
+  },
+  {
+    name: "HongKong",
+    imgUrl: HongKong,
+  },
+  {
+    name: "Malaysia",
+    imgUrl: Malaysia,
+  },
+  {
+    name: "Singapore",
+    imgUrl: Singapore,
+  },
+  {
+    name: "Thailand",
+    imgUrl: Thailand,
+  },
+  {
+    name: "Vietnam",
+    imgUrl: Vietnam,
+  },
+];
+
+export default function PopularDestinations() {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <Container>
+      {/* <Title title="Popular Destinations" prevRef={prevRef} nextRef={nextRef} /> */}
+      <SectionTitle>
+        <TitileHeading>Popular Destinations</TitileHeading>
+        <NavIcons>
+          <button ref={prevRef}>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+            </svg>
+          </button>
+          <button ref={nextRef}>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 320 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+            </svg>
+          </button>
+        </NavIcons>
+      </SectionTitle>
+      <CardsWrapper>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={20}
+          slidesPerView={1.8}
+          breakpoints={{
+            1080: {
+              slidesPerView: 4.8,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            400: {
+              slidesPerView: 2,
+            },
+          }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onInit={(swiper) => {
+            if (
+              swiper.params.navigation &&
+              typeof swiper.params.navigation !== "boolean"
+            ) {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
+        >
+          {popularDestinationsData.map((item, index) => (
+            <SwiperSlide>
+              <Card key={index}>
+                <ImageWrapper>
+                  <img src={item.imgUrl} alt="" />
+                </ImageWrapper>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </CardsWrapper>
+    </Container>
+  );
+}
