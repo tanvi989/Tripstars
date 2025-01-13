@@ -358,7 +358,7 @@ const Popup: React.FC = () => {
             <label>Travel Date</label>
             <DatePicker
               selected={startDate}
-              onChange={(date: Date) => setStartDate(date)}
+
               dateFormat="dd-MM-yyyy"
               placeholderText="Pick your travel date"
               isClearable
