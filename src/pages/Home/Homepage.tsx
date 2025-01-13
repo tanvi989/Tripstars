@@ -9,6 +9,7 @@ import PopularDestinations from "./sections/PopularDestinations";
 import TrendingOffers from "./sections/TrendingOffers";
 import VideoTestimonials from "./sections/VideoTestimonials";
 import WhyTripstars from "./sections/WhyTripstars";
+import Popup from "../../components/common/Popup";
 
 export default function HomePage() {
   return (
