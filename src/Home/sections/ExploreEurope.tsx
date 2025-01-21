@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Title from "../../../components/common/SectionTitle";
+import Title from "../../components/common/SectionTitle";
 
 import Australia from "../../../assets/images/ExploreEurope/Australia 1.png";
 import Eiffel from "../../../assets/images/ExploreEurope/eiffel.png";
