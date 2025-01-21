@@ -1,21 +1,22 @@
 import styled from "styled-components";
-// import Title from "../../../components/common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Australia from "../../../assets/PopularDestination/Australia.png";
-import Bali from "../../../assets/PopularDestination/Bali.png";
-import Dubai from "../../../assets/PopularDestination/Dubai.png";
-import Europe from "../../../assets/PopularDestination/Europe.png";
-import HongKong from "../../../assets/PopularDestination/Hong kong.png";
-import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
-import Singapore from "../../../assets/PopularDestination/Singapore.png";
-import Thailand from "../../../assets/PopularDestination/Thailand.png";
-import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
+import Kashmir from "../../../assets/images/BudgetFriendly/Artboard 1.png";
+import Kerala from "../../../assets/images/BudgetFriendly/Artboard 2.png";
+import Andaman from "../../../assets/images/BudgetFriendly/Artboard 3.png";
+import NorthEast from "../../../assets/images/BudgetFriendly/Artboard 4.png";
+import Goa from "../../../assets/images/BudgetFriendly/Artboard 5.png";
+import Ladakh from "../../../assets/images/BudgetFriendly/Artboard 6.png";
+import Himachal from "../../../assets/images/BudgetFriendly/Artboard 7.png";
+import Nepal from "../../../assets/images/BudgetFriendly/Artboard 8.png";
+import Bhutan from "../../../assets/images/BudgetFriendly/Artboard 9.png";
+import Nanital from "../../../assets/images/BudgetFriendly/Artboard 10.png";
 import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 
 const Container = styled.div`
   padding: 0 15rem;
+  margin-top: 2rem;
   @media (max-width: 1340px) {
     padding: 0 5rem;
   }
@@ -29,21 +30,23 @@ const Container = styled.div`
 
 const CardsWrapper = styled.div`
   display: flex;
-  width: 100%;
+  gap: 2rem;
 `;
 
 const Card = styled.div`
+  width: 100%;
   height: 100%;
-  @media (max-width: 1080px) {
-    width: 100%;
-  }
+  background-color: #fcfcfd;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 1rem;
+  overflow: hidden;
 `;
 
 const ImageWrapper = styled.div`
-  width: 100%;
+  /* width: 100%; */
+  position: relative;
   height: 100%;
-  border-radius: 0.5rem;
-  overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;
@@ -57,8 +60,6 @@ const SectionTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
-
   @media (max-width: 1340px) {
     padding-top: 4rem;
     padding-bottom: 1rem;
@@ -106,55 +107,69 @@ const NavIcons = styled.div`
   }
 `;
 
-const popularDestinationsData = [
- 
+const cardsData = [
   {
-    name: "Malaysia",
-    imgUrl: Malaysia,
+    imgUrl: Kashmir,
+    name: "Kashmir",
+    url: "",
   },
   {
-    name: "Singapore",
-    imgUrl: Singapore,
+    imgUrl: Kerala,
+    name: "Kerala",
+    url: "",
   },
   {
-    name: "Thailand",
-    imgUrl: Thailand,
+    imgUrl: Andaman,
+    name: "Andaman",
+    url: "",
   },
   {
-    name: "Vietnam",
-    imgUrl: Vietnam,
+    imgUrl: NorthEast,
+    name: "NorthEast",
+    url: "",
   },
   {
-    name: "Australia",
-    imgUrl: Australia,
+    imgUrl: Goa,
+    name: "Goa",
+    url: "",
   },
   {
-    name: "Bali",
-    imgUrl: Bali,
+    imgUrl: Ladakh,
+    name: "Ladakh",
+    url: "",
   },
   {
-    name: "Dubai",
-    imgUrl: Dubai,
+    imgUrl: Himachal,
+    name: "Himachal",
+    url: "",
+  },
+
+  {
+    imgUrl: Nepal,
+    name: "Nepal",
+    url: "",
   },
   {
-    name: "Europe",
-    imgUrl: Europe,
+    imgUrl: Bhutan,
+    name: "Bhutan",
+    url: "",
   },
   {
-    name: "HongKong",
-    imgUrl: HongKong,
-  }
+    imgUrl: Nanital,
+    name: "Nanital",
+    url: "",
+  },
 ];
 
-export default function PopularDestinations() {
+export default function BudgetFriendly() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Container>
-      {/* <Title title="Popular Destinations" prevRef={prevRef} nextRef={nextRef} /> */}
+      {/* <SectionTitle title="Budget-Friendly Options" /> */}
       <SectionTitle>
-        <TitileHeading>Popular Destinations</TitileHeading>
+        <TitileHeading>Explore India</TitileHeading>
         <NavIcons>
           <button ref={prevRef}>
             <svg
@@ -180,39 +195,39 @@ export default function PopularDestinations() {
           </button>
         </NavIcons>
       </SectionTitle>
-      <CardsWrapper>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={1.8}
-          breakpoints={{
-            1080: {
-              slidesPerView: 4.8,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            400: {
-              slidesPerView: 2,
-            },
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onInit={(swiper) => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-        >
-          {popularDestinationsData.map((item, index) => (
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={1.8}
+        breakpoints={{
+          1080: {
+            slidesPerView: 4.9,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          400: {
+            slidesPerView: 2,
+          },
+        }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onInit={(swiper) => {
+          if (
+            swiper.params.navigation &&
+            typeof swiper.params.navigation !== "boolean"
+          ) {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+      >
+        <CardsWrapper>
+          {cardsData.map((item, index) => (
             <SwiperSlide>
               <Card key={index}>
                 <ImageWrapper>
@@ -221,8 +236,8 @@ export default function PopularDestinations() {
               </Card>
             </SwiperSlide>
           ))}
-        </Swiper>
-      </CardsWrapper>
+        </CardsWrapper>
+      </Swiper>
     </Container>
   );
 }

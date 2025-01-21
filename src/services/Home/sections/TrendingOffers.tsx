@@ -2,15 +2,16 @@ import styled from "styled-components";
 // import Title from "../../../components/common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Australia from "../../../assets/PopularDestination/Australia.png";
-import Bali from "../../../assets/PopularDestination/Bali.png";
-import Dubai from "../../../assets/PopularDestination/Dubai.png";
-import Europe from "../../../assets/PopularDestination/Europe.png";
-import HongKong from "../../../assets/PopularDestination/Hong kong.png";
-import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
-import Singapore from "../../../assets/PopularDestination/Singapore.png";
-import Thailand from "../../../assets/PopularDestination/Thailand.png";
-import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
+import Australia from "../../../assets/images/TrendingOffers/Artboard 1.png";
+import Bali from "../../../assets/images/TrendingOffers/Artboard 2.png";
+import Dubai from "../../../assets/images/TrendingOffers/Artboard 3.png";
+import Europe from "../../../assets/images/TrendingOffers/Artboard 4.png";
+import HongKong from "../../../assets/images/TrendingOffers/Artboard 5.png";
+import Mauritius from "../../../assets/images/TrendingOffers/Artboard 6.png";
+import NewZealand from "../../../assets/images/TrendingOffers/Artboard 7.png";
+import Turkey from "../../../assets/images/TrendingOffers/Artboard 9.png";
+import Thailand from "../../../assets/images/TrendingOffers/Artboard 8.png";
+import Vietnam from "../../../assets/images/TrendingOffers/Artboard 10.png";
 import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 
@@ -29,21 +30,19 @@ const Container = styled.div`
 
 const CardsWrapper = styled.div`
   display: flex;
-  width: 100%;
 `;
 
 const Card = styled.div`
+  width: 100%;
   height: 100%;
-  @media (max-width: 1080px) {
-    width: 100%;
-  }
+  border-radius: 0.5rem;
+  overflow: hidden;
 `;
 
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
-  overflow: hidden;
+
   img {
     width: 100%;
     height: 100%;
@@ -57,8 +56,6 @@ const SectionTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
-
   @media (max-width: 1340px) {
     padding-top: 4rem;
     padding-bottom: 1rem;
@@ -106,24 +103,7 @@ const NavIcons = styled.div`
   }
 `;
 
-const popularDestinationsData = [
- 
-  {
-    name: "Malaysia",
-    imgUrl: Malaysia,
-  },
-  {
-    name: "Singapore",
-    imgUrl: Singapore,
-  },
-  {
-    name: "Thailand",
-    imgUrl: Thailand,
-  },
-  {
-    name: "Vietnam",
-    imgUrl: Vietnam,
-  },
+const data = [
   {
     name: "Australia",
     imgUrl: Australia,
@@ -143,18 +123,39 @@ const popularDestinationsData = [
   {
     name: "HongKong",
     imgUrl: HongKong,
-  }
+  },
+  {
+    name: "Mauritius",
+    imgUrl: Mauritius,
+  },
+  {
+    name: "NewZealand",
+    imgUrl: NewZealand,
+  },
+  {
+    name: "Thailand",
+    imgUrl: Thailand,
+  },
+  {
+    name: "Turkey",
+    imgUrl: Turkey,
+  },
+  {
+    name: "Vietnam",
+    imgUrl: Vietnam,
+  },
 ];
 
-export default function PopularDestinations() {
+export default function TrendingOffers() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Container>
-      {/* <Title title="Popular Destinations" prevRef={prevRef} nextRef={nextRef} /> */}
+      {/* <Title title="Trending Offers" /> */}
+
       <SectionTitle>
-        <TitileHeading>Popular Destinations</TitileHeading>
+        <TitileHeading>Trending Offers</TitileHeading>
         <NavIcons>
           <button ref={prevRef}>
             <svg
@@ -190,7 +191,7 @@ export default function PopularDestinations() {
               slidesPerView: 4.8,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 2.8,
             },
             400: {
               slidesPerView: 2,
@@ -212,7 +213,7 @@ export default function PopularDestinations() {
             swiper.navigation.update();
           }}
         >
-          {popularDestinationsData.map((item, index) => (
+          {data.map((item, index) => (
             <SwiperSlide>
               <Card key={index}>
                 <ImageWrapper>

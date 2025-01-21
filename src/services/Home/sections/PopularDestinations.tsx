@@ -107,23 +107,6 @@ const NavIcons = styled.div`
 `;
 
 const popularDestinationsData = [
- 
-  {
-    name: "Malaysia",
-    imgUrl: Malaysia,
-  },
-  {
-    name: "Singapore",
-    imgUrl: Singapore,
-  },
-  {
-    name: "Thailand",
-    imgUrl: Thailand,
-  },
-  {
-    name: "Vietnam",
-    imgUrl: Vietnam,
-  },
   {
     name: "Australia",
     imgUrl: Australia,
@@ -143,7 +126,23 @@ const popularDestinationsData = [
   {
     name: "HongKong",
     imgUrl: HongKong,
-  }
+  },
+  {
+    name: "Malaysia",
+    imgUrl: Malaysia,
+  },
+  {
+    name: "Singapore",
+    imgUrl: Singapore,
+  },
+  {
+    name: "Thailand",
+    imgUrl: Thailand,
+  },
+  {
+    name: "Vietnam",
+    imgUrl: Vietnam,
+  },
 ];
 
 export default function PopularDestinations() {
