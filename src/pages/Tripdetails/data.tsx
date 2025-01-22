@@ -88,7 +88,7 @@ import singaporeCherryImg2 from "../../assets/Tripdetails/singapore/Best selling
 import thailandImg1 from "../../assets/Tripdetails/thailand/Things to do/Bangkok city Tour.png";
 import thailandImg2 from "../../assets/Tripdetails/thailand/Things to do/Krabi 4 island tour.png";
 import thailandImg3 from "../../assets/Tripdetails/thailand/Things to do/Marine park thailand.png";
-import thailandImg4 from "../../assets/Tripdetails/thailand/Things to do/Phi phi island Tour.png";
+import thailandImg4 from "../../assets/Tripdetails/thailand/Things to do/Phi phi island tour.png";
 import thailandImg5 from "../../assets/Tripdetails/thailand/Things to do/phuket city tour.png";
 import thailandImg6 from "../../assets/Tripdetails/thailand/Things to do/Safari world.png";
 
