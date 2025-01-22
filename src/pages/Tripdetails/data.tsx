@@ -69,13 +69,12 @@ import dubaiCherryImg1 from "../../assets/Tripdetails/dubai/Best selling/Artboar
 import dubaiCherryImg2 from "../../assets/Tripdetails/dubai/Best selling/Artboard 2.png";
 
 // Import images for "Things to Do"
-import singaporeImg1 from "../../assets/Tripdetails/singapore/Things to do/Garden by the Bay.png";
+
 import singaporeImg2 from "../../assets/Tripdetails/singapore/Things to do/Marina bay sand.png";
+import singaporeImg1 from "../../assets/Tripdetails/singapore/Things to do/Garden by the Bay.png";
 import singaporeImg3 from "../../assets/Tripdetails/singapore/Things to do/Sentosa Island Tour.png";
 import singaporeImg4 from "../../assets/Tripdetails/singapore/Things to do/Singapore City Tour.png";
 import singaporeImg5 from "../../assets/Tripdetails/singapore/Things to do/Singapore Night Safari.png";
-
-// Import images for "Trending Offers"
 import singaporeTrendingImg1 from "../../assets/Tripdetails/singapore/itinerary/Artboard 1.png";
 import singaporeTrendingImg2 from "../../assets/Tripdetails/singapore/itinerary/Artboard 2.png";
 import singaporeTrendingImg3 from "../../assets/Tripdetails/singapore/itinerary/Artboard 3.png";
