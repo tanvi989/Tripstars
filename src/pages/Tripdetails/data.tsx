@@ -85,12 +85,12 @@ import singaporeTrendingImg5 from "../../assets/Tripdetails/singapore/itinerary/
 import singaporeCherryImg1 from "../../assets/Tripdetails/singapore/Best selling/Discover Singapore 1.png";
 import singaporeCherryImg2 from "../../assets/Tripdetails/singapore/Best selling/Discover Singapore 2.png";
 // Import images for "Things to Do"
-import thailandImg1 from "../../assets/Tripdetails/thailand/Things to do/Bangkok City Tour.png";
-import thailandImg2 from "../../assets/Tripdetails/thailand/Things to do/Krabi 4 Island Tour.png";
-import thailandImg3 from "../../assets/Tripdetails/thailand/Things to do/Marine Park Thailand.png";
-import thailandImg4 from "../../assets/Tripdetails/thailand/Things to do/Phi Phi Island Tour.png";
-import thailandImg5 from "../../assets/Tripdetails/thailand/Things to do/Phuket City Tour.png";
-import thailandImg6 from "../../assets/Tripdetails/thailand/Things to do/Safari World.png";
+import thailandImg1 from "../../assets/Tripdetails/thailand/Things to do/Bangkok city Tour.png";
+import thailandImg2 from "../../assets/Tripdetails/thailand/Things to do/Krabi 4 island tour.png";
+import thailandImg3 from "../../assets/Tripdetails/thailand/Things to do/Marine park thailand.png";
+import thailandImg4 from "../../assets/Tripdetails/thailand/Things to do/Phi phi island Tour.png";
+import thailandImg5 from "../../assets/Tripdetails/thailand/Things to do/phuket city tour.png";
+import thailandImg6 from "../../assets/Tripdetails/thailand/Things to do/Safari world.png";
 
 // Import images for "Trending Offers"
 import thailandTrendingImg1 from "../../assets/Tripdetails/thailand/itinerary/Artboard 1.png";
