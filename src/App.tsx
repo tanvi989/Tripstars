@@ -8,6 +8,7 @@ import "./App.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Tripdetailspage from "./pages/Tripdetails/Tripdetailspage";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Popup />
       <Routes>
         <Route path="/" element={<HomePage />} />
+   
+        <Route path="/tripdetails/:location" element={<Tripdetailspage />} />
       </Routes>
       <Footer />
     </div>
