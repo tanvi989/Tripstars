@@ -82,7 +82,7 @@ import singaporeTrendingImg3 from "../../assets/Tripdetails/singapore/itinerary/
 import singaporeTrendingImg4 from "../../assets/Tripdetails/singapore/itinerary/Artboard 3 copy 2.png";
 import singaporeTrendingImg5 from "../../assets/Tripdetails/singapore/itinerary/Artboard 3 copy.png";
 
-// Import images for "Cherry Blossoms"
+// Import images for 
 import singaporeCherryImg1 from "../../assets/Tripdetails/singapore/Best selling/Discover Singapore 1.png";
 import singaporeCherryImg2 from "../../assets/Tripdetails/singapore/Best selling/Discover Singapore 2.png";
 // Import images for "Things to Do"
