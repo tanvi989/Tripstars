@@ -35,6 +35,7 @@ import trandingimg4 from "../../assets/Tripdetails/bali/itinerary/Artboard 3 cop
 import trandingimg5 from "../../assets/Tripdetails/bali/itinerary/Artboard 3.png";
 import trandingimg6 from "../../assets/Tripdetails/bali/itinerary/Artboard 4 copy.png";
 // Styled Components
+import TravelItinerary from "./sections/TravelItinerary.tsx";
 import InclusionsExclusions from "./sections/InclusionsExclusions";
 import TabbedTable from "./sections/TabbedTable.tsx";
 import PackageCard from "./sections/PackageCard.tsx";
@@ -186,6 +187,7 @@ export default function Thirdpage() {
             <br></br>
             <OverviewWrapper>
             <Title>Highlights</Title>
+     <TravelItinerary />
             <Highlight />
             </OverviewWrapper>
           </PageWrapper>
