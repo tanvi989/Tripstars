@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -53,7 +53,7 @@ const TitleHeading = styled.h2`
   font-weight: 600;
   text-transform: uppercase;
   @media (max-width: 1080px) {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
   }
   @media (max-width: 768px) {
     font-size: 1.1rem;
@@ -81,46 +81,27 @@ const NavIcons = styled.div`
   }
 `;
 
-// Helper Function to Get Image URL
-const getImageUrl = (name: string): string => {
+// Dynamic image loader with fallback
+const getImageUrl = (name: string) => {
   try {
-    return require(`../../../assets/images/TrendingOffers/${name}.jpg`).default;
+    return require(`../../../assets/images/TrendingOffers/itinerary/${name}.jpg`).default;
   } catch {
     console.error(`Image for ${name} not found`);
-    return "/images/default-image.jpg"; // Fallback path
+    return "/images/default-image.jpg"; // Ensure your fallback image exists
   }
 };
 
-// Type Definitions for Props
-type TrendingOfferItem = {
-  name: string;
-  imgUrl: string;
-};
-
-type TrendingOffersProps = {
-  title?: string;
-  data: TrendingOfferItem[];
-  swiperSettings?: any;
-};
-
-const TrendingOffers: React.FC<TrendingOffersProps> = ({
+const TrendingOffers = ({
   title = "Trending Offers",
   data,
   swiperSettings = {},
+}: {
+  title?: string;
+  data: { imgUrl: string; name: string }[];
+  swiperSettings?: object;
 }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    // Ensuring refs are assigned after component mounts
-    if (prevRef.current && nextRef.current) {
-      const navigation = {
-        prevEl: prevRef.current,
-        nextEl: nextRef.current,
-      };
-      Object.assign(defaultSettings.navigation, navigation);
-    }
-  }, [prevRef, nextRef]);
 
   const defaultSettings = {
     modules: [Navigation],
@@ -129,6 +110,17 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({
     navigation: {
       prevEl: prevRef.current,
       nextEl: nextRef.current,
+    },
+    onInit: (swiper: any) => {
+      if (
+        swiper.params.navigation &&
+        typeof swiper.params.navigation !== "boolean"
+      ) {
+        swiper.params.navigation.prevEl = prevRef.current;
+        swiper.params.navigation.nextEl = nextRef.current;
+      }
+      swiper.navigation.init();
+      swiper.navigation.update();
     },
     breakpoints: {
       1080: { slidesPerView: 4.8 },
@@ -161,7 +153,10 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({
             <SwiperSlide key={index}>
               <Card>
                 <ImageWrapper>
-                  <img src={item.imgUrl} alt={item.name} />
+                  <img
+                    src={item.imgUrl || getImageUrl(item.name)}
+                    alt={item.name}
+                  />
                 </ImageWrapper>
               </Card>
             </SwiperSlide>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import React from "react"; // Import React explicitly
 import Kashmir from "../../../assets/images/BudgetFriendly/Artboard 1.png";
 import Kerala from "../../../assets/images/BudgetFriendly/Artboard 2.png";
 import Andaman from "../../../assets/images/BudgetFriendly/Artboard 3.png";

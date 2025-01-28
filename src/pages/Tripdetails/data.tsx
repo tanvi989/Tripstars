@@ -135,6 +135,130 @@ export const destinationsData = {
       { name: "Discover Bali 2", imgUrl: cherryImg2 },
     ],
   },
+  malaysia: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+      title: "malaysia",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Bali Swing", image: baliImg1 },
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: trendingImg1 },
+      { name: "Artboard 2", imgUrl: trendingImg2 },
+      { name: "Artboard 3", imgUrl: trendingImg3 },
+      { name: "Artboard 4", imgUrl: trendingImg4 },
+      { name: "Artboard 5", imgUrl: trendingImg5 },
+      { name: "Artboard 6", imgUrl: trendingImg6 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Bali 1", imgUrl: cherryImg1 },
+      { name: "Discover Bali 2", imgUrl: cherryImg2 },
+    ],
+  },
+  australia: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+      title: "Australia",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Bali Swing", image: baliImg1 },
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: trendingImg1 },
+      { name: "Artboard 2", imgUrl: trendingImg2 },
+      { name: "Artboard 3", imgUrl: trendingImg3 },
+      { name: "Artboard 4", imgUrl: trendingImg4 },
+      { name: "Artboard 5", imgUrl: trendingImg5 },
+      { name: "Artboard 6", imgUrl: trendingImg6 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Bali 1", imgUrl: cherryImg1 },
+      { name: "Discover Bali 2", imgUrl: cherryImg2 },
+    ],
+  },
+ europe: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+      title: "Europe",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Bali Swing", image: baliImg1 },
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: trendingImg1 },
+      { name: "Artboard 2", imgUrl: trendingImg2 },
+      { name: "Artboard 3", imgUrl: trendingImg3 },
+      { name: "Artboard 4", imgUrl: trendingImg4 },
+      { name: "Artboard 5", imgUrl: trendingImg5 },
+      { name: "Artboard 6", imgUrl: trendingImg6 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Bali 1", imgUrl: cherryImg1 },
+      { name: "Discover Bali 2", imgUrl: cherryImg2 },
+    ],
+  },
+hongkong: {
+    banner: {
+      image:
+        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+      title: "Hongkong",
+      description: "Discover stunning locations and create unforgettable memories.",
+    },
+    thingsToDo: [
+      { name: "Bali Swing", image: baliImg1 },
+      { name: "Banova Water Sport", image: baliImg2 },
+      { name: "Kechak Dance", image: baliImg3 },
+      { name: "Kintamani Tour", image: baliImg4 },
+      { name: "Nusa Paneda", image: baliImg5 },
+      { name: "Tanah Lot Temple", image: baliImg6 },
+      { name: "Ulun Danu Temple", image: baliImg7 },
+      { name: "MTV Ride", image: baliImg8 },
+      { name: "Rice Terrace", image: baliImg9 },
+    ],
+    trendingOffers: [
+      { name: "Artboard 1", imgUrl: trendingImg1 },
+      { name: "Artboard 2", imgUrl: trendingImg2 },
+      { name: "Artboard 3", imgUrl: trendingImg3 },
+      { name: "Artboard 4", imgUrl: trendingImg4 },
+      { name: "Artboard 5", imgUrl: trendingImg5 },
+      { name: "Artboard 6", imgUrl: trendingImg6 },
+    ],
+    cherryBlossoms: [
+      { name: "Discover Bali 1", imgUrl: cherryImg1 },
+      { name: "Discover Bali 2", imgUrl: cherryImg2 },
+    ],
+  },
 vietnam: {
   banner: {
     image:

@@ -235,7 +235,7 @@ const Popup: React.FC = () => {
   });
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 3000);
+    const timer = setTimeout(() => setIsVisible(true), 195000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -1,17 +1,6 @@
-// TrendingDestinations.js
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom'; // Import for navigation
 
 const Container = styled.div`
   position: absolute;
@@ -23,17 +12,13 @@ const Container = styled.div`
   border-radius: 8px;
   margin-top: 4px;
   z-index: 10000;
-  
-  /* Default max-height for desktop */
-  max-height: 500px;
+  max-height: 350px;
   overflow-y: auto;
 
-  /* Adjust for smaller screens */
   @media (max-width: 600px) {
-    max-height: 500px; /* Ensure the same height as desktop */
+    max-height: 300px;
   }
 
-  /* (Optional) Customize the scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -41,22 +26,6 @@ const Container = styled.div`
     background: #ccc;
     border-radius: 6px;
   }
-`;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  font-weight: 600; 
-  font-size: 1.05rem;
-  border-bottom: 1px solid #eee;
-  color: #333;
-`;
-
-const Icon = styled.img`
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
 `;
 
 const ListItem = styled.div`
@@ -90,33 +59,37 @@ const Name = styled.div`
   color: #333;
 `;
 
-const TrendingDestinations = () => {
+const TrendingDestinations = ({ searchTerm }: { searchTerm: string }) => {
+
+  const navigate = useNavigate(); // Hook for navigation
+
   const destinations = [
-    // Add as many destinations as you want here
-    { name: 'Europe',   image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Kerala',   image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Thailand', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Kashmir',  image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Japan',    image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'London',   image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Paris',    image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Maldives', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Hawaii',   image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'Switzerland', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    // ... and so on
+    { name: 'bali', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'vietnam', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'thailand', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'kashmir', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'japan', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'london', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'paris', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'maldives', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'hawaii', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'switzerland', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
   ];
+  const handleDestinationClick = (destination: string) => {
+
+    const lowerCaseDestination = destination.toLowerCase();
+    navigate(`/${lowerCaseDestination}`);
+  };
+
+  // Filter destinations based on searchTerm
+  const filteredDestinations = destinations.filter(dest =>
+    dest.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <Container>
-      <Header>
-        <Icon 
-          src="https://images.emtcontent.com/holiday-img/home-img/cir_loc.svg" 
-          alt="Location Icon" 
-        />
-        Top Trending Holiday Destinations
-      </Header>
-      {destinations.map((dest, i) => (
-        <ListItem key={i}>
+      {filteredDestinations.map((dest, i) => (
+        <ListItem key={i} onClick={() => handleDestinationClick(dest.name)}>
           <Thumbnail src={dest.image} alt={dest.name} />
           <Name>{dest.name}</Name>
         </ListItem>

@@ -10,9 +10,12 @@ const NavbarContainer = styled.nav`
   left: 0;
   width: 100%;
   display: flex;
+  height:86px;
   justify-content: space-between;
   padding: 1.5rem 7rem;
   z-index: 999999;
+
+  background: rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease-in-out;
   &.active {
     background-color: #000;
@@ -24,7 +27,10 @@ const NavbarContainer = styled.nav`
     }
   }
   @media (max-width: 768px) {
+  height: 71px;
+  border-radius: 8px;
     padding: 1.5rem 1rem;
+
   }
 `;
 

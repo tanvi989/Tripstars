@@ -1,13 +1,15 @@
+import React from "react";
 import styled from "styled-components";
-import Title from "../../../components/common/SectionTitle";
+import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 import Australia from "../../../assets/images/ExploreEurope/Australia 1.png";
 import Eiffel from "../../../assets/images/ExploreEurope/eiffel.png";
 import Japan from "../../../assets/images/ExploreEurope/Japan 1.png";
 import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.png";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 
+// Styled-components for styling
 const Container = styled.div`
   width: 100%;
   padding: 0 15rem;
@@ -35,11 +37,7 @@ const CardsWrapper = styled.div`
   }
 `;
 
-const Card = styled.div``;
-
 const ImageWrapper = styled.div`
-  /* width: 7rem;
-  height: 7rem; */
   border-radius: 50%;
   overflow: hidden;
 
@@ -79,7 +77,7 @@ const SectionTitle = styled.div`
   }
 `;
 
-const TitileHeading = styled.h2`
+const TitleHeading = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -91,54 +89,45 @@ const TitileHeading = styled.h2`
   }
 `;
 
-const cardData = [
-  {
-    name: "Australia",
-    image: Australia,
-  },
-  {
-    name: "Eiffel",
-    image: Eiffel,
-  },
-  {
-    name: "Japan",
-    image: Japan,
-  },
-  {
-    name: "Swiss",
-    image: Swiss,
-  },
-  {
-    name: "Swiss",
-    image: Australia,
-  },
-  {
-    name: "Swiss",
-    image: Swiss,
-  },
-  {
-    name: "Swiss",
-    image: Eiffel,
-  },
-  {
-    name: "Swiss",
-    image: Australia,
-  },
-  {
-    name: "Swiss",
-    image: Swiss,
-  },
-  {
-    name: "Swiss",
-    image: Eiffel,
-  },
+// Define the type for card data
+interface CardData {
+  name: string;
+  image: string;
+}
+
+const cardData: CardData[] = [
+  { name: "Australia", image: Australia },
+  { name: "Eiffel", image: Eiffel },
+  { name: "Japan", image: Japan },
+  { name: "Swiss", image: Swiss },
+  { name: "Swiss", image: Australia },
+  { name: "Swiss", image: Swiss },
+  { name: "Swiss", image: Eiffel },
+  { name: "Swiss", image: Australia },
+  { name: "Swiss", image: Swiss },
+  { name: "Swiss", image: Eiffel },
 ];
 
-export default function ExploreEurope() {
+// ExploreEurope Component
+const ExploreEurope: React.FC = () => {
+  const navigate = useNavigate();
+
+  // Handle card click to navigate based on the card name
+  const handleCardClick = (name: string) => {
+    const routes: { [key: string]: string } = {
+      Australia: "/australia",
+      Eiffel: "/eiffel",
+      Japan: "/japan",
+      Swiss: "/swiss",
+    };
+
+    navigate(routes[name] || "/europe");
+  };
+
   return (
     <Container>
       <SectionTitle>
-        <TitileHeading>Explore Europe</TitileHeading>
+        <TitleHeading>Explore Europe</TitleHeading>
       </SectionTitle>
       <CardsWrapper>
         <Swiper
@@ -161,9 +150,13 @@ export default function ExploreEurope() {
           }}
         >
           {cardData.map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              onClick={() => handleCardClick(item.name)} // On card click
+              style={{ cursor: "pointer" }}
+            >
               <ImageWrapper>
-                <img src={item.image} alt="" />
+                <img src={item.image} alt={item.name} />
               </ImageWrapper>
               <div className="box_title">{item.name}</div>
             </SwiperSlide>
@@ -172,4 +165,6 @@ export default function ExploreEurope() {
       </CardsWrapper>
     </Container>
   );
-}
+};
+
+export default ExploreEurope;

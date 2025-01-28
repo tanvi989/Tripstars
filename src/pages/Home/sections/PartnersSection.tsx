@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import React from "react"; // Import React explicitly
 import Logo1 from "../../../assets/images/logo/brandLogos/Singapore.png";
 import Logo2 from "../../../assets/images/logo/brandLogos/Untitled design (14).png";
 import Logo3 from "../../../assets/images/logo/brandLogos/Untitled design (16).png";

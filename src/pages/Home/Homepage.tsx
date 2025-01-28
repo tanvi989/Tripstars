@@ -9,21 +9,36 @@ import PopularDestinations from "./sections/PopularDestinations";
 import TrendingOffers from "./sections/TrendingOffers";
 import VideoTestimonials from "./sections/VideoTestimonials";
 import WhyTripstars from "./sections/WhyTripstars";
+import NewComponent from "./sections/NewComponent";
 import Popup from "../../components/common/Popup";
-
+import ImageSlider from "./sections/ImageSlider";
+import ResponsiveBanner from "./sections/ResponsiveBanner";
+import CardSection from "./sections/CardSection";
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <PopularDestinations />
-      <TrendingOffers />
+  
+      {/* <TrendingOffers /> */}
+     
+      <CardSection 
+        title="Trending Offers"
+      />
       <ExploreDestinations />
       {/* <Loader /> */}
+
       <VideoTestimonials />
+      {/* <ImageSlider /> */}
+    {/* <NewComponent /> */}
       <WhyTripstars />
       <ExploreEurope />
-      <BudgetFriendly />
+      <CardSection 
+        title="Explore India"
+      />
+      {/* <BudgetFriendly /> */}
       <PartnersSection />
+     {/* <ResponsiveBanner /> */}
       {/* <MediaMentions /> */}
     </>
   );

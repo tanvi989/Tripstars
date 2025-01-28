@@ -15,7 +15,6 @@ const SliderContainer = styled.section`
   position: relative;
   width: 100%;
   height: 60vh;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     height: 50vh; /* Adjust height for smaller screens */

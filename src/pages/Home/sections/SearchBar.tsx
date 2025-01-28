@@ -1,8 +1,6 @@
-// SearchBar.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import TrendingDestinations from './TrandingDestinations'
-// ^^^ Adjust the import path if needed (e.g. '../sections/TrendingDestinations')
+import TrendingDestinations from './TrandingDestinations';
 
 const SearchBarContainer = styled.div`
   position: relative;
@@ -13,7 +11,6 @@ const SearchBarContainer = styled.div`
   margin: 0 auto;
   background-color: #fff;
   border-radius: 50px;
-  /* overflow: hidden;  // Comment or remove to allow dropdown to appear outside container */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 
   @media (max-width: 600px) {
@@ -54,7 +51,7 @@ const SearchButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+
   position: absolute;
   right: 0;
   top: 0;
@@ -85,11 +82,15 @@ const SearchButton = styled.button`
 
 const SearchBar = () => {
   const [showTrending, setShowTrending] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(''); // Track user input
 
-  const toggleTrending = () => {
-    // Toggle trending destinations visibility on input click
-    setShowTrending(prev => !prev);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value); // Update search term
+    if (!showTrending) {
+      setShowTrending(true); // Show trending on input
+    }
   };
+  
 
   return (
     <SearchBarContainer>
@@ -99,12 +100,14 @@ const SearchBar = () => {
       />
       <SearchInput
         placeholder="Enter Your Dream Destination!"
-        onClick={toggleTrending}   // Toggle on click
+        value={searchTerm}
+        onChange={handleInputChange} // Update search term on change
+        onClick={() => setShowTrending(true)} // Show dropdown on click
       />
       <SearchButton>Search</SearchButton>
 
-      {/* Render the trending destinations dropdown if showTrending is true */}
-      {showTrending && <TrendingDestinations />}
+      {/* Pass searchTerm as a prop */}
+      {showTrending && <TrendingDestinations searchTerm={searchTerm} />}
     </SearchBarContainer>
   );
 };

@@ -1,197 +1,317 @@
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import logoImg from "../../assets/images/logo/logo.png";
+import DesktopFooter from "./DesktopFooter";
+// Styled Components
 const FooterContainer = styled.footer`
-  background-color: #000;
-  color: #fff;
-  padding: 8rem;
+  background-color: #101820;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+`;
+
+const DesktopLinksContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  height: 60vh;
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 3rem;
+  padding: 20px 40px;
 
   @media (max-width: 768px) {
-    padding: 4rem 2rem;  /* Reduce padding for mobile */
-    flex-direction: column; /* Stack sections vertically */
-    height: auto; /* Allow height to adapt based on content */
+    display: none;
   }
 `;
 
-const LogoSection = styled.div`
+const LinksLeft = styled.div`
   flex: 1;
-  max-width: 25%;
-  img {
-    width: 50%;
-    margin-bottom: 1rem;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
+  max-width: 30%;
+`;
 
-  @media (max-width: 768px) {
-    max-width: 100%;  /* Make logo section full-width on small screens */
-    text-align: center;  /* Center align text on smaller screens */
+const LinksRight = styled.div`
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 65%;
+  justify-content: flex-start;
+`;
+
+const LinkList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const LinkItem = styled.li<{ active?: boolean }>`
+  margin: 10px 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: ${({ active }) => (active ? "#007BFF" : "transparent")};
+  border-radius: 5px;
+
+  a {
+    color: ${({ active }) => (active ? "white" : "white")};
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
-const LinksSection = styled.div`
-  display: flex;
-  flex: 2;
-  justify-content: space-evenly;
-  max-width: 50%;
-  
-  h4 {
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
+const MobileFooterContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+`;
+
+const FooterSection = styled.div<{ isOpen: boolean }>`
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  text-align: left;
+
+  h3 {
+    font-size: 18px;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      margin-left: 10px;
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    &.open i {
+      transform: rotate(180deg);
+    }
   }
 
   ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    margin: 10px 0;
+    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 
     li {
-      margin-bottom: 0.5rem;
-    }
+      margin: 5px 0;
 
-    a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      &:hover {
-        text-decoration: underline;
+      a {
+        color: #4caf50;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
 
-  @media (max-width: 768px) {
-    max-width: 100%;
-    justify-content: center; /* Center the links section */
-    margin-top: 2rem; /* Add spacing between sections */
+  hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 10px 0;
   }
 `;
 
-const SubscribeSection = styled.div`
-  flex: 1;
-  max-width: 25%;
-  text-align: right;
-
-  h4 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  form {
-    display: flex;
-    align-items: center;
-
-    input {
-      flex: 1;
-      padding: 0.8rem;
-      border-radius: 0.5rem 0 0 0.5rem;
-      border: none;
-      outline: none;
-    }
-
-    button {
-      padding: 0.8rem 1rem;
-      border-radius: 0 0.5rem 0.5rem 0;
-      border: none;
-      background-color: #28a745;
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  }
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-    text-align: center; /* Center the subscribe section */
-    margin-top: 2rem; /* Add spacing between sections */
-  }
-`;
-
-const CopyrightSection = styled.div`
+const FooterContact = styled.div`
   text-align: center;
-  width: 100%;
-  font-size: 0.8rem;
-  border-top: 1px solid #444;
-  padding-top: 1rem;
-  background-color: #000;
+  margin-top: 20px;
+  font-size: 14px;
+
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    color: #4caf50;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .contact-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+  }
+`;
+
+const SocialContainer = styled.div`
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  color: white;
+`;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem; /* Adjust padding for mobile */
-    font-size: 0.9rem; /* Increase font size slightly */
+const SocialLinks = styled.div`
+  background-color: #1a1a1a;
+  padding: 10px 30px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    margin: 0 10px;
+    display: inline-block;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
-export default function Footer() {
+const FooterBottom = styled.div`
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+
+  img {
+    height: 50px;
+    display: block;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+
+const FooterImage = styled.img`
+  margin-bottom: 10px;
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+// Social media icons
+const socialMediaLinks = [
+  { href: "https://www.facebook.com", src: "https://images.wanderon.in/icons/facebook", alt: "Facebook" },
+  { href: "https://www.instagram.com", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
+  { href: "https://www.linkedin.com", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
+  { href: "https://www.youtube.com", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
+];
+
+// Dropdown content
+const footerSections = [
+  {
+    title: "India Trips",
+    links: [
+      { label: "Destination 1", href: "#destination1" },
+      { label: "Destination 2", href: "#destination2" },
+      { label: "Destination 3", href: "#destination3" },
+    ],
+  },
+  {
+    title: "International Trips",
+    links: [
+      { label: "Destination 1", href: "#destination1" },
+      { label: "Destination 2", href: "#destination2" },
+      { label: "Destination 3", href: "#destination3" },
+    ],
+  },
+  {
+    title: "Tripstars Special",
+    links: [
+      { label: "Special 1", href: "#special1" },
+      { label: "Special 2", href: "#special2" },
+    ],
+  },
+  {
+    title: "Quick Links",
+    links: [
+      { label: "Link 1", href: "#link1" },
+      { label: "Link 2", href: "#link2" },
+      { label: "Link 3", href: "#link3" },
+    ],
+  },
+];
+
+const Footer: React.FC = () => {
+  const [dropdowns, setDropdowns] = useState<{ [key: string]: boolean }>({});
+
+  const toggleDropdown = (key: string) => {
+    setDropdowns((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
-    <>
-      <FooterContainer>
-        {/* Logo Section */}
-        <LogoSection>
-          <img src={logoImg} alt="TripStars Logo" />
+    <FooterContainer>
+      <MobileFooterContainer>
+        {footerSections.map((section) => (
+          <FooterSection
+            key={section.title}
+            isOpen={dropdowns[section.title] || false}
+          >
+            <h3
+              onClick={() => toggleDropdown(section.title)}
+              className={dropdowns[section.title] ? "open" : ""}
+            >
+              {section.title} <i>▼</i>
+            </h3>
+            <ul>
+              {section.links.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+            <hr />
+          </FooterSection>
+        ))}
+      </MobileFooterContainer>
+
+      <FooterContact>
+        <p><strong>Tripstars Holidays Pvt LTD</strong></p>
+        <p> B, Iscon, 1817/18 Navratna Corporate Park, Ambli Rd, Ahmedabad, Gujarat 380058</p>
+        <div className="contact-horizontal">
           <p>
-            There are many variations of passages of available but it is the
-            majority of suffered that a alteration in that some dummy text.
+            <a href="mailto:hello@wanderon.in">hello@tripstars.in</a>
           </p>
-        </LogoSection>
- 
-        {/* Links Section */}
-        <LinksSection>
-          <ul>
-            <h4>About</h4>
-            <li>
-              <Link to="/discover">Discover</Link>
-            </li>
-            <li>
-              <Link to="/find-travel">Find Travel</Link>
-            </li>
-            <li>
-              <Link to="/popular-destinations">Popular Destinations</Link>
-            </li>
-            <li>
-              <Link to="/reviews">Reviews</Link>
-            </li>
-          </ul>
-          <ul>
-            <h4>Support</h4>
-            <li>
-              <Link to="/support">Customer Support</Link>
-            </li>
-            <li>
-              <Link to="/privacy-policy">Privacy & Policy</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Channels</Link>
-            </li>
-          </ul>
-        </LinksSection>
- 
-        {/* Subscribe Section */}
-        <SubscribeSection>
-          <h4>LET'S STAY CONNECTED</h4>
-          <form>
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">→</button>
-          </form>
-        </SubscribeSection>
-      </FooterContainer>
- 
-      {/* Copyright Section */}
-      <CopyrightSection>
-        Copyright © TripStars. All rights reserved.
-      </CopyrightSection>
-    </>
+          <p>
+            <a href="tel:+919090403075">+91 98750 97169</a>
+          </p>
+          <p>
+            <a href="https://www.wanderon.in">www.tripstars.in</a>
+          </p>
+        </div>
+      </FooterContact>
+
+      <SocialContainer>
+        <SocialLinks>
+          {socialMediaLinks.map((link) => (
+            <a href={link.href} key={link.alt} target="_blank" rel="noopener noreferrer">
+              <img src={link.src} alt={link.alt} />
+            </a>
+          ))}
+        </SocialLinks>
+      </SocialContainer>
+
+      <FooterBottom>
+        <FooterImage
+          src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
+          alt="Footer Graphics"
+        />
+        <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>
+      </FooterBottom>
+    </FooterContainer>
   );
-}
- 
+};
+
+export default Footer;

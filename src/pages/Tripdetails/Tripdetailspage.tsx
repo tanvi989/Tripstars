@@ -1,12 +1,15 @@
 // src/components/Tripdetailspage.js
-
-import HeroSection2 from "./sections/HeroSection2";
 import { useParams } from "react-router-dom"; 
 import DynamicSlider from "./sections/DynamicSlider";
 import TrendingOffers from "../Tripdetails/sections/TrandingOffers";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
 import Ban from "./sections/Ban";
 import { destinationsData } from './data'
+import CardSection from "./sections/CardSection";
+import ReviewSlider from "./sections/ReviewSlider";
+import ChooseTravelStyle from "./sections/ChooseTravelStyle";
+import TravelStyleCarousel from "./sections/TravelStyleCarousel";
+import ExploreDestinations from "../Home/sections/ExploreDestinations";
 
 
 
@@ -43,13 +46,24 @@ export default function Tripdetailspage() {
         highlightedWord={location}
         destinations={thingsToDo}
       />
-      <TrendingOffers
-        title={`Trending Offers in ${location}`}
-        data={trendingOffers}
+      {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
+      {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
+
+      {/* <ChooseTravelStyle/> */}
+
+      <CardSection 
+        title="Trending Offers in Bali"
       />
-      <CherryBlossomsSection
-        title={`Experience Best Selling Packages in ${location}`}
-        images={cherryBlossoms}
+      {/* <Loader /> */}
+      {/* <Loader /> */}
+ <ExploreDestinations />
+
+      <ReviewSlider
+        title="Review"
+      />
+{/* <TravelStyleCarousel /> */}
+<CardSection 
+        title="Similar packages"
       />
     </>
   );

@@ -15,7 +15,6 @@ const Container = styled.div`
   padding: 0 10rem;
   background-image: url(${bgImage});
   background-size: cover;
-  /* height: 100svh; */
   margin: 10rem 0;
   margin-bottom: 0;
   padding-bottom: 5rem;
@@ -97,16 +96,9 @@ const CardsWrapper = styled.div`
   }
 `;
 
-const Card = styled.div`
-  /* .card_title {
-    color: #fff;
-    padding-top: 1rem;
-    font-weight: 500;
-  } */
-`;
+const Card = styled.div``;
 
 const ImageWrapper = styled.div`
-  /* width: 18rem; */
   height: 100%;
   border-radius: 1rem;
   overflow: hidden;
@@ -143,6 +135,20 @@ const testimonials = [
 ];
 
 export default function VideoTestimonials() {
+  const handlePlay = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    // Pause and mute all videos
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      if (video !== e.currentTarget) {
+        video.pause();
+        video.muted = true;
+      }
+    });
+
+    // Unmute the current video
+    e.currentTarget.muted = false;
+  };
+
   return (
     <Container>
       <Title>
@@ -174,12 +180,13 @@ export default function VideoTestimonials() {
                     <video
                       src={item.videoUrl}
                       autoPlay
-                      muted
                       playsInline
                       loop
+                      muted
+                      controls
+                      onPlay={handlePlay}
                     />
                   </ImageWrapper>
-                  {/* <h4 className="card_title">Azure Haven</h4> */}
                 </Card>
               </SwiperSlide>
             ))}

@@ -6,7 +6,7 @@ const RatingBarContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #000;
+  background-color: rgb(0, 0, 0,0.5);
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: center; /* Centers the content horizontally */

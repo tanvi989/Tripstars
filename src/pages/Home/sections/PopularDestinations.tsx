@@ -1,7 +1,10 @@
 import styled from "styled-components";
-// import Title from "../../../components/common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { Navigation } from "swiper/modules";
 
+// Import your images
 import Australia from "../../../assets/PopularDestination/Australia.png";
 import Bali from "../../../assets/PopularDestination/Bali.png";
 import Dubai from "../../../assets/PopularDestination/Dubai.png";
@@ -11,9 +14,8 @@ import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
 import Singapore from "../../../assets/PopularDestination/Singapore.png";
 import Thailand from "../../../assets/PopularDestination/Thailand.png";
 import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
-import { useRef } from "react";
-import { Navigation } from "swiper/modules";
 
+// Styled components
 const Container = styled.div`
   padding: 0 15rem;
   @media (max-width: 1340px) {
@@ -34,6 +36,7 @@ const CardsWrapper = styled.div`
 
 const Card = styled.div`
   height: 100%;
+  cursor: pointer; /* Make the cards clickable */
   @media (max-width: 1080px) {
     width: 100%;
   }
@@ -63,8 +66,6 @@ const SectionTitle = styled.div`
     padding-top: 4rem;
     padding-bottom: 1rem;
   }
-  @media (max-width: 1080px) {
-  }
   @media (max-width: 768px) {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -86,11 +87,9 @@ const TitileHeading = styled.h2`
 const NavIcons = styled.div`
   display: flex;
   gap: 0.5rem;
-  .left_btn,
   button {
     cursor: pointer;
     border: 1px solid #000;
-    /* background-color: #000; */
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
@@ -106,53 +105,36 @@ const NavIcons = styled.div`
   }
 `;
 
-const popularDestinationsData = [
- 
-  {
-    name: "Malaysia",
-    imgUrl: Malaysia,
-  },
-  {
-    name: "Singapore",
-    imgUrl: Singapore,
-  },
-  {
-    name: "Thailand",
-    imgUrl: Thailand,
-  },
-  {
-    name: "Vietnam",
-    imgUrl: Vietnam,
-  },
-  {
-    name: "Australia",
-    imgUrl: Australia,
-  },
-  {
-    name: "Bali",
-    imgUrl: Bali,
-  },
-  {
-    name: "Dubai",
-    imgUrl: Dubai,
-  },
-  {
-    name: "Europe",
-    imgUrl: Europe,
-  },
-  {
-    name: "HongKong",
-    imgUrl: HongKong,
-  }
+// Type definition for destinations
+type Destination = {
+  name: string;
+  imgUrl: string;
+};
+
+// Destination data
+const popularDestinationsData: Destination[] = [
+  { name: "Malaysia", imgUrl: Malaysia },
+  { name: "Singapore", imgUrl: Singapore },
+  { name: "Thailand", imgUrl: Thailand },
+  { name: "Vietnam", imgUrl: Vietnam },
+  { name: "Australia", imgUrl: Australia },
+  { name: "Bali", imgUrl: Bali },
+  { name: "Dubai", imgUrl: Dubai },
+  { name: "Europe", imgUrl: Europe },
+  { name: "HongKong", imgUrl: HongKong },
 ];
 
 export default function PopularDestinations() {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+  const navigate = useNavigate();
+
+  const handleRedirect = (destination: string) => {
+    navigate(`/${destination.toLowerCase()}`);
+  };
 
   return (
     <Container>
-      {/* <Title title="Popular Destinations" prevRef={prevRef} nextRef={nextRef} /> */}
       <SectionTitle>
         <TitileHeading>Popular Destinations</TitileHeading>
         <NavIcons>
@@ -160,7 +142,7 @@ export default function PopularDestinations() {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 320 512"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -171,7 +153,7 @@ export default function PopularDestinations() {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 320 512"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -213,10 +195,10 @@ export default function PopularDestinations() {
           }}
         >
           {popularDestinationsData.map((item, index) => (
-            <SwiperSlide>
-              <Card key={index}>
+            <SwiperSlide key={index}>
+              <Card onClick={() => handleRedirect(item.name)}>
                 <ImageWrapper>
-                  <img src={item.imgUrl} alt="" />
+                  <img src={item.imgUrl} alt={item.name} />
                 </ImageWrapper>
               </Card>
             </SwiperSlide>
