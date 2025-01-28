@@ -1,82 +1,61 @@
 import styled from "styled-components";
-// import Title from "../../../components/common/SectionTitle";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useRef, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-import Australia from "../../../assets/images/TrendingOffers/Artboard 1.png";
-import Bali from "../../../assets/images/TrendingOffers/Artboard 2.png";
-import Dubai from "../../../assets/images/TrendingOffers/Artboard 3.png";
-import Europe from "../../../assets/images/TrendingOffers/Artboard 4.png";
-import HongKong from "../../../assets/images/TrendingOffers/Artboard 5.png";
-import Mauritius from "../../../assets/images/TrendingOffers/Artboard 6.png";
-import NewZealand from "../../../assets/images/TrendingOffers/Artboard 7.png";
-import Turkey from "../../../assets/images/TrendingOffers/Artboard 9.png";
-import Thailand from "../../../assets/images/TrendingOffers/Artboard 8.png";
-import Vietnam from "../../../assets/images/TrendingOffers/Artboard 10.png";
-import { useRef } from "react";
-import { Navigation } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
-const Container = styled.div`
-  padding: 0 15rem;
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 0 15rem;
+
   @media (max-width: 1340px) {
-    padding: 0 5rem;
+    margin: 0 5rem;
   }
   @media (max-width: 1080px) {
-    padding: 0 3rem;
+    margin: 0 3rem;
   }
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    margin: 0 1rem;
   }
-`;
-
-const CardsWrapper = styled.div`
-  display: flex;
 `;
 
 const Card = styled.div`
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
+  flex: 1 0 auto;
+  margin: 0.5%;
+  height: 330px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  position: relative;
 `;
 
-const ImageWrapper = styled.div`
+const CardImage = styled.img`
   width: 100%;
-  height: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  height: 330px;
+  object-fit: cover;
 `;
 
-const SectionTitle = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: 1340px) {
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-  }
-  @media (max-width: 1080px) {
-  }
-  @media (max-width: 768px) {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
-`;
+const PricingTag = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  z-index: 10;
 
-const TitileHeading = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  @media (max-width: 1080px) {
-    font-size: 2.3rem;
-  }
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 9px;
   }
 `;
 
@@ -103,65 +82,239 @@ const NavIcons = styled.div`
   }
 `;
 
-const data = [
+const SectionTitle = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+
+  @media (max-width: 1340px) {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+`;
+
+const TitileHeading = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  @media (max-width: 1080px) {
+    font-size: 2.3rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const CardOverlay = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0) 1%, rgb(0, 0, 0) 76.21%);
+  color: white;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+`;
+
+const Title = styled.div`
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
+const Info = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+const InfoItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 0.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const Icon = styled.span<{ backgroundImage: string }>`
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  background-image: url(${({ backgroundImage }) => backgroundImage});
+`;
+
+const cards = [
   {
-    name: "Australia",
-    imgUrl: Australia,
+    title: "Meghalaya Road Trip",
+    image:
+      "https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02",
+    pricing: "₹21,499/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "5N/6D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Guwahati - Guwahati",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-calender.svg",
+        text: "25 Jan",
+      },
+    ],
   },
   {
-    name: "Bali",
-    imgUrl: Bali,
+    title: "Vietnam Adventure",
+    image: "https://images.wanderon.in/new-homepage-data/International/vietnam",
+    pricing: "₹21,499/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "5N/6D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Guwahati - Guwahati",
+      },
+    ],
   },
   {
-    name: "Dubai",
-    imgUrl: Dubai,
+    title: "Kashmir Winter Backpacking",
+    image:
+      "https://wanderon-sales.s3.amazonaws.com/gallery/new/2024/12/16/kashmir-winter-backpacking-1.avif",
+    pricing: "₹21,499/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "5N/6D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Guwahati - Guwahati",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-calender.svg",
+        text: "25 Jan",
+      },
+    ],
   },
   {
-    name: "Europe",
-    imgUrl: Europe,
+    title: "European Escape",
+    image: "https://images.wanderon.in/new-homepage-data/International/europe",
+    pricing: "₹21,499/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "5N/6D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Guwahati - Guwahati",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-calender.svg",
+        text: "25 Jan",
+      },
+    ],
   },
   {
-    name: "HongKong",
-    imgUrl: HongKong,
+    title: "Romantic Kashmir",
+    image:
+      "https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02",
+    pricing: "₹21,499/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "5N/6D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Guwahati - Guwahati",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-calender.svg",
+        text: "25 Jan",
+      },
+    ],
   },
   {
-    name: "Mauritius",
-    imgUrl: Mauritius,
-  },
-  {
-    name: "NewZealand",
-    imgUrl: NewZealand,
-  },
-  {
-    name: "Thailand",
-    imgUrl: Thailand,
-  },
-  {
-    name: "Turkey",
-    imgUrl: Turkey,
-  },
-  {
-    name: "Vietnam",
-    imgUrl: Vietnam,
+    title: "Vietnam Road Trip",
+    image: "https://images.wanderon.in/new-homepage-data/International/vietnam",
+    pricing: "₹19,999/- Onwards",
+    info: [
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "6N/7D",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-location.svg",
+        text: "Delhi - Manali",
+      },
+      {
+        icon: "https://wanderon.in/assets/images/new-calender.svg",
+        text: "1 Feb",
+      },
+    ],
   },
 ];
 
-export default function TrendingOffers() {
+interface TrendingOffersProps {
+  title: string;
+}
+
+const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
-  return (
-    <Container>
-      {/* <Title title="Trending Offers" /> */}
+  useEffect(() => {
+    const swiperElement = document.querySelector(
+      ".swiper.trending-offers-slider"
+    ) as HTMLElement & { swiper?: any }; // Unique class name for this Swiper
 
+    if (swiperElement?.swiper) {
+      const swiperInstance = swiperElement.swiper;
+
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, []);
+
+  return (
+    <SliderContainer>
       <SectionTitle>
-        <TitileHeading>Trending Offers</TitileHeading>
+        <TitileHeading>{title}</TitileHeading>
         <NavIcons>
           <button ref={prevRef}>
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 320 512"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -172,7 +325,7 @@ export default function TrendingOffers() {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 320 512"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -181,49 +334,52 @@ export default function TrendingOffers() {
           </button>
         </NavIcons>
       </SectionTitle>
-      <CardsWrapper>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={1.8}
-          breakpoints={{
-            1080: {
-              slidesPerView: 4.8,
-            },
-            768: {
-              slidesPerView: 2.8,
-            },
-            400: {
-              slidesPerView: 2,
-            },
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onInit={(swiper) => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-        >
-          {data.map((item, index) => (
-            <SwiperSlide>
-              <Card key={index}>
-                <ImageWrapper>
-                  <img src={item.imgUrl} alt="" />
-                </ImageWrapper>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </CardsWrapper>
-    </Container>
+      <Swiper
+        className="trending-offers-slider" // Unique class name
+        modules={[Navigation]}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        spaceBetween={10}
+        slidesPerView={4}
+        breakpoints={{
+          1080: {
+            slidesPerView: 4.8,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          400: {
+            slidesPerView: 2,
+          },
+          300: {
+            slidesPerView: 2,
+          },
+        }}
+      >
+        {cards.map((card, index) => (
+          <SwiperSlide key={index}>
+            <Card>
+              <PricingTag>{card.pricing}</PricingTag>
+              <CardImage src={card.image} alt={card.title} />
+              <CardOverlay>
+                <Title>{card.title}</Title>
+                <Info>
+                  {card.info.map((item, idx) => (
+                    <InfoItem key={idx}>
+                      <Icon backgroundImage={item.icon} />
+                      {item.text}
+                    </InfoItem>
+                  ))}
+                </Info>
+              </CardOverlay>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </SliderContainer>
   );
-}
+};
+
+export default TrendingOffers;

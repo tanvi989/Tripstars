@@ -14,17 +14,18 @@ import Popup from "../../components/common/Popup";
 import ImageSlider from "./sections/ImageSlider";
 import ResponsiveBanner from "./sections/ResponsiveBanner";
 import CardSection from "./sections/CardSection";
+import ExploreIndia from "./sections/ExploreIndia";
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <PopularDestinations />
   
-      {/* <TrendingOffers /> */}
+      <TrendingOffers title="Trending Offers"/>
      
-      <CardSection 
+      {/* <CardSection 
         title="Trending Offers"
-      />
+      /> */}
       <ExploreDestinations />
       {/* <Loader /> */}
 
@@ -33,9 +34,7 @@ export default function HomePage() {
     {/* <NewComponent /> */}
       <WhyTripstars />
       <ExploreEurope />
-      <CardSection 
-        title="Explore India"
-      />
+      <ExploreIndia title="Explore India"/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
      {/* <ResponsiveBanner /> */}
