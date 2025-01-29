@@ -28,7 +28,7 @@ const SliderContainer = styled.div`
 const Card = styled.div`
   flex: 1 0 auto;
   margin: 0.5%;
-  height: 330px;
+  height: 350px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -38,7 +38,7 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 330px;
+  height: 350px;
   object-fit: cover;
 `;
 
@@ -165,119 +165,141 @@ const Icon = styled.span<{ backgroundImage: string }>`
 `;
 
 const cards = [
-    {
-      title: "Meghalaya Road Trip",
-      image:
-        "https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02",
-      pricing: "₹21,499/- Onwards",
+  {
+      title: 'Meghalaya Road Trip',
+      image: 'https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02',
+      pricing: '₹21,499/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "5N/6D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Guwahati - Guwahati",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-calender.svg",
-          text: "25 Jan",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Guwahati' },
       ],
-    },
-    {
-      title: "Vietnam Adventure",
-      image: "https://images.wanderon.in/new-homepage-data/International/vietnam",
-      pricing: "₹21,499/- Onwards",
+  },
+  {
+      title: 'Vietnam Adventure',
+      image: 'https://images.wanderon.in/new-homepage-data/International/vietnam',
+      pricing: '₹21,499/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "5N/6D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Guwahati - Guwahati",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Guwahati ' },
       ],
-    },
-    {
-      title: "Kashmir Winter Backpacking",
-      image:
-        "https://wanderon-sales.s3.amazonaws.com/gallery/new/2024/12/16/kashmir-winter-backpacking-1.avif",
-      pricing: "₹21,499/- Onwards",
+  },
+  {
+      title: 'Kashmir Winter Backpacking',
+      image: 'https://wanderon-sales.s3.amazonaws.com/gallery/new/2024/12/16/kashmir-winter-backpacking-1.avif',
+      pricing: '₹21,499/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "5N/6D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Guwahati - Guwahati",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-calender.svg",
-          text: "25 Jan",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Srinagar' },
       ],
-    },
-    {
-      title: "European Escape",
-      image: "https://images.wanderon.in/new-homepage-data/International/europe",
-      pricing: "₹21,499/- Onwards",
+  },
+  {
+      title: 'European Escape',
+      image: 'https://images.wanderon.in/new-homepage-data/International/europe',
+      pricing: '₹69,999/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "5N/6D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Guwahati - Guwahati",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-calender.svg",
-          text: "25 Jan",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Paris' },
       ],
-    },
-    {
-      title: "Romantic Kashmir",
-      image:
-        "https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02",
-      pricing: "₹21,499/- Onwards",
+  },
+  {
+      title: 'Romantic Kashmir',
+      image: 'https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02',
+      pricing: '₹18,999/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "5N/6D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Guwahati - Guwahati",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-calender.svg",
-          text: "25 Jan",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Srinagar' },
       ],
-    },
-    {
-      title: "Vietnam Road Trip",
-      image: "https://images.wanderon.in/new-homepage-data/International/vietnam",
-      pricing: "₹19,999/- Onwards",
+  },
+  {
+      title: 'Vietnam Road Trip',
+      image: 'https://images.wanderon.in/new-homepage-data/International/vietnam',
+      pricing: '₹19,999/- Onwards',
       info: [
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "6N/7D",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-location.svg",
-          text: "Delhi - Manali",
-        },
-        {
-          icon: "https://wanderon.in/assets/images/new-calender.svg",
-          text: "1 Feb",
-        },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Hanoi' },
       ],
-    },
+  },
+  {
+      title: 'Ladakh Bike Trip',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/ladakh-bike-trip.jpg',
+      pricing: '₹25,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '8N/9D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Leh ' },
+      ],
+  },
+  {
+      title: 'Andaman Bliss',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/andaman.jpg',
+      pricing: '₹24,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Port' },
+      ],
+  },
+  {
+      title: 'Spiti Valley Expedition',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/spiti.jpg',
+      pricing: '₹20,499/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Manali - Kaza' },
+      ],
+  },
+  {
+      title: 'Maldives Getaway',
+      image: 'https://images.wanderon.in/new-homepage-data/International/maldives.jpg',
+      pricing: '₹39,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Male - Private Island' },
+      ],
+  },
+  {
+      title: 'Kerala Backwaters',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/kerala-backwaters.jpg',
+      pricing: '₹15,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '3N/4D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Cochin - Alleppey' },
+      ],
+  },
+  {
+      title: 'Rajasthan Royal Retreat',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/rajasthan.jpg',
+      pricing: '₹22,499/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Jaipur - Udaipur' },
+      ],
+  },
+  {
+      title: 'Bali Beaches & Bliss',
+      image: 'https://images.wanderon.in/new-homepage-data/International/bali.jpg',
+      pricing: '₹34,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Denpasar - Ubud' },
+      ],
+  },
+  {
+      title: 'Himachal Adventure',
+      image: 'https://images.wanderon.in/new-homepage-data/domestic/himachal.jpg',
+      pricing: '₹16,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Shimla - Manali' },
+      ],
+  },
+  {
+      title: 'Thailand Tropical Escape',
+      image: 'https://images.wanderon.in/new-homepage-data/International/thailand.jpg',
+      pricing: '₹28,999/- Onwards',
+      info: [
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Bangkok - Phuket' },
+      ],
+  },
   ];
 
 interface ExploreIndiaProps {
