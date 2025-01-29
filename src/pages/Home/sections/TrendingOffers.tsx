@@ -28,7 +28,7 @@ const SliderContainer = styled.div`
 const Card = styled.div`
   flex: 1 0 auto;
   margin: 0.5%;
-  height: 350px;
+  height: 380px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -141,7 +141,9 @@ const Title = styled.div`
 const Info = styled.div`
   display: flex;
   align-items: center;
+  justify-content:space-between;
   margin-top: 10px;
+  flex-wrap:wrap;
 `;
 
 const InfoItem = styled.div`
@@ -366,7 +368,7 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
         slidesPerView={4}
         breakpoints={{
           1080: {
-            slidesPerView: 4.8,
+            slidesPerView: 4,
           },
           768: {
             slidesPerView: 4,

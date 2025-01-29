@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import {
   FaUmbrellaBeach,
   FaCocktail,
@@ -12,78 +12,91 @@ import {
   FaShip,
   FaTree,
   FaMapMarkedAlt,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
-// Container for the tags
 const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
   padding: 10px;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
   justify-content: center;
+  background-color: #f9f9f9;
 
   @media (max-width: 768px) {
-    width: 100%;
-    gap: 5px;
-    padding: 0px; /* Ensures it spans the full width */
-    justify-content: flex-start; /* Optional: Align tags to the start if needed */
+    gap: 8px;
+    padding: 5px;
+    justify-content: flex-start;
   }
 `;
 
-// Styled tag component with dynamic background and text colors
 const Tag = styled.div<{ bgColor: string; textColor?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: -4px !important;
-  padding-right: 20px;
-  padding-bottom: -4px ; // Adjusted padding for the yellow background (smaller)
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  color: ${({ textColor }) => textColor || '#000'};
-  background-color: ${({ bgColor }) => bgColor};
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: ${({ textColor }) => textColor || "black"};
+  background: linear-gradient(to top left, #d4af37, #ffd700); /* Gold gradient */
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 1.5px solid black; /* Thin Black Border */
+  transition: all 0.2s ease-in-out;
+
+  /* Glossy Effect */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 40%;
+    height: 40%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(4px);
+  }
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: inset 2px 3px 4px rgba(0, 0, 0, 0.2);
   }
 `;
 
-// Icon wrapper to align icons with the text, make icons black with white background
 const IconWrapper = styled.div`
-  font-size: 20px; /* Increase the font size to make the icon larger */
-  margin-right: 10px;  /* Adjust margin between icon and text */
-  color: #000; /* Set icon color to black */
-  background-color: #fff; /* Set background of icon to white */
-  padding: 12px; /* Increase padding around the icon to make the circle bigger */
-  border-radius: 50%; /* Makes the icon background circular */
+  font-size: 18px;
+  margin-right: 10px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black; /* Thin border around the icon */
 `;
 
-// Tags data with corresponding icons and colors
 const tagsData = [
-  { label: 'Beaches', color: '#FFEB3B', icon: <FaUmbrellaBeach /> },
-  { label: 'Nightlife', color: '#FFEB3B', icon: <FaCocktail /> },
-  { label: 'Adventure', color: '#FFEB3B', icon: <FaMountain /> },
-  { label: 'Flights', color: '#FFEB3B', icon: <FaPlane /> },
-  { label: 'Cities', color: '#FFEB3B', icon: <FaCity /> },
-  { label: 'Hotels', color: '#FFEB3B', icon: <FaHotel />, textColor: '#000' },
-  { label: 'Visa Assistance', color: '#FFEB3B', icon: <FaPassport /> },
-  { label: 'Road Trips', color: '#FFEB3B', icon: <FaCarSide /> },
-  { label: 'Cruises', color: '#FFEB3B', icon: <FaShip /> },
-  { label: 'Nature', color: '#FFEB3B', icon: <FaTree /> },
-  { label: 'Tours', color: '#FFEB3B', icon: <FaMapMarkedAlt /> },
+  { label: "Beaches", icon: <FaUmbrellaBeach /> },
+  { label: "Nightlife", icon: <FaCocktail /> },
+  { label: "Adventure", icon: <FaMountain /> },
+  { label: "Flights", icon: <FaPlane /> },
+  { label: "Cities", icon: <FaCity /> },
+  { label: "Hotels", icon: <FaHotel /> },
+  { label: "Visa Assistance", icon: <FaPassport /> },
+  { label: "Road Trips", icon: <FaCarSide /> },
+  { label: "Cruises", icon: <FaShip /> },
+  { label: "Nature", icon: <FaTree /> },
+  { label: "Tours", icon: <FaMapMarkedAlt /> },
 ];
 
-// Main Highlight component
 const Highlight: React.FC = () => {
   const handleTagClick = (label: string) => {
     console.log(`Clicked on ${label}`);
@@ -91,13 +104,8 @@ const Highlight: React.FC = () => {
 
   return (
     <TagsContainer>
-      {tagsData.map(({ label, color, icon, textColor }) => (
-        <Tag
-          key={label}
-          bgColor={color}
-          textColor={textColor}
-          onClick={() => handleTagClick(label)}
-        >
+      {tagsData.map(({ label, icon }) => (
+        <Tag key={label} bgColor="#FFEB3B" onClick={() => handleTagClick(label)}>
           <IconWrapper>{icon}</IconWrapper>
           {label}
         </Tag>
