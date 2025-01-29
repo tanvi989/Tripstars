@@ -20,7 +20,6 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 15rem;
-
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -45,7 +44,7 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 350px;
+  height: 360px;
   object-fit: cover;
 `;
 
@@ -181,7 +180,7 @@ const cards = [
       pricing: '₹21,499/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Hanoi' },
+       { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Hanoi' },
       ],
   },
   {

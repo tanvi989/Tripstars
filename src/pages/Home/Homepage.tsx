@@ -15,6 +15,7 @@ import ImageSlider from "./sections/ImageSlider";
 import ResponsiveBanner from "./sections/ResponsiveBanner";
 import CardSection from "./sections/CardSection";
 import ExploreIndia from "./sections/ExploreIndia";
+import SwipeableSlider from "./sections/SwipeableSlider";
 export default function HomePage() {
   return (
     <>
@@ -22,6 +23,7 @@ export default function HomePage() {
       <PopularDestinations />
   
       <TrendingOffers title="Trending Offers"/>
+      <SwipeableSlider/>
      
       {/* <CardSection 
         title="Trending Offers"
