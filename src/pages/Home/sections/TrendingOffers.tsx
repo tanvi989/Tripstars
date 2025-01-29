@@ -4,7 +4,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
+import VietnamImage from '../../../assets/tranding-offers/Vietnam.png';
+import TurkeyImage from '../../../assets/tranding-offers/Turkey.jpg';
+import ThailandImage from '../../../assets/tranding-offers/Thailand.jpeg';
+import MauritiusImage from '../../../assets/tranding-offers/Mauritius.png';
+import MaldivesImage from '../../../assets/tranding-offers/Maldives.jpg';
+import EuropeImage from '../../../assets/tranding-offers/Europe 1.jpg';
+import DubaiImage from '../../../assets/tranding-offers/Dubai.jpg';
+import BaliImage from '../../../assets/tranding-offers/Bali.jpg';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -167,89 +174,44 @@ const Icon = styled.span<{ backgroundImage: string }>`
 
 const cards = [
   {
-      title: 'Meghalaya Road Trip',
-      image: 'https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02',
-      pricing: '₹21,499/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Guwahati' },
-      ],
-  },
-  {
       title: 'Vietnam Adventure',
-      image: 'https://images.wanderon.in/new-homepage-data/International/vietnam',
+      image: VietnamImage,
       pricing: '₹21,499/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Guwahati ' },
-      ],
-  },
-  {
-      title: 'Kashmir Winter Backpacking',
-      image: 'https://wanderon-sales.s3.amazonaws.com/gallery/new/2024/12/16/kashmir-winter-backpacking-1.avif',
-      pricing: '₹21,499/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Srinagar' },
-      ],
-  },
-  {
-      title: 'European Escape',
-      image: 'https://images.wanderon.in/new-homepage-data/International/europe',
-      pricing: '₹69,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Paris' },
-      ],
-  },
-  {
-      title: 'Romantic Kashmir',
-      image: 'https://images.wanderon.in/new-homepage-data/romantic%20escapes/kashmir-romantic-02',
-      pricing: '₹18,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Srinagar' },
-      ],
-  },
-  {
-      title: 'Vietnam Road Trip',
-      image: 'https://images.wanderon.in/new-homepage-data/International/vietnam',
-      pricing: '₹19,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
        { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Hanoi' },
       ],
   },
   {
-      title: 'Ladakh Bike Trip',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/ladakh-bike-trip.jpg',
-      pricing: '₹25,999/- Onwards',
+      title: 'Turkey Hot Air Balloon Experience',
+      image: TurkeyImage,
+      pricing: '₹32,999/- Onwards',
       info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '8N/9D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Leh ' },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Cappadocia' },
       ],
   },
   {
-      title: 'Andaman Bliss',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/andaman.jpg',
-      pricing: '₹24,999/- Onwards',
+      title: 'Thailand Tropical Escape',
+      image: ThailandImage,
+      pricing: '₹28,999/- Onwards',
       info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Port' },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Bangkok - Phuket' },
       ],
   },
   {
-      title: 'Spiti Valley Expedition',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/spiti.jpg',
-      pricing: '₹20,499/- Onwards',
+      title: 'Mauritius Beach Retreat',
+      image: MauritiusImage,
+      pricing: '₹45,999/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Manali - Kaza' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Port Louis' },
       ],
   },
   {
       title: 'Maldives Getaway',
-      image: 'https://images.wanderon.in/new-homepage-data/International/maldives.jpg',
+      image: MaldivesImage,
       pricing: '₹39,999/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
@@ -257,51 +219,33 @@ const cards = [
       ],
   },
   {
-      title: 'Kerala Backwaters',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/kerala-backwaters.jpg',
-      pricing: '₹15,999/- Onwards',
+      title: 'European Escape',
+      image: EuropeImage,
+      pricing: '₹69,999/- Onwards',
       info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '3N/4D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Cochin - Alleppey' },
+       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Paris' },
       ],
   },
   {
-      title: 'Rajasthan Royal Retreat',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/rajasthan.jpg',
-      pricing: '₹22,499/- Onwards',
+      title: 'Luxury Dubai Tour',
+      image: DubaiImage,
+      pricing: '₹49,999/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Jaipur - Udaipur' },
+       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Dubai' },
       ],
   },
   {
       title: 'Bali Beaches & Bliss',
-      image: 'https://images.wanderon.in/new-homepage-data/International/bali.jpg',
+      image: BaliImage,
       pricing: '₹34,999/- Onwards',
       info: [
        { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
        { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Denpasar - Ubud' },
       ],
   },
-  {
-      title: 'Himachal Adventure',
-      image: 'https://images.wanderon.in/new-homepage-data/domestic/himachal.jpg',
-      pricing: '₹16,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Shimla - Manali' },
-      ],
-  },
-  {
-      title: 'Thailand Tropical Escape',
-      image: 'https://images.wanderon.in/new-homepage-data/International/thailand.jpg',
-      pricing: '₹28,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Bangkok - Phuket' },
-      ],
-  },
-  ];
+];
 interface TrendingOffersProps {
   title: string;
 }
