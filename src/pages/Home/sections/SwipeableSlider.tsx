@@ -10,7 +10,8 @@ const SliderContainer = styled.div`
   margin-top:20px;
   @media (max-width: 1024px) {
     width: 100%;
-    margin: 0;
+  
+    margin:4rem 0;
   }
 `;
 const SliderWrapper = styled.div<{ translateX: number }>`
@@ -39,7 +40,7 @@ const Slide = styled.div<{ background: string }>`
    width: calc(100vw - 1rem); /* Ensures padding is applied on desktop */
 
     height: 114px;
-    max-width: 346px;
+    max-width: 100%
     padding: 0; /* Remove padding on mobile */
   }
 `;

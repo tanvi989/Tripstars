@@ -21,9 +21,9 @@ export default function HomePage() {
     <>
       <HeroSection />
       <PopularDestinations />
-  
-      <TrendingOffers title="Trending Offers"/>
       <SwipeableSlider/>
+      <TrendingOffers title="Trending Offers"/>
+      {/* <SwipeableSlider/> */}
      
       {/* <CardSection 
         title="Trending Offers"
@@ -36,7 +36,8 @@ export default function HomePage() {
     {/* <NewComponent /> */}
       <WhyTripstars />
       <ExploreEurope />
-      <ExploreIndia title="Explore India"/>
+  
+      <TrendingOffers title="Explore India"/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
      {/* <ResponsiveBanner /> */}
