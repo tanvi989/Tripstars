@@ -1,130 +1,146 @@
-import React from 'react';
-import styled from 'styled-components';
-import {
-  FaPlane,
-  FaHotel,
-  FaUtensils,
-  FaTaxi,
-  FaWater,
-  FaBan,
-  FaTimesCircle,
-  FaMoneyBillWave,
-  FaEllipsisH,
-  FaPassport,
-} from 'react-icons/fa';
+import React from "react";
+import styled from "styled-components";
+import { FaCheckCircle, FaTimesCircle, FaCheck, FaTimes } from "react-icons/fa";
 
+// Styled Components
 const Container = styled.div`
+  font-family: "Roboto", sans-serif;
+  margin: 20px;
+  padding:20px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px 10px;
-  background-color: #fff;
 `;
 
-const Box = styled.div<{ borderColor: string }>`
-  flex: 1 1 300px;
-  background-color: #fff;
+const OverviewWrapper = styled.div`
   padding: 20px;
+  margin-top:20px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 3px solid ${({ borderColor }) => borderColor};
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+`;
+
+const Box = styled.div<{ borderColor: string; bgColor: string }>`
+  background-color: ${(props) => props.bgColor};
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid ${(props) => props.borderColor};
+  width: 100%;
 `;
 
 const Title = styled.h3`
-  font-size: 1.25em;
-  margin-bottom: 20px;
+  margin: 0 0 15px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+`;
+
+const Icon = styled.span`
+  font-size: 20px;
+  margin-right: 10px;
 `;
 
 const List = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
 `;
 
-const ListItem = styled.li`
-  margin: 10px 0;
-  padding: 10px 0;
+const ListItem = styled.li<{ iconColor: string }>`
+  margin-bottom: 10px;
+  font-size: 14px;
   display: flex;
   align-items: center;
-  position: relative;
-
-  &:not(:last-child)::after {
-    content: '';
-    border: none;
-    height: 1px;
-    background-color: #ccc;
-    margin: 10px 0;
-    width: calc(100% + 20px);
-    position: absolute;
-    left: -10px;
-    bottom: 0;
+  color: #333;
+ 
+  svg {
+    color: ${(props) => props.iconColor};
+    margin-right: 10px;
   }
 `;
 
-const OverviewWrapper = styled.div`
-  margin:20px 0px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// Data Type
+interface SectionData {
+  title: string;
+  items: string[];
+  borderColor: string;
+  bgColor: string;
+  icon: React.ReactNode;
+  iconColor: string;
+}
 
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
-`;
-
-const Icon = styled.span<{ color: string }>`
-  margin-right: 10px;
-  color: ${({ color }) => color};
-`;
-
-const inclusionsData = [
+// Data
+const sections: SectionData[] = [
   {
-    icon: <FaPlane />,
-    text: 'Return flight ticket Ex DEL on VIETJET WITH 20 KG BAGGAGE + 7 Cabin BAGGAGE (NO MEAL)',
+    title: "Inclusions",
+    items: [
+      "02 nights accommodation in Sheraton Skyline / Mercure LHR / Holiday Inn or similar Hotel in London",
+      "03 nights accommodation in B&B / Millennium CDG / Hilton CDG or similar hotel in Paris",
+      "01 night accommodation in Novotel / NH / Fletcher or similar hotel in Netherlands",
+      "01 night accommodation in Mercure / Rilano / NH or similar hotel in Germany",
+      "Daily breakfast included in the stay",
+      "Airport transfers in a private vehicle",
+      "Guided city tours in Paris and London",
+      "All hotel taxes included",
+    ],
+    borderColor: "#28a745",
+    bgColor: "#e7f8e8",
+    icon: <FaCheckCircle />,
+    iconColor: "#28a745",
   },
-  { icon: <FaHotel />, text: '06 nights’ accommodation in above mentioned hotel.' },
-  { icon: <FaUtensils />, text: 'Daily breakfast at hotel/resort.' },
-  { icon: <FaTaxi />, text: 'Return airport transfers on pvt basis.' },
-  { icon: <FaWater />, text: 'Full Day Water Sport (1x banana boat + 1x Jet Ski + Parasailing) followed by Uluwatu Temple Tour' },
+  {
+    title: "Exclusions",
+    items: [
+      "The cost of the Airfare, Passport, POE charges, Visa charges, Overseas Travel Insurance, etc.",
+      "Any expenses of personal nature such as Porterage, Laundry, Alcohol, Food, or Drinks not in the regular menus provided by us, minibar, and telephone calls",
+      "Any extra meals not included in the itinerary. Meals are pre-set and a choice of menu is not available",
+      "Cost of excursions, city sightseeing, entrance fees, and local guides availed of by passengers, other than those mentioned under tour inclusions",
+      "Any medical expenses or emergency evacuation charges",
+      "Travel insurance or baggage loss compensation",
+      "Tips to guides, drivers, and hotel staff",
+    ],
+    borderColor: "#dc3545",
+    bgColor: "#fdecec",
+    icon: <FaTimesCircle />,
+    iconColor: "#dc3545",
+  },
 ];
 
-const exclusionsData = [
-  { icon: <FaBan />, text: 'Travel Insurance' },
-  { icon: <FaTimesCircle />, text: 'Optional Tour' },
-  { icon: <FaMoneyBillWave />, text: 'Tipping' },
-  { icon: <FaEllipsisH />, text: 'Any other expenses' },
-  { icon: <FaPassport />, text: 'Visa' },
-];
-
+// Main Component
 const InclusionsExclusions: React.FC = () => {
   return (
     <OverviewWrapper>
     <Container>
-      <Box borderColor="#4CAF50">
-        <Title>Inclusions</Title>
-        <List>
-          {inclusionsData.map((item, index) => (
-            <ListItem key={index}>
-              <Icon color="#4CAF50">{item.icon}</Icon>
-              {item.text}
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-      <Box borderColor="#F44336">
-        <Title>Exclusions</Title>
-        <List>
-          {exclusionsData.map((item, index) => (
-            <ListItem key={index}>
-              <Icon color="#F44336">{item.icon}</Icon>
-              {item.text}
-            </ListItem>
-          ))}
-        </List>
-      </Box>
+      <Wrapper>
+        {sections.map(({ title, items, borderColor, bgColor, icon, iconColor }, index) => (
+          <Box key={index} borderColor={borderColor} bgColor={bgColor}>
+            <Title>
+              <Icon>{icon}</Icon>
+              {title}
+            </Title>
+            <List>
+              {items.map((item, i) => (
+                <ListItem key={i} iconColor={iconColor}>
+                  {title === "Inclusions" ? <FaCheck /> : <FaTimes />}
+                  {item}
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        ))}
+      </Wrapper>
     </Container>
     </OverviewWrapper>
   );

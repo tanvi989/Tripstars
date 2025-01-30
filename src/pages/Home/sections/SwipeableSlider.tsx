@@ -5,14 +5,22 @@ import { useSwipeable } from "react-swipeable";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  width: calc(100% - 30rem);
-  margin: 0 15rem;
-  margin-top:20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+
+  @media (max-width: 1340px) {
+    width:90%;
+  }
+
   @media (max-width: 1024px) {
-    width: 100%;
-    margin: 0;
+    width: 90%;
+  }
+  @media (max-width: 768px) {
+    width: 95%;
   }
 `;
+
 const SliderWrapper = styled.div<{ translateX: number }>`
   display: flex;
   transition: transform 0.4s ease-in-out;
@@ -21,26 +29,24 @@ const SliderWrapper = styled.div<{ translateX: number }>`
 `;
 
 const Slide = styled.div<{ background: string }>`
-  width: calc(100vw - 4rem); /* Ensures padding is applied on desktop */
-
-  height: 350px;
-   margin: 0.5%;
-   overflow:hidden;
+  width: 100%;
+  height: 400px;
   background-image: url(${({ background }) => background});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto; /* Centering the slide */
-  padding: 1rem; /* Padding on desktop */
+  margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
   @media (max-width: 768px) {
-   width: calc(100vw - 1rem); /* Ensures padding is applied on desktop */
-
-    height: 114px;
-    max-width: 346px;
-    padding: 0; /* Remove padding on mobile */
+    height: 200px;
+  }
+  @media (max-width: 480px) {
+    height: 150px;
   }
 `;
 
@@ -87,7 +93,6 @@ const SwipeableSlider: React.FC = () => {
         ))}
       </SliderWrapper>
 
-      {/* Dots Indicator */}
       <DotsContainer>
         {slides.map((_, index) => (
           <Dot key={index} active={index === currentIndex} onClick={() => setCurrentIndex(index)} />
