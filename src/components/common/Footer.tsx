@@ -237,9 +237,9 @@ const footerSections = [
   {
     title: "Quick Links",
     links: [
-      { label: "Link 1", href: "#link1" },
-      { label: "Link 2", href: "#link2" },
-      { label: "Link 3", href: "#link3" },
+      { label: "Terms & Conditions", href: "/terms-conditions" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Cancellation Policy", href: "/cancellation-policy" },
     ],
   },
 ];

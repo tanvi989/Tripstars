@@ -20,7 +20,7 @@ const TagsContainer = styled.div`
   gap: 12px;
   padding: 10px;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: #fff;
 
   @media (max-width: 768px) {
     gap: 8px;

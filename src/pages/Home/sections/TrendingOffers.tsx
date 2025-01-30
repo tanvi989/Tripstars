@@ -103,8 +103,10 @@ const SectionTitle = styled.div`
   @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-top: 0;
+      padding-bottom: 1rem;
+       margin-top: 0;
+
   }
 `;
 
@@ -175,78 +177,80 @@ const Icon = styled.span<{ backgroundImage: string }>`
 
 const cards = [
   {
-      title: 'Vietnam Adventure',
-      image: VietnamImage,
-      pricing: '₹21,499/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Hanoi' },
-      ],
+    title: 'Vietnam',
+    image: VietnamImage,
+    pricing: '₹99,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
   },
   {
-      title: 'Turkey Hot Air Balloon Experience',
-      image: TurkeyImage,
-      pricing: '₹32,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Cappadocia' },
-      ],
+    title: 'Turkey',
+    image: TurkeyImage,
+    pricing: '₹32,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
   },
   {
-      title: 'Thailand Tropical Escape',
-      image: ThailandImage,
-      pricing: '₹28,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Bangkok - Phuket' },
-      ],
+    title: 'Thailand',
+    image: ThailandImage,
+    pricing: '₹38,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
   },
   {
-      title: 'Mauritius Beach Retreat',
-      image: MauritiusImage,
-      pricing: '₹45,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Port Louis' },
-      ],
+    title: 'Mauritius',
+    image: MauritiusImage,
+    pricing: '₹89,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: ' Flight' },
+    ],
   },
   {
-      title: 'Maldives Getaway',
-      image: MaldivesImage,
-      pricing: '₹39,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Male - Private Island' },
-      ],
+    title: 'Maldives',
+    image: MaldivesImage,
+    pricing: '₹99,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '3N/4D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
   },
   {
-      title: 'European Escape',
-      image: EuropeImage,
-      pricing: '₹69,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Paris' },
-      ],
+    title: 'Europe',
+    image: EuropeImage,
+    pricing: '₹2,75,000/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '9N/10D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: ' Flight' },
+    ],
   },
   {
-      title: 'Luxury Dubai Tour',
-      image: DubaiImage,
-      pricing: '₹49,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Dubai' },
-      ],
+    title: 'Dubai',
+    image: DubaiImage,
+    pricing: '₹87,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
   },
   {
-      title: 'Bali Beaches & Bliss',
-      image: BaliImage,
-      pricing: '₹34,999/- Onwards',
-      info: [
-       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
-       { icon: 'https://img.icons8.com/material-rounded/24/FAB005/marker.png', text: 'Denpasar - Ubud' },
-      ],
+    title: 'Bali',
+    image: BaliImage,
+    pricing: '₹74,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: ' Flight' },
+    ],
   },
 ];
+
+
 interface TrendingOffersProps {
   title: string;
 }

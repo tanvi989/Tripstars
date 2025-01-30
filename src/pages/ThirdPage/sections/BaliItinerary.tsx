@@ -5,7 +5,7 @@ import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 // Styled Components
 const Container = styled.div`
   font-family: "Roboto", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
   padding: 20px;
   min-height: 100vh;
 `;

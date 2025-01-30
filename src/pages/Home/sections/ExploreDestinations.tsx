@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 import React from "react"; // Import React explicitly
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
+// Import local images from the assets folder
+import EuropeImage from "../../../assets/explore-destination/australia.jpg";
+import AustraliaImage from "../../../assets/explore-destination/australia.jpg";
+import JapanImage from "../../../assets/explore-destination/japan.jpg";
+import NewZealandImage from "../../../assets/explore-destination/new zealand.jpg";
+import TurkeyImage from "../../../assets/explore-destination/south africa.jpg";
+import SouthAfricaImage from "../../../assets/explore-destination/south africa.jpg";
 
 const Container = styled.div`
   padding: 0 15rem;
@@ -118,34 +125,40 @@ const MobileOverlayText = styled.div`
 
 const cards = [
   {
-    image: "https://www.unimoni.in/blog/wp-content/uploads/2023/09/Eiffel-Tower-Europe.webp",
+    image: EuropeImage,
     location: "Europe",
-    price: "₹ 89,999/-",
+    price: "₹ 2,75,000/-",
     url: "/europe",
   },
   {
-    image: "https://www.shutterstock.com/image-photo/sydney-australia-october-20-2023-600nw-2465212583.jpg",
+    image: AustraliaImage,
     location: "Australia",
-    price: "₹ 2,49,999/-",
+    price: "₹ 2,49,000/-",
     url: "/australia",
   },
   {
-    image: "https://www.unimoni.in/blog/wp-content/uploads/2023/09/Eiffel-Tower-Europe.webp",
-    location: "Maldives",
-    price: "₹ 89,999/-",
-    url: "/maldives",
+    image: JapanImage,
+    location: "Japan",
+    price: "₹ 3,29,000/-",
+    url: "/japan",
   },
   {
-    image: "https://www.shutterstock.com/image-photo/sydney-australia-october-20-2023-600nw-2465212583.jpg",
+    image: NewZealandImage,
     location: "New Zealand",
-    price: "₹ 2,49,999/-",
+    price: "₹ 3,49,000/-",
     url: "/new-zealand",
   },
   {
-    image: "https://www.shutterstock.com/image-photo/sydney-australia-october-20-2023-600nw-2465212583.jpg",
-    location: "Japan",
-    price: "₹ 89,999/-",
-    url: "/japan",
+    image: TurkeyImage,
+    location: "Turkey",
+    price: "₹ 2,09,999/-",
+    url: "/turkey",
+  },
+  {
+    image: SouthAfricaImage,
+    location: "South Africa",
+    price: "₹ 2,79,000/-",
+    url: "/south-africa",
   },
 ];
 

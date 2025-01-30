@@ -4,7 +4,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import Popup from "./components/common/Popup";
 import Thirdpage from "./pages/ThirdPage/ThirdPage";
-
+import PrivacyPolicyPage from "./pages/PrivacyPolicy/PrivacyPolicyPage";
 //Styles
 import "./App.css";
 import "swiper/css";
@@ -23,6 +23,9 @@ function App() {
         <Route path="/:location" element={<Tripdetailspage />} />
         <Route path="/tripdetails" element={<Thirdpage/>} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/terms-conditions" element={<PrivacyPolicyPage title="Terms & Conditions" />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
+        <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
       </Routes>
       <Footer />
     </div>
