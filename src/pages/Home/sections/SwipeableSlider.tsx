@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
+// Importing images from the assets folder
+import image1 from "../../../assets/advertisebanner/banner-1.jpg";
+import image2 from "../../../assets/advertisebanner/banner-2.jpg";
+import image3 from "../../../assets/advertisebanner/banner-3.jpg";
 
 const SliderContainer = styled.div`
   position: relative;
@@ -30,7 +34,7 @@ const SliderWrapper = styled.div<{ translateX: number }>`
 
 const Slide = styled.div<{ background: string }>`
   width: 100%;
-  height: 600px;
+  height: auto;
   background-image: url(${({ background }) => background});
   background-size: cover;
   background-position: center;
@@ -71,10 +75,10 @@ const Dot = styled.div<{ active: boolean }>`
 
 const SwipeableSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slides = [
-    "https://www.tripzygo.in/images/homepagebanner/DubaiRepublicbanner.jpg",
-    "https://www.tripzygo.in/images/homepagebanner/MaldivesRepublicbanner.jpg",
-  ];
+ 
+  // Updated slides array with images from assets
+  const slides = [image1, image2, image3];
+
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < slides.length - 1 ? prev + 1 : 0));
