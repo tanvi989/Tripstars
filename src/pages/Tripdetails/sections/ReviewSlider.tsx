@@ -1,328 +1,257 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// Styled Components
+const Wrapper = styled.div`
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+`;
+
+const MainTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 2rem;
+`;
+
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
   width: 100%;
-  max-width: 1600px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
   }
 `;
 
 const LeftSection = styled.div`
   width: 30%;
-  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  padding: 2.5rem 2rem;
+  border-right: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 30px 20px;
-  border-right: 1px solid #ddd;
-  height: 300px;
-  gap: 16px; /* Even spacing between elements */
+  justify-content: center;
+  min-height: 400px;
 
   @media (max-width: 768px) {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-  }
-
-  .stars {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-    span {
-      font-size: 28px;
-      color: #f4b400;
-    }
-
-    .half-star {
-      font-size: 28px;
-      color: #f4b400;
-      position: relative;
-    }
-
-    .half-star:after {
-      content: "★";
-      position: absolute;
-      left: 0;
-      color: #ddd; /* Gray color to show half-fill */
-      width: 50%;
-      overflow: hidden;
-    }
-  }
-
-  .rating-number {
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
-    margin-left: 8px;
-  }
-
-  .review-count {
-    font-size: 14px;
-    color: #555;
-
-    strong {
-      font-weight: bold;
-      color: #333;
-    }
-  }
-
-  .trust-index {
-    margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-      width: 80px; /* Larger logo */
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.1); /* Slight zoom on hover */
-    }
-
-    p {
-      margin-top: 8px;
-      font-size: 12px;
-      color: #888;
-      text-align: center;
-    }
+    border-bottom: 1px solid #e2e8f0;
+    min-height: 300px;
   }
 `;
 
+const RatingTitle = styled.h2`
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+`;
 
-const ReviewSummary = styled.div`
-  text-align: center;
+const StarsContainer = styled.div`
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+`;
+interface StarProps {
+  filled: boolean;
+}
 
-  h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 8px;
+const Star = styled.span<StarProps>`
+  color: ${props => props.filled ? '#F59E0B' : '#CBD5E0'};
+  font-size: 2rem;
+`;
+
+const ReviewCount = styled.p`
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  
+  strong {
+    color: #2d3748;
+    font-weight: 600;
   }
+`;
 
-  .stars {
-    font-size: 24px;
-    color: #f4b400;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 8px;
+const TrustBadge = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 
-    span {
-      margin: 0 2px;
-    }
-  }
-
-  .review-count {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 16px;
-
-    strong {
-      font-weight: bold;
-    }
-  }
-
-  .trust-index img {
-    width: 60px;
+  img {
+    width: 80px;
     height: auto;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 
 const RightSection = styled.div`
   width: 70%;
-  overflow: hidden;
   position: relative;
-  padding: 20px;
+  padding: 2rem;
+  overflow: hidden;
+
+  /* Add a specific width to create a viewport for the slider */
+  .slider-viewport {
+    width: calc(100% - 4rem); /* Account for padding */
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 
-const Slider = styled.div<{ translateX: number }>`
+interface SliderProps {
+  $translateX: number;
+}
+
+const Slider = styled.div<SliderProps>`
   display: flex;
-  transform: ${({ translateX }) => `translateX(${translateX}px)`};
+  transform: translateX(${props => props.$translateX}px);
   transition: transform 0.5s ease-in-out;
-  align-items: flex-start; /* Ensures cards are independently aligned */
-
-  @media (max-width: 768px) {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
+  gap: 1.5rem;
+  width: fit-content; /* Allow the slider to be as wide as needed */
 `;
-
 const ReviewCard = styled.div`
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  width: 300px;
-  margin: 0 10px;
+  flex: 0 0 300px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  flex: 0 0 auto; /* Prevents the card from resizing with others */
-
-  @media (max-width: 768px) {
-    flex: 0 0 90%;
-    margin: 0 5%;
-    scroll-snap-align: start;
-  }
+  gap: 1rem;
 `;
-
-const ReviewText = styled.p<{ expanded: boolean }>`
-  font-size: 12px;
-  color: #333;
-  line-height: 1.4;
-  overflow: hidden;
-  max-height: ${({ expanded }) => (expanded ? "500px" : "70px")};
-  transition: max-height 0.5s ease, padding 0.5s ease;
-  margin-bottom: ${({ expanded }) => (expanded ? "16px" : "0")}; /* Smooth margin transition */
-`;
-
 
 const ReviewHeader = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 1rem;
+`;
 
-  .profile-initial {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #6b6b6b;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+const ProfileInitial = styled.div`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4a5568;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+`;
+
+const ReviewInfo = styled.div`
+  flex: 1;
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
   }
 
-  .google-logo {
-    margin-left: auto;
-    width: 35px;
-    height: auto;
+  p {
+    font-size: 0.875rem;
+    color: #718096;
   }
 `;
 
-const Stars = styled.div`
-  color: #f4b400;
-  font-size: 24px;
-  margin: 0 0 10px 0;
+const ReviewLogo = styled.img`
+  width: 24px;
+  height: auto;
 `;
 
+const ReviewStars = styled.div`
+  color: #F59E0B;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+`;
 
+interface ReviewTextProps {
+  $expanded: boolean;
+}
 
-const ReadMore = styled.span`
-  font-size: 12px;
-  color: gray;
-  cursor: pointer;
-  margin-top: 4px;
+const ReviewText = styled.p<ReviewTextProps>`
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.5;
+  overflow: hidden;
+  max-height: ${props => props.$expanded ? 'none' : '4.5rem'};
+  transition: max-height 0.3s ease;
+`;
+
+const ReadMoreButton = styled.button`
+  font-size: 0.875rem;
+  color: #4a5568;
   text-decoration: underline;
-  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-self: flex-start;
 
   &:hover {
-    color: #f4b400;
+    color: #2d3748;
   }
 `;
 
 const Controls = styled.div`
-  position: absolute; /* Position it absolutely */
-  top: 50%; /* Vertically center the controls */
-  transform: translateY(-50%); /* Center it properly */
-  width: 100%; /* Full width to align buttons properly */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: space-between; /* Space arrows on the left and right */
-  padding: 0 20px; /* Add some padding for better spacing */
-  pointer-events: none; /* Prevent blocking content clicks */
-
-  button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    opacity: 0.7;
-    border-radius: 5px;
-    pointer-events: all; /* Re-enable clicks for buttons */
-
-    &:hover {
-      opacity: 1;
-    }
-  }
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;
 
   @media (max-width: 768px) {
-    display: none; /* Hide controls on smaller screens */
+    display: none;
   }
 `;
 
+const ControlButton = styled.button`
+  background: rgba(45, 55, 72, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 0.2s ease;
 
-const Title2 = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
+  &:hover {
+    background: rgba(45, 55, 72, 1);
   }
 `;
 
-interface ReviewSliderInterface {
-  title: string; // Title for the section
-}
-
-// React Component
-const ReviewSlider: React.FC<ReviewSliderInterface> = ({ title }) => {
+const ReviewSlider = ({ title }:{title:string}) => {
   const [translateX, setTranslateX] = useState(0);
   const [expandedReview, setExpandedReview] = useState<number | null>(null);
-  const handlePrev = () => {
-    setTranslateX((prev) => Math.min(prev + 410, 0)); // Prevent moving beyond the first card
-  };
-  
-  const handleNext = () => {
-    const maxTranslateX = -(410 * (reviews.length - 1)); // Maximum leftward movement
-    setTranslateX((prev) => {
-      const newTranslateX = prev - 410;
-      return newTranslateX < maxTranslateX ? maxTranslateX : newTranslateX; // Stop at the last card
-    });
-  };
-  
-  
-  
+
   const reviews = [
     {
       id: 1,
       name: "Anna Smith",
       date: "5 January 2024",
-      text: "Amazing service! They went above and beyond Amazing service! They went above and beyond to help me with my travel plans.Am to help me with my travel plans.Amazing service! They went above and beyond to help me with my travel plans",
+      text: "Amazing service! They went above and beyond Amazing service! They went above and beyond to help me with my travel plans. Am to help me with my travel plans. Amazing service! They went above and beyond to help me with my travel plans",
     },
     {
       id: 2,
@@ -338,84 +267,107 @@ const ReviewSlider: React.FC<ReviewSliderInterface> = ({ title }) => {
     },
     {
       id: 4,
-      name: "Jane Doe",
+      name: "Mark Johnson",
       date: "15 February 2024",
       text: "I had a great experience. They are very professional and responsive.",
     },
     {
       id: 5,
-      name: "Jane Doe",
+      name: "Sarah Wilson",
       date: "15 February 2024",
       text: "I had a great experience. They are very professional and responsive.",
     },
   ];
 
+  const handleNext = () => {
+    const cardWidth = 320; // Width of each card
+    const gapWidth = 24; // Gap between cards (1.5rem = 24px)
+    const moveAmount = cardWidth + gapWidth;
+    const slidesPerView = 2; // Number of cards visible at once
+    const totalWidth = reviews.length * moveAmount;
+    const maxScroll = -(totalWidth - (moveAmount * slidesPerView));
+    
+    setTranslateX((prev) => {
+      const next = prev - moveAmount;
+      return Math.max(maxScroll, next);
+    });
+  };
+
+  const handlePrev = () => {
+    const moveAmount = 320 + 24; // Card width + gap
+    setTranslateX((prev) => Math.min(prev + moveAmount, 0));
+  };
+
+  interface Review {
+    id: number;
+    name: string;
+    date: string;
+    text: string;
+  }
+
+  const toggleExpanded = (reviewId: number) => {
+    setExpandedReview(current => current === reviewId ? null : reviewId);
+  };
+  
+
   return (
-    <div>
-      <Title2>{title}</Title2>
+    <Wrapper>
+      <MainTitle>{title}</MainTitle>
       <Container>
         <LeftSection>
-          <ReviewSummary>
-            <h2>GOOD</h2>
-            <div className="stars">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-              <span style={{ color: "#ccc" }}>★</span>
-            </div>
-            <p className="review-count">
-              Based on <strong>4787 reviews</strong>
-            </p>
-            <div className="trust-index">
-              <img
-                src="https://cdn.trustindex.io/assets/platform/Trustindex/icon.svg"
-                alt="Trustindex"
-              />
-            </div>
-          </ReviewSummary>
-        </LeftSection>
-        <RightSection>
-          <Slider translateX={translateX}>
-            {reviews.map((review) => (
-              <ReviewCard key={review.id}>
-                <ReviewHeader>
-                  <div className="profile-initial">
-                    {review.name[0].toUpperCase()}
-                  </div>
-                  <div>
-                    <h4>{review.name}</h4>
-                    <p>{review.date}</p>
-                  </div>
-                  <img
-                    src="https://cdn.trustindex.io/assets/platform/Google/icon.svg"
-                    alt="Google"
-                    className="google-logo"
-                  />
-                </ReviewHeader>
-                <Stars>★★★★★</Stars>
-                <ReviewText expanded={expandedReview === review.id}>
-                  {review.text}
-                </ReviewText>
-                <ReadMore
-                  onClick={() =>
-                    setExpandedReview(
-                      expandedReview === review.id ? null : review.id
-                    )
-                  }
-                >
-                  {expandedReview === review.id ? "Show less" : "Read more"}
-                </ReadMore>
-              </ReviewCard>
+          <RatingTitle>GOOD</RatingTitle>
+          <StarsContainer>
+            {[1, 2, 3, 4, 5].map((_, index) => (
+              <Star key={index} filled={index < 4}>★</Star>
             ))}
-          </Slider>
+          </StarsContainer>
+          <ReviewCount>
+            Based on <strong>4,787 reviews</strong>
+          </ReviewCount>
+          <TrustBadge>
+            <img
+              src="https://cdn.trustindex.io/assets/platform/Trustindex/icon.svg"
+              alt="Trustindex"
+            />
+          </TrustBadge>
+        </LeftSection>
+
+        <RightSection>
+          <div className="slider-viewport">
+            <Slider $translateX={translateX}>
+              {reviews.map((review) => (
+                <ReviewCard key={review.id}>
+                  <ReviewHeader>
+                    <ProfileInitial>{review.name[0]}</ProfileInitial>
+                    <ReviewInfo>
+                      <h4>{review.name}</h4>
+                      <p>{review.date}</p>
+                    </ReviewInfo>
+                    <ReviewLogo
+                      src="https://cdn.trustindex.io/assets/platform/Google/icon.svg"
+                      alt="Google"
+                    />
+                  </ReviewHeader>
+                  <ReviewStars>★★★★★</ReviewStars>
+                  <ReviewText $expanded={expandedReview === review.id}>
+                    {review.text}
+                  </ReviewText>
+                  <ReadMoreButton
+                    onClick={() => toggleExpanded(review.id)}
+                  >
+                    {expandedReview === review.id ? "Show less" : "Read more"}
+                  </ReadMoreButton>
+                </ReviewCard>
+              ))}
+            </Slider>
+          </div>
           <Controls>
-            <button onClick={handlePrev}>❮</button>
-            <button onClick={handleNext}>❯</button>
+            <ControlButton onClick={handlePrev}>❮</ControlButton>
+            <ControlButton onClick={handleNext}>❯</ControlButton>
           </Controls>
         </RightSection>
       </Container>
-    </div>
+    </Wrapper>
   );
 };
 
