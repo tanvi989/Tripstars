@@ -5,8 +5,7 @@ import { FaCheckCircle, FaTimesCircle, FaCheck, FaTimes } from "react-icons/fa";
 // Styled Components
 const Container = styled.div`
   font-family: "Roboto", sans-serif;
-  margin: 20px;
-  padding:20px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
 `;
@@ -45,9 +44,15 @@ const Title = styled.h3`
 `;
 
 const Icon = styled.span`
-  font-size: 20px;
   margin-right: 10px;
+
+  svg {
+    width: 22px;  /* Fixed size */
+    height: 22px;
+    flex-shrink: 0;
+  }
 `;
+
 
 const List = styled.ul`
   list-style: none;
@@ -64,12 +69,16 @@ const ListItem = styled.li<{ iconColor: string }>`
   display: flex;
   align-items: center;
   color: #333;
- 
+
   svg {
     color: ${(props) => props.iconColor};
     margin-right: 10px;
+    width: 20px;  /* Fixed width */
+    height: 20px; /* Fixed height */
+    flex-shrink: 0; /* Prevent resizing */
   }
 `;
+
 
 // Data Type
 interface SectionData {

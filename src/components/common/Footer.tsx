@@ -144,6 +144,18 @@ const FooterContact = styled.div`
     justify-content: center;
     gap: 40px;
     margin-top: 10px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      gap: 20px; 
+      flex-wrap: nowrap; 
+      justify-content: center; 
+    }
+
+    p {
+      margin: 0;
+      white-space: nowrap;
+    }
   }
 `;
 
@@ -203,10 +215,10 @@ const FooterImage = styled.img`
 
 // Social media icons
 const socialMediaLinks = [
-  { href: "https://www.facebook.com", src: "https://images.wanderon.in/icons/facebook", alt: "Facebook" },
-  { href: "https://www.instagram.com", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
-  { href: "https://www.linkedin.com", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
-  { href: "https://www.youtube.com", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
+  { href: "https://www.facebook.com/tripstarsholidays?rdid=dSUD1oQcaaH2mjCk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19qbFGvRJw%2F#", src: "https://images.wanderon.in/icons/facebook", alt: "Facebook" },
+  { href: "https://www.instagram.com/tripstars.in?igsh=MWlpNHVhMHp6aXA2bA==", src: "https://images.wanderon.in/icons/instagram", alt: "Instagram" },
+  { href: "https://www.linkedin.com/company/tripstarsholidays/", src: "https://images.wanderon.in/icons/linkedin", alt: "LinkedIn" },
+  { href: "https://www.youtube.com/@tripstarsholidays108", src: "https://images.wanderon.in/icons/youtube", alt: "YouTube" },
 ];
 
 // Dropdown content

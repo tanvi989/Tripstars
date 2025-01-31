@@ -5,8 +5,8 @@ import { useSwipeable } from "react-swipeable";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: 1200px;
+  width: 70%;
+  max-width: 2000px;
   margin: 20px auto;
 
   @media (max-width: 1340px) {
@@ -17,7 +17,7 @@ const SliderContainer = styled.div`
     width: 90%;
   }
   @media (max-width: 768px) {
-    width: 95%;
+    width: 90%;
   }
 `;
 
@@ -30,7 +30,7 @@ const SliderWrapper = styled.div<{ translateX: number }>`
 
 const Slide = styled.div<{ background: string }>`
   width: 100%;
-  height: 400px;
+  height: 600px;
   background-image: url(${({ background }) => background});
   background-size: cover;
   background-position: center;
@@ -38,6 +38,10 @@ const Slide = styled.div<{ background: string }>`
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
+
+  @media (max-width: 2000px) {
+    height: 300px;
+  }
 
   @media (max-width: 1024px) {
     height: 300px;

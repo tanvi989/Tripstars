@@ -186,7 +186,7 @@ export default function Thirdpage() {
             />
             <br></br>
             <OverviewWrapper>
-            <Title>Highlights</Title>
+            <Title>Iternary</Title>
      <TravelItinerary />
             <Highlight />
             </OverviewWrapper>
