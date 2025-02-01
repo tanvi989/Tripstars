@@ -4,12 +4,12 @@ import React from "react"; // Import React explicitly
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import local images from the assets folder
-import EuropeImage from "../../../assets/explore-destination/australia.jpg";
+import EuropeImage from "../../../assets/explore-destination/europe.jpg";
 import AustraliaImage from "../../../assets/explore-destination/australia.jpg";
 import JapanImage from "../../../assets/explore-destination/japan.jpg";
-import NewZealandImage from "../../../assets/explore-destination/new zealand.jpg";
-import TurkeyImage from "../../../assets/explore-destination/south africa.jpg";
-import SouthAfricaImage from "../../../assets/explore-destination/south africa.jpg";
+import NewZealandImage from "../../../assets/explore-destination/new-zealand.jpg";
+import TurkeyImage from "../../../assets/explore-destination/turkey.jpg";
+import SouthAfricaImage from "../../../assets/explore-destination/south-africa.jpg";
 
 const Container = styled.div`
   padding: 0 15rem;
@@ -76,12 +76,24 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   cursor: pointer;
-
+  
   img {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
     object-fit: cover;
+  }
+
+  // Adding a gradient overlay at the bottom
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Adjust the height as needed */
+    border-radius: 0.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); 
   }
 `;
 
@@ -93,7 +105,9 @@ const OverlayText = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Ensure text appears above the gradient */
 `;
+
 
 const MobileWrapper = styled.div`
   display: none;
