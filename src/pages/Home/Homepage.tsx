@@ -7,6 +7,7 @@ import MediaMentions from "./sections/MediaMentions";
 import PartnersSection from "./sections/PartnersSection";
 import PopularDestinations from "./sections/PopularDestinations";
 import TrendingOffers from "./sections/TrendingOffers";
+import TrendingOffers2 from "./sections/TrandingOffers2";
 import VideoTestimonials from "./sections/VideoTestimonials";
 import WhyTripstars from "./sections/WhyTripstars";
 import NewComponent from "./sections/NewComponent";
@@ -37,7 +38,7 @@ export default function HomePage() {
       <WhyTripstars />
       <ExploreEurope />
   
-      <TrendingOffers title="Explore India"/>
+      <TrendingOffers2 title="Explore India"/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
      {/* <ResponsiveBanner /> */}
