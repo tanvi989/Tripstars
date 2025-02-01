@@ -45,9 +45,6 @@ const Card = styled.div`
     height: 320px; /* Adjust height for mobile devices */
   }
 
-  @media (max-width: 480px) { 
-    height: 250px; /* Even smaller for very small screens */
-  }
 `;
 
 const CardImage = styled.img`
