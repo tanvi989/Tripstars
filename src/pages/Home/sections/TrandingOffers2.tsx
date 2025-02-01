@@ -40,6 +40,14 @@ const Card = styled.div`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
+
+    @media (max-width: 768px) { 
+    height: 320px; /* Adjust height for mobile devices */
+  }
+
+  @media (max-width: 480px) { 
+    height: 250px; /* Even smaller for very small screens */
+  }
 `;
 
 const CardImage = styled.img`
@@ -173,7 +181,14 @@ const Icon = styled.span<{ backgroundImage: string }>`
   background-repeat: no-repeat;
   margin-right: 5px;
   background-image: url(${({ backgroundImage }) => backgroundImage});
+  filter: brightness(0) invert(1); /* Converts icons to white */
+
+  /* Rotate only the airplane icon */
+  ${({ backgroundImage }) =>
+    backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
 `;
+
+
 
 const cards = [
     {
@@ -270,29 +285,30 @@ const TrendingOffers2: React.FC<TrendingOffersProps> = ({ title }) => {
       <SectionTitle>
         <TitileHeading>{title}</TitileHeading>
         <NavIcons>
-          <button ref={prevRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
-            </svg>
-          </button>
-          <button ref={nextRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-            </svg>
-          </button>
-        </NavIcons>
+  <button ref={prevRef}>
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      strokeWidth="0"
+      viewBox="0 0 320 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M233.4 278.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L256 210.7l118.6-118.6c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160z"></path>
+    </svg>
+  </button>
+  <button ref={nextRef}>
+    <svg
+      stroke="currentColor"
+      fill="currentColor"
+      strokeWidth="0"
+      viewBox="0 0 320 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M233.4 278.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L256 210.7l118.6-118.6c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160z"></path>
+    </svg>
+  </button>
+</NavIcons>
+
       </SectionTitle>
       <Swiper
         className="trending-offers-slider" // Unique class name
