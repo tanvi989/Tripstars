@@ -96,16 +96,21 @@ interface CardData {
 }
 
 const cardData: CardData[] = [
-  { name: "Australia", image: Australia },
-  { name: "Eiffel", image: Eiffel },
-  { name: "Japan", image: Japan },
-  { name: "Swiss", image: Swiss },
-  { name: "Swiss", image: Australia },
-  { name: "Swiss", image: Swiss },
-  { name: "Swiss", image: Eiffel },
-  { name: "Swiss", image: Australia },
-  { name: "Swiss", image: Swiss },
-  { name: "Swiss", image: Eiffel },
+  { name: "Paris", image: Australia },
+  { name: "London", image: Eiffel },
+  { name: "Rome", image: Japan },
+  { name: "Barcelona", image: Swiss },
+  { name: "Amsterdam", image: Australia },
+  { name: "Berlin", image: Swiss },
+  { name: "Prague", image: Eiffel },
+  { name: "Vienna", image: Australia },
+  { name: "Zurich", image: Swiss },
+  { name: "Budapest", image: Eiffel },
+  { name: "Copenhagen", image: Eiffel },
+  { name: "Stockholm", image: Eiffel },
+  { name: "Helsinki", image: Eiffel },
+  { name: "Oslo", image: Eiffel },
+  { name: "Athens", image: Eiffel },
 ];
 
 // ExploreEurope Component
