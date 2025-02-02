@@ -142,7 +142,6 @@ const ReviewCard = styled.div`
   gap: 1rem;
 
   @media (max-width: 768px) {
-    flex: 0 0 calc(100vw - 4rem); /* Full width minus padding */
     padding: 1.25rem;
   }
 `;
@@ -255,13 +254,15 @@ const ReadMoreButton = styled.button`
 
 const Controls = styled.div`
   position: absolute;
-  top: -1rem; /* Move it slightly higher */
-  right: 1rem; /* Keep it aligned to the right */
+  top: 0;
+  right: 20px;
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0 10px;
+  transform: translateY(-50%);
 
-  @media (max-width: 1080px) {
-    display:none;
+  @media (max-width: 768px) {
+    justify-content: space-around;
   }
 `;
 

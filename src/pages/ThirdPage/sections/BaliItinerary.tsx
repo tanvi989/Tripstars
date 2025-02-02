@@ -13,7 +13,6 @@ const Container = styled.div`
 const ItineraryWrapper = styled.div`
   background-color: #ffffff;
   border-radius: 14px;
-  max-width: 600px;
   margin: 20px auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
