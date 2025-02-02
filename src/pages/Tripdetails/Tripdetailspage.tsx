@@ -1,17 +1,17 @@
 // src/components/Tripdetailspage.js
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import DynamicSlider from "./sections/DynamicSlider";
-import TrendingOffers from "../Tripdetails/sections/TrandingOffers";
+import TrendingOffers from "./sections/TrendingOffers";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
 import Ban from "./sections/Ban";
-import { destinationsData } from './data'
+import { destinationsData } from "./data";
 import CardSection from "./sections/CardSection";
 import ReviewSlider from "./sections/ReviewSlider";
 import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
-
-
+import TrendingOffers2 from "../../components/TrendingOffers2";
+import {Bali, Vietnam} from "../../components/data";
 
 // Define a union type for location keys
 type LocationKey = keyof typeof destinationsData;
@@ -32,11 +32,11 @@ export default function Tripdetailspage() {
     return <p>No data available for this location.</p>;
   }
 
-  const { thingsToDo, trendingOffers, cherryBlossoms,banner } = locationData;
+  const { thingsToDo, trendingOffers, cherryBlossoms, banner } = locationData;
 
   return (
     <>
-       <Ban
+      <Ban
         image={banner?.image}
         title={banner?.title}
         description={banner?.description}
@@ -46,25 +46,20 @@ export default function Tripdetailspage() {
         highlightedWord={location}
         destinations={thingsToDo}
       />
+
+      {location == "bali" ? <TrendingOffers title="Popular Destinations" cards={Bali} />: ""}
+      {location == "vietnam" ? <TrendingOffers title="Popular Destinations" cards={Vietnam} />: ""}
+      
       {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
       {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
-
       {/* <ChooseTravelStyle/> */}
-
-      <CardSection 
-        title="Trending Offers in Bali"
-      />
+      <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} />
       {/* <Loader /> */}
       {/* <Loader /> */}
- <ExploreDestinations />
-
-      <ReviewSlider
-        title="Review"
-      />
-{/* <TravelStyleCarousel /> */}
-<CardSection 
-        title="Similar packages"
-      />
+      <ExploreDestinations />
+      <ReviewSlider title="Review" />
+      {/* <TravelStyleCarousel /> */}
+      <CardSection title="Similar packages" />
     </>
   );
 }

@@ -11,9 +11,9 @@ import VideoTestimonials from "../Home/sections/VideoTestimonials";
 import Highlight from "./sections/Highlight";
 import PricingTables from "./sections/PricingTables.tsx";
 import TermsAndConditions from "./sections/TermsAndConditions";
-import SliderComponent from "./sections/SliderComponent"
+import SliderComponent from "./sections/SliderComponent";
 import PopularDestinations from "../Home/sections/PopularDestinations";
-import TrendingOffers from "../Tripdetails/sections/TrandingOffers";
+import TrendingOffers from "../Tripdetails/sections/TrendingOffers.tsx";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
 import styled from "styled-components";
 import DynamicSlider from "./sections/DynamicSlider";
@@ -41,21 +41,20 @@ import TabbedTable from "./sections/TabbedTable.tsx";
 import PackageCard from "./sections/PackageCard.tsx";
 const TrendingOffersWrapper = styled.div`
   max-width: 1200px; /* Adjust the width for desktop */
-  margin:0 20px auto; /* Center the box on the page */
+  margin: 0 20px auto; /* Center the box on the page */
   padding: 0 20px; /* Add padding inside the box */
- 
 
   @media (max-width: 768px) {
     max-width: 100%; /* Make the box full-width on tablets and smaller screens */
     margin: 0 10px; /* Reduce margin for smaller screens */
-    padding-top:0;
-    margin-top:0;
-    padding:0 10px; /* Adjust padding for smaller screens */
+    padding-top: 0;
+    margin-top: 0;
+    padding: 0 10px; /* Adjust padding for smaller screens */
   }
 `;
 
 const PageWrapper = styled.div`
-  padding:20px 0px;
+  padding: 20px 0px;
   @media (max-width: 768px) {
     // padding: 15px;
   }
@@ -74,10 +73,9 @@ const SplitContainer = styled.div`
 
 const LeftDiv = styled.div`
   width: 70%;
- 
+
   padding: 20px;
   box-sizing: border-box;
- 
 
   @media (max-width: 768px) {
     width: 100%; /* Full-width on smaller screens */
@@ -100,7 +98,6 @@ const RightDiv = styled.div`
     overflow-y: visible; /* No independent scrolling for mobile */
   }
 `;
-
 
 const Title = styled.h2`
   font-size: 18px;
@@ -144,10 +141,12 @@ const tabContents = [
       "Immerse yourself in the beauty of Bali with our 6-day holiday package. Spend 4 nights in vibrant Kuta, known for its golden beaches, lively nightlife, and cultural attractions. Then, retreat to Ubud for 2 nights, the heart of Bali’s serene landscapes, lush rice terraces, and artistic heritage. This package combines relaxation, adventure, and culture, offering an unforgettable experience in one of the world’s most captivating destinations. Perfect for families, couples, or solo travellers, your Bali escape awaits!",
   },
   { title: "Day Wise Itinerary", content: "Content for Day Wise Itinerary." },
-  { title: "Inclusion/Exclusions", content: "Content for Inclusion/Exclusions." },
+  {
+    title: "Inclusion/Exclusions",
+    content: "Content for Inclusion/Exclusions.",
+  },
   { title: "Additional Info", content: "Content for Additional Info." },
 ];
-
 
 export default function Thirdpage() {
   const tabs = ["Overview", "Day Wise Itinerary", "Inclusions", "Exclusions"];
@@ -179,16 +178,15 @@ export default function Thirdpage() {
           />
           <SliderComponent images={imageUrls} />
           <PageWrapper>
-
             <PackageOverview
               title={tabContents[activeTab].title}
               content={tabContents[activeTab].content}
             />
             <br></br>
             <OverviewWrapper>
-            <Title>Iternary</Title>
-     <TravelItinerary />
-            <Highlight />
+              <Title>Iternary</Title>
+              <TravelItinerary />
+              <Highlight />
             </OverviewWrapper>
           </PageWrapper>
           <DynamicSlider
@@ -203,11 +201,10 @@ export default function Thirdpage() {
           <InclusionsExclusions />
         </LeftDiv>
         <RightDiv>
-          
-        <PriceCard price={16999} emiPrice={3590} emiLink="/emi-options" />
-        <PackageCard />
-     
-        <HelpCard />
+          <PriceCard price={16999} emiPrice={3590} emiLink="/emi-options" />
+          <PackageCard />
+
+          <HelpCard />
         </RightDiv>
       </SplitContainer>
     </>

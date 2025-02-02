@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -19,6 +19,7 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   background: white;
+  padding-top:20px;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
@@ -100,17 +101,21 @@ const RightSection = styled.div`
   width: 70%;
   position: relative;
   padding: 2rem;
-  overflow: hidden;
 
-  /* Add a specific width to create a viewport for the slider */
   .slider-viewport {
-    width: calc(100% - 4rem); /* Account for padding */
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
+    padding: 0 1rem; /* Add padding for the control buttons */
   }
 
   @media (max-width: 768px) {
     width: 100%;
+    padding: 1.5rem;
+    
+    .slider-viewport {
+      padding: 0; /* Remove padding on mobile */
+    }
   }
 `;
 
@@ -135,12 +140,21 @@ const ReviewCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex: 0 0 calc(100vw - 4rem); /* Full width minus padding */
+    padding: 1.25rem;
+  }
 `;
 
 const ReviewHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0.75rem; // Reduce gap on mobile
+  }
 `;
 
 const ProfileInitial = styled.div`
@@ -154,6 +168,12 @@ const ProfileInitial = styled.div`
   justify-content: center;
   font-size: 1.25rem;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    width: 40px; // Smaller profile initial on mobile
+    height: 40px;
+    font-size: 1rem;
+  }
 `;
 
 const ReviewInfo = styled.div`
@@ -164,23 +184,39 @@ const ReviewInfo = styled.div`
     font-weight: 600;
     color: #2d3748;
     margin-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.875rem; // Smaller font size on mobile
+    }
   }
 
   p {
     font-size: 0.875rem;
     color: #718096;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem; // Smaller font size on mobile
+    }
   }
 `;
 
 const ReviewLogo = styled.img`
   width: 24px;
   height: auto;
+
+  @media (max-width: 768px) {
+    width: 20px; // Smaller logo on mobile
+  }
 `;
 
 const ReviewStars = styled.div`
-  color: #F59E0B;
+  color: #f59e0b;
   font-size: 1.25rem;
   letter-spacing: 0.1em;
+
+  @media (max-width: 768px) {
+    font-size: 1rem; // Smaller stars on mobile
+  }
 `;
 
 interface ReviewTextProps {
@@ -191,9 +227,11 @@ const ReviewText = styled.p<ReviewTextProps>`
   font-size: 0.875rem;
   color: #4a5568;
   line-height: 1.5;
-  overflow: hidden;
-  max-height: ${props => props.$expanded ? 'none' : '4.5rem'};
-  transition: max-height 0.3s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Slightly larger font for better readability */
+    max-height: none; /* Always show full content on mobile */
+  }
 `;
 
 const ReadMoreButton = styled.button`
@@ -209,42 +247,57 @@ const ReadMoreButton = styled.button`
   &:hover {
     color: #2d3748;
   }
+
+  @media (max-width: 768px) {
+    display: none; /* Hide read more button on mobile since content is always expanded */
+  }
 `;
 
 const Controls = styled.div`
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+  top: -1rem; /* Move it slightly higher */
+  right: 1rem; /* Keep it aligned to the right */
   display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  pointer-events: none;
+  gap: 0.5rem;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (max-width: 1080px) {
+    display:none;
   }
 `;
+
 
 const ControlButton = styled.button`
-  background: rgba(45, 55, 72, 0.8);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
+  background: white;
+  color: black;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   cursor: pointer;
-  pointer-events: auto;
-  transition: background-color 0.2s ease;
-
+  transition: all 0.2s ease-in-out;
+  
   &:hover {
-    background: rgba(45, 55, 72, 1);
+    background: #f3f3f3;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
-const ReviewSlider = ({ title }:{title:string}) => {
+
+
+
+
+
+const ReviewSlider = ({ title }: { title: string }) => {
   const [translateX, setTranslateX] = useState(0);
   const [expandedReview, setExpandedReview] = useState<number | null>(null);
+  const [slidesPerView, setSlidesPerView] = useState(2);
 
   const reviews = [
     {
@@ -279,14 +332,28 @@ const ReviewSlider = ({ title }:{title:string}) => {
     },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSlidesPerView(1);
+        setExpandedReview(null);
+      } else {
+        setSlidesPerView(2);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleNext = () => {
-    const cardWidth = 320; // Width of each card
+    const cardWidth = 300; // Width of each card
     const gapWidth = 24; // Gap between cards (1.5rem = 24px)
-    const moveAmount = cardWidth + gapWidth;
-    const slidesPerView = 2; // Number of cards visible at once
+    const moveAmount = cardWidth + gapWidth; // Move only one card width + gap
     const totalWidth = reviews.length * moveAmount;
     const maxScroll = -(totalWidth - (moveAmount * slidesPerView));
-    
+
     setTranslateX((prev) => {
       const next = prev - moveAmount;
       return Math.max(maxScroll, next);
@@ -294,21 +361,16 @@ const ReviewSlider = ({ title }:{title:string}) => {
   };
 
   const handlePrev = () => {
-    const moveAmount = 320 + 24; // Card width + gap
+    const cardWidth = 300; // Width of each card
+    const gapWidth = 24; // Gap between cards (1.5rem = 24px)
+    const moveAmount = cardWidth + gapWidth; // Move only one card width + gap
+
     setTranslateX((prev) => Math.min(prev + moveAmount, 0));
   };
 
-  interface Review {
-    id: number;
-    name: string;
-    date: string;
-    text: string;
-  }
-
   const toggleExpanded = (reviewId: number) => {
-    setExpandedReview(current => current === reviewId ? null : reviewId);
+    setExpandedReview((current) => (current === reviewId ? null : reviewId));
   };
-  
 
   return (
     <Wrapper>
@@ -318,7 +380,9 @@ const ReviewSlider = ({ title }:{title:string}) => {
           <RatingTitle>GOOD</RatingTitle>
           <StarsContainer>
             {[1, 2, 3, 4, 5].map((_, index) => (
-              <Star key={index} filled={index < 4}>★</Star>
+              <Star key={index} filled={index < 4}>
+                ★
+              </Star>
             ))}
           </StarsContainer>
           <ReviewCount>
@@ -352,9 +416,7 @@ const ReviewSlider = ({ title }:{title:string}) => {
                   <ReviewText $expanded={expandedReview === review.id}>
                     {review.text}
                   </ReviewText>
-                  <ReadMoreButton
-                    onClick={() => toggleExpanded(review.id)}
-                  >
+                  <ReadMoreButton onClick={() => toggleExpanded(review.id)}>
                     {expandedReview === review.id ? "Show less" : "Read more"}
                   </ReadMoreButton>
                 </ReviewCard>
