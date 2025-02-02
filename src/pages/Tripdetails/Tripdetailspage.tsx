@@ -47,16 +47,16 @@ export default function Tripdetailspage() {
         destinations={thingsToDo}
       />
 
-      {location == "bali" ? <TrendingOffers title="Popular Destinations" cards={Bali} />: ""}
-      {location == "vietnam" ? <TrendingOffers title="Popular Destinations" cards={Vietnam} />: ""}
-      {location == "dubai" ? <TrendingOffers title="Popular Destinations" cards={Dubai} />: ""}
-      {location == "europe" ? <TrendingOffers title="Popular Destinations" cards={Europe} />: ""}
-      {location == "thailand" ? <TrendingOffers title="Popular Destinations" cards={Thailand} />: ""}
+      {location == "bali" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} />: ""}
+      {location == "vietnam" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Vietnam} />: ""}
+      {location == "dubai" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Dubai} />: ""}
+      {location == "europe" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Europe} />: ""}
+      {location == "thailand" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Thailand} />: ""}
       
       {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
       {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
       {/* <ChooseTravelStyle/> */}
-      <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} />
+      {/* <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} /> */}
       {/* <Loader /> */}
       {/* <Loader /> */}
       <ExploreDestinations />

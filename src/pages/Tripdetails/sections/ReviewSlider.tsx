@@ -100,21 +100,21 @@ const TrustBadge = styled.div`
 const RightSection = styled.div`
   width: 70%;
   position: relative;
-  padding: 2rem;
+  padding: 3rem 2rem 2rem; /* Increased padding at the top */
 
   .slider-viewport {
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    padding: 0 1rem; /* Add padding for the control buttons */
+    padding: 0 1rem;
   }
 
   @media (max-width: 768px) {
     width: 100%;
-    padding: 1.5rem;
-    
+    padding: 4rem 1.5rem 2rem; /* Extra top padding on mobile */
+
     .slider-viewport {
-      padding: 0; /* Remove padding on mobile */
+      padding: 0;
     }
   }
 `;
@@ -128,8 +128,9 @@ const Slider = styled.div<SliderProps>`
   transform: translateX(${props => props.$translateX}px);
   transition: transform 0.5s ease-in-out;
   gap: 1.5rem;
-  width: fit-content; /* Allow the slider to be as wide as needed */
+  width: fit-content;
 `;
+
 const ReviewCard = styled.div`
   flex: 0 0 300px;
   background: white;
@@ -140,9 +141,11 @@ const ReviewCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 10px; /* Push cards slightly down */
 
   @media (max-width: 768px) {
     padding: 1.25rem;
+    margin-top: 15px; /* More space on mobile */
   }
 `;
 
@@ -254,26 +257,27 @@ const ReadMoreButton = styled.button`
 
 const Controls = styled.div`
   position: absolute;
-  top: 0;
+  top: -20px; /* Adjust placement above the card */
   right: 20px;
   display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  transform: translateY(-50%);
-
+  gap: 12px; /* Space between buttons */
+  align-items: center;
+  
   @media (max-width: 768px) {
-    justify-content: space-around;
+    top: -10px; /* Lower on mobile to avoid cutting */
+    right: 10px;
+    gap: 10px;
+    margin-top: 20px; /* Prevent overlap */
   }
 `;
-
 
 const ControlButton = styled.button`
   background: white;
   color: black;
-  border: 2px solid #ddd;
+  border: 1px solid black;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,8 +293,6 @@ const ControlButton = styled.button`
     outline: none;
   }
 `;
-
-
 
 
 
