@@ -226,36 +226,62 @@ const footerSections = [
   {
     title: "India Trips",
     links: [
-      { label: "Destination 1", href: "#destination1" },
-      { label: "Destination 2", href: "#destination2" },
-      { label: "Destination 3", href: "#destination3" },
+      { label: "Kerala", href: "/kerala" },
+      { label: "Himachal Pradesh", href: "/himachal" },
+      { label: "Andaman", href: "/andaman" },
+      { label: "Kashmir", href: "/kashmir" },
+      { label: "Goa", href: "/goa" },
+      { label: "Nepal", href: "/nepal" },
+      { label: "North East", href: "/northeast" },
     ],
   },
   {
     title: "International Trips",
     links: [
-      { label: "Destination 1", href: "#destination1" },
-      { label: "Destination 2", href: "#destination2" },
-      { label: "Destination 3", href: "#destination3" },
+      { label: "Bali", href: "/bali" },
+      { label: "Vietnam", href: "/vietnam" },
+      { label: "Dubai", href: "/dubai" },
+      { label: "Singapore", href: "/singapore" },
+      { label: "Malaysia", href: "/malaysia" },
+      { label: "Thailand", href: "/thailand" },
+      { label: "Baku", href: "/baku" },
+      { label: "Turkey", href: "/turkey" },
+      { label: "Australia", href: "/australia" },
+      { label: "Europe", href: "/europe" },
+      { label: "New Zealand", href: "/newzealand" },
+      { label: "Japan", href: "/japan" },
+      { label: "Korea", href: "/korea" },
     ],
   },
   {
     title: "Tripstars Special",
     links: [
-      { label: "Special 1", href: "#special1" },
-      { label: "Special 2", href: "#special2" },
+      { label: "Exclusive Deals", href: "#special1" },
+      { label: "Seasonal Offers", href: "#special2" },
+      { label: "Custom Tour Packages", href: "#special2" },
+      { label: "Luxury Travel", href: "#special2" },
+      { label: "Group Bookings", href: "#special2" },
+      { label: "Honeymoon Specials", href: "#special2" },
+      { label: "Adventure Trips", href: "#special2" },
+      { label: "Cruise Bookings", href: "#special2" },
+      { label: "Visa Assistance", href: "#special2" },
+      { label: "Travel Guides & Tips", href: "#special2" },
     ],
   },
   {
     title: "Quick Links",
     links: [
+      { label: "Travel Guides & Tips", href: "/travel-guides-tips" },
+      { label: "FAQs", href: "/faqs" },
+      { label: "Support / Help Center", href: "/support-help-center" },
+      { label: "About Us", href: "/about-us" },
+      { label: "Destinations", href: "/destinations" },
       { label: "Terms & Conditions", href: "/terms-conditions" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Cancellation Policy", href: "/cancellation-policy" },
     ],
   },
 ];
-
 const Footer: React.FC = () => {
   const [dropdowns, setDropdowns] = useState<{ [key: string]: boolean }>({});
 
