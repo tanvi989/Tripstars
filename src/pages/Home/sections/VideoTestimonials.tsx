@@ -157,9 +157,7 @@ export default function VideoTestimonials() {
       <ContentWrapper>
         <LeftContent>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Our valued customers share their incredible experiences with us in these video testimonials. Watch as they highlight the seamless booking process, excellent service, and unforgettable travel memories with Tripstars!
           </p>
           <div className="btn">See all</div>
         </LeftContent>
