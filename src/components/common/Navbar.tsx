@@ -28,9 +28,6 @@ const NavbarContainer = styled.nav`
   }
   @media (max-width: 768px) {
   height: 71px;
-  border-radius: 8px;
-    padding: 1.5rem 1rem;
-
   }
 `;
 
