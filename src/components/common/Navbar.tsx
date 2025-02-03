@@ -12,18 +12,18 @@ const NavbarContainer = styled.nav`
   display: flex;
   height:86px;
   justify-content: space-between;
-  padding: 1.5rem 7rem;
+  padding: 1rem 2rem;
   z-index: 999999;
 
   background: rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease-in-out;
   &.active {
     background-color: #000;
-    padding: 1rem 7rem;
+    padding: 1rem 2rem;
   }
   @media (max-width: 1080px) {
     &.active {
-      padding: 1.5rem 1rem;
+      padding: 1rem 2rem;
     }
   }
   @media (max-width: 768px) {
