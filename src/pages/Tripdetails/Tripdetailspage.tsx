@@ -12,6 +12,7 @@ import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
 import {Bali, similar, Vietnam, Thailand, Europe, Dubai} from "../../components/data";
+import DestinationSlider from "./sections/DestinationSlider";
 
 // Define a union type for location keys
 type LocationKey = keyof typeof destinationsData;
@@ -59,7 +60,8 @@ export default function Tripdetailspage() {
       {/* <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} /> */}
       {/* <Loader /> */}
       {/* <Loader /> */}
-      <ExploreDestinations />
+      {/* <ExploreDestinations /> */}
+      <DestinationSlider/>
       <ReviewSlider  />
       {/* <ReviewCard/> */}
       {/* <TravelStyleCarousel /> */}
