@@ -80,30 +80,36 @@ const DynamicSlider: React.FC<DynamicSliderProps> = ({
     speed: 500,
     slidesToShow: 9,
     slidesToScroll: 1,
+    swipeToSlide: true, // Enable swipe-to-slide behavior
+    draggable: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
-        },
+          swipeToSlide: true
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
-        },
+          swipeToSlide: true
+        }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 1,
-        },
-      },
+          swipeToSlide: true
+        }
+      }
     ],
-    ...sliderSettings, // Merge user settings with defaults
+    ...sliderSettings,
   };
 
   return (
