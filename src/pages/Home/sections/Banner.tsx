@@ -4,7 +4,6 @@ import styled from "styled-components";
 // Styled Component for Banner
 const BannerContainer = styled.div`
   text-align: center;
-  background-color: #f4f4f4;
   padding: 10px;
 `;
 
@@ -24,14 +23,31 @@ const BannerImage = styled.img`
   }
 `;
 
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 0 15rem;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
+`;
+
 const Banner: React.FC = () => {
   return (
+    <SliderContainer>
     <BannerContainer>
       <BannerImage
         src="https://www.tripzygo.in/images/a/Whyus1.jpg"
         alt="Banner"
       />
     </BannerContainer>
+    </SliderContainer>
   );
 };
 
