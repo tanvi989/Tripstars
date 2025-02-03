@@ -42,7 +42,7 @@ export default function Tripdetailspage() {
         description={banner?.description}
       />
       <DynamicSlider
-        title={`Things to do in ${location}`}
+        title={`Things to do in `}
         highlightedWord={location}
         destinations={thingsToDo}
       />
@@ -60,7 +60,8 @@ export default function Tripdetailspage() {
       {/* <Loader /> */}
       {/* <Loader /> */}
       <ExploreDestinations />
-      <ReviewSlider title="Review" />
+      <ReviewSlider  />
+      {/* <ReviewCard/> */}
       {/* <TravelStyleCarousel /> */}
       <TrendingOffers title="Similar packages" cards={similar}/>
     </>

@@ -1,438 +1,325 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import profile from "../../../assets/icons/Ellipse 13.png"
 
-const Wrapper = styled.div`
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 2rem;
-`;
-
-const MainTitle = styled.h2`
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2d3748;
-  text-align: center;
-  margin-bottom: 2rem;
-`;
-
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  background: white;
-  padding-top:20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+// Styled Components
+const SliderContainer = styled.div`
+  position: relative;
   overflow: hidden;
-
+  margin: 0 15rem;
+  margin-bottom: 40px;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+    margin-bottom: 20px;
+  }
   @media (max-width: 768px) {
-    flex-direction: column;
+    margin: 0 1rem;
+    margin-bottom: 20px;
   }
 `;
 
-const LeftSection = styled.div`
-  width: 30%;
-  background: linear-gradient(135deg, #ffffff, #f8fafc);
-  padding: 2.5rem 2rem;
-  border-right: 1px solid #e2e8f0;
+const PageContainer = styled.div`
+  background-color: #f6f8fa;
+  padding: 32px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
+`;
+
+const OverallRatingSection = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 32px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff, #f0f2f5);
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: #444;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: #ffcc00;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:nth-child(n + 4) {
+        fill: #d1d1d1;
+      }
+    }
+  }
+
+  .summary {
+    font-size: 1.2rem;
+    margin: 12px 0;
+    color: #555;
+
+    strong {
+      font-weight: bold;
+      color: #111;
+    }
+  }
+
+  .trust-badge {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+`;
+
+const SwiperContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
+`;
+
+const ReviewContainer = styled.div`
+  background: linear-gradient(145deg, #ffffff, #f7f8fa);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
+  justify-content: space-between;
+  height: 250px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+  }
 
   @media (max-width: 768px) {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-    min-height: 300px;
+    height: auto;
   }
 `;
 
-const RatingTitle = styled.h2`
+const Stars = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffcc00;
+
+    &:nth-child(n + 5) {
+      fill: #d1d1d1;
+    }
+  }
+`;
+
+const ReviewText = styled.p`
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 16px 0;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+`;
+
+const User = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 12px;
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e2e8f0, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5a5a5a;
+    border: 3px solid #d1d5db;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .details {
+    text-align: left;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+`;
+
+const TitleHeading = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+  margin-top: 40px;
+
+  @media (max-width: 1080px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
-const StarsContainer = styled.div`
-  display: flex;
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-`;
-interface StarProps {
-  filled: boolean;
+// Icons
+const StarIcon = () => (
+  <svg viewBox="0 0 24 24">
+    <path d="M12 .587l3.668 7.571 8.332 1.151-6.064 5.793 1.564 8.307L12 18.897l-7.5 4.512 1.564-8.307-6.064-5.793 8.332-1.151L12 .587z" />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg viewBox="0 0 24 24">
+    <path d="M9 21.5l-7-7L3.5 12l5.5 5.5L20.5 5l2.5 2.5-14 14z" />
+  </svg>
+);
+
+interface ReviewCardProps {
+  review:string,
+  name:string,
+  date:string
 }
 
-const Star = styled.span<StarProps>`
-  color: ${props => props.filled ? '#F59E0B' : '#CBD5E0'};
-  font-size: 2rem;
-`;
+// Review Card
+const ReviewCard = ({ review, name, date }:ReviewCardProps) => (
+  <ReviewContainer>
+    <Stars>
+      {Array(5)
+        .fill(null)
+        .map((_, index) => (
+          <StarIcon key={index} />
+        ))}
+    </Stars>
+    <ReviewText>"{review}"</ReviewText>
+    <User>
+      <div className="avatar"><img src={profile}></img></div>
+      <div className="details">
+        <h3>{name}</h3>
+        <span>{date}</span>
+      </div>
+    </User>
+  </ReviewContainer>
+);
 
-const ReviewCount = styled.p`
-  font-size: 1rem;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-  
-  strong {
-    color: #2d3748;
-    font-weight: 600;
-  }
-`;
-
-const TrustBadge = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-
-  img {
-    width: 80px;
-    height: auto;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-`;
-
-const RightSection = styled.div`
-  width: 70%;
-  position: relative;
-  padding: 3rem 2rem 2rem; /* Increased padding at the top */
-
-  .slider-viewport {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 1rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 4rem 1.5rem 2rem; /* Extra top padding on mobile */
-
-    .slider-viewport {
-      padding: 0;
-    }
-  }
-`;
-
-interface SliderProps {
-  $translateX: number;
-}
-
-const Slider = styled.div<SliderProps>`
-  display: flex;
-  transform: translateX(${props => props.$translateX}px);
-  transition: transform 0.5s ease-in-out;
-  gap: 1.5rem;
-  width: fit-content;
-`;
-
-const ReviewCard = styled.div`
-  flex: 0 0 300px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 10px; /* Push cards slightly down */
-
-  @media (max-width: 768px) {
-    padding: 1.25rem;
-    margin-top: 15px; /* More space on mobile */
-  }
-`;
-
-const ReviewHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    gap: 0.75rem; // Reduce gap on mobile
-  }
-`;
-
-const ProfileInitial = styled.div`
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #4a5568;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-
-  @media (max-width: 768px) {
-    width: 40px; // Smaller profile initial on mobile
-    height: 40px;
-    font-size: 1rem;
-  }
-`;
-
-const ReviewInfo = styled.div`
-  flex: 1;
-
-  h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 0.25rem;
-
-    @media (max-width: 768px) {
-      font-size: 0.875rem; // Smaller font size on mobile
-    }
-  }
-
-  p {
-    font-size: 0.875rem;
-    color: #718096;
-
-    @media (max-width: 768px) {
-      font-size: 0.75rem; // Smaller font size on mobile
-    }
-  }
-`;
-
-const ReviewLogo = styled.img`
-  width: 24px;
-  height: auto;
-
-  @media (max-width: 768px) {
-    width: 20px; // Smaller logo on mobile
-  }
-`;
-
-const ReviewStars = styled.div`
-  color: #f59e0b;
-  font-size: 1.25rem;
-  letter-spacing: 0.1em;
-
-  @media (max-width: 768px) {
-    font-size: 1rem; // Smaller stars on mobile
-  }
-`;
-
-interface ReviewTextProps {
-  $expanded: boolean;
-}
-
-const ReviewText = styled.p<ReviewTextProps>`
-  font-size: 0.875rem;
-  color: #4a5568;
-  line-height: 1.5;
-  
-  @media (max-width: 768px) {
-    font-size: 1rem; /* Slightly larger font for better readability */
-    max-height: none; /* Always show full content on mobile */
-  }
-`;
-
-const ReadMoreButton = styled.button`
-  font-size: 0.875rem;
-  color: #4a5568;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  align-self: flex-start;
-
-  &:hover {
-    color: #2d3748;
-  }
-
-  @media (max-width: 768px) {
-    display: none; /* Hide read more button on mobile since content is always expanded */
-  }
-`;
-
-const Controls = styled.div`
-  position: absolute;
-  top: -20px; /* Adjust placement above the card */
-  right: 20px;
-  display: flex;
-  gap: 12px; /* Space between buttons */
-  align-items: center;
-  
-  @media (max-width: 768px) {
-    top: -10px; /* Lower on mobile to avoid cutting */
-    right: 10px;
-    gap: 10px;
-    margin-top: 20px; /* Prevent overlap */
-  }
-`;
-
-const ControlButton = styled.button`
-  background: white;
-  color: black;
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  
-  &:hover {
-    background: #f3f3f3;
-  }
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-
-
-
-const ReviewSlider = ({ title }: { title: string }) => {
-  const [translateX, setTranslateX] = useState(0);
-  const [expandedReview, setExpandedReview] = useState<number | null>(null);
-  const [slidesPerView, setSlidesPerView] = useState(2);
-
+const ReviewSlider = () => {
   const reviews = [
-    {
-      id: 1,
-      name: "Anna Smith",
-      date: "5 January 2024",
-      text: "Amazing service! They went above and beyond Amazing service! They went above and beyond to help me with my travel plans. Am to help me with my travel plans. Amazing service! They went above and beyond to help me with my travel plans",
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      date: "10 February 2024",
-      text: "The response was quick and professional. I recommend them highly!",
-    },
-    {
-      id: 3,
-      name: "Jane Doe",
-      date: "15 February 2024",
-      text: "I had a great experience. They are very professional and responsive.",
-    },
-    {
-      id: 4,
-      name: "Mark Johnson",
-      date: "15 February 2024",
-      text: "I had a great experience. They are very professional and responsive.",
-    },
-    {
-      id: 5,
-      name: "Sarah Wilson",
-      date: "15 February 2024",
-      text: "I had a great experience. They are very professional and responsive.",
-    },
+    { review: "ShudipG is best. Thanks buddy!", name: "Jasminder Sohal", date: "10 Nov 2024" },
+    { review: "Excellent service and support!", name: "Alex Johnson", date: "5 Jan 2025" },
+    { review: "Outstanding experience!", name: "Priya Mehta", date: "22 Dec 2024" },
+    { review: "Fantastic work! Will recommend.", name: "Michael Lee", date: "15 Feb 2025" },
+    { review: "Simply amazing!", name: "Sophie Turner", date: "3 Mar 2025" },
   ];
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setSlidesPerView(1);
-        setExpandedReview(null);
-      } else {
-        setSlidesPerView(2);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleNext = () => {
-    const cardWidth = 300; // Width of each card
-    const gapWidth = 24; // Gap between cards (1.5rem = 24px)
-    const moveAmount = cardWidth + gapWidth; // Move only one card width + gap
-    const totalWidth = reviews.length * moveAmount;
-    const maxScroll = -(totalWidth - (moveAmount * slidesPerView));
-
-    setTranslateX((prev) => {
-      const next = prev - moveAmount;
-      return Math.max(maxScroll, next);
-    });
-  };
-
-  const handlePrev = () => {
-    const cardWidth = 300; // Width of each card
-    const gapWidth = 24; // Gap between cards (1.5rem = 24px)
-    const moveAmount = cardWidth + gapWidth; // Move only one card width + gap
-
-    setTranslateX((prev) => Math.min(prev + moveAmount, 0));
-  };
-
-  const toggleExpanded = (reviewId: number) => {
-    setExpandedReview((current) => (current === reviewId ? null : reviewId));
-  };
-
   return (
-    <Wrapper>
-      <MainTitle>{title}</MainTitle>
-      <Container>
-        <LeftSection>
-          <RatingTitle>GOOD</RatingTitle>
-          <StarsContainer>
-            {[1, 2, 3, 4, 5].map((_, index) => (
-              <Star key={index} filled={index < 4}>
-                ★
-              </Star>
-            ))}
-          </StarsContainer>
-          <ReviewCount>
-            Based on <strong>4,787 reviews</strong>
-          </ReviewCount>
-          <TrustBadge>
-            <img
-              src="https://cdn.trustindex.io/assets/platform/Trustindex/icon.svg"
-              alt="Trustindex"
-            />
-          </TrustBadge>
-        </LeftSection>
-
-        <RightSection>
-          <div className="slider-viewport">
-            <Slider $translateX={translateX}>
-              {reviews.map((review) => (
-                <ReviewCard key={review.id}>
-                  <ReviewHeader>
-                    <ProfileInitial>{review.name[0]}</ProfileInitial>
-                    <ReviewInfo>
-                      <h4>{review.name}</h4>
-                      <p>{review.date}</p>
-                    </ReviewInfo>
-                    <ReviewLogo
-                      src="https://cdn.trustindex.io/assets/platform/Google/icon.svg"
-                      alt="Google"
-                    />
-                  </ReviewHeader>
-                  <ReviewStars>★★★★★</ReviewStars>
-                  <ReviewText $expanded={expandedReview === review.id}>
-                    {review.text}
-                  </ReviewText>
-                  <ReadMoreButton onClick={() => toggleExpanded(review.id)}>
-                    {expandedReview === review.id ? "Show less" : "Read more"}
-                  </ReadMoreButton>
-                </ReviewCard>
-              ))}
-            </Slider>
+    <SliderContainer>
+      <TitleHeading>Reviews</TitleHeading>
+      <PageContainer>
+        <OverallRatingSection>
+          <h1>Good</h1>
+          <div className="stars">
+            <StarIcon />
+            <StarIcon />
+            <StarIcon />
+            <StarIcon />
+            <StarIcon />
           </div>
-          <Controls>
-            <ControlButton onClick={handlePrev}>❮</ControlButton>
-            <ControlButton onClick={handleNext}>❯</ControlButton>
-          </Controls>
-        </RightSection>
-      </Container>
-    </Wrapper>
+          <p className="summary">
+            Based on <strong>4,797 reviews</strong>
+          </p>
+          <div className="trust-badge">
+            <CheckIcon />
+            Trusted Reviews
+          </div>
+        </OverallRatingSection>
+        <SwiperContainer>
+          <Swiper
+            modules={[Pagination, A11y]}
+            spaceBetween={30}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {reviews.map((review, index) => (
+              <SwiperSlide key={index}>
+                <ReviewCard {...review} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </SwiperContainer>
+      </PageContainer>
+    </SliderContainer>
   );
 };
 

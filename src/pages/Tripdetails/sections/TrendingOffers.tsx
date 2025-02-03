@@ -20,14 +20,18 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 15rem;
+  margin-bottom:20px;
   @media (max-width: 1340px) {
     margin: 0 5rem;
+    margin-bottom:20px;
   }
   @media (max-width: 1080px) {
     margin: 0 3rem;
+    margin-bottom:20px;
   }
   @media (max-width: 768px) {
     margin: 0 1rem;
+    margin-bottom:20px;
   }
 `;
 
@@ -57,11 +61,11 @@ const PricingTag = styled.div`
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   z-index: 10;
 
   @media (max-width: 768px) {
-    font-size: 9px;
+    font-size: 0.9rem; /* Increased font size for mobile */
   }
 `;
 
