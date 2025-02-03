@@ -65,7 +65,7 @@ const DestinationSlider: React.FC = () => {
   return (
     <Container>
     <SliderContainer>
-      <Title>Destination Guides</Title>
+      <Title>Choose your travel style</Title>
 
       <StyledSwiper
         modules={[Navigation]}
