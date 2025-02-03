@@ -41,7 +41,7 @@ const Card = styled.div`
   background-color: #fff;
   position: relative;
 
-    @media (max-width: 768px) { 
+  @media (max-width: 768px) { 
     height: 320px; /* Adjust height for mobile devices */
   }
 
@@ -62,11 +62,11 @@ const PricingTag = styled.div`
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   z-index: 10;
 
   @media (max-width: 768px) {
-    font-size: 9px;
+    font-size: 0.9rem;
   }
 `;
 

@@ -17,6 +17,7 @@ import ResponsiveBanner from "./sections/ResponsiveBanner";
 import CardSection from "./sections/CardSection";
 import ExploreIndia from "./sections/ExploreIndia";
 import SwipeableSlider from "./sections/SwipeableSlider";
+import Banner from "./sections/Banner";
 export default function HomePage() {
   return (
     <>
@@ -41,6 +42,7 @@ export default function HomePage() {
       <TrendingOffers2 title="Explore India"/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
+      <Banner/> 
      {/* <ResponsiveBanner /> */}
       {/* <MediaMentions /> */}
     </>

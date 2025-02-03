@@ -44,6 +44,9 @@ const Card = styled.div`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
+  @media (max-width: 768px) { 
+    height: 320px; /* Adjust height for mobile devices */
+  }
 `;
 
 const CardImage = styled.img`
@@ -61,7 +64,7 @@ const PricingTag = styled.div`
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   z-index: 10;
 
   @media (max-width: 768px) {
@@ -177,6 +180,11 @@ const Icon = styled.span<{ backgroundImage: string }>`
   background-repeat: no-repeat;
   margin-right: 5px;
   background-image: url(${({ backgroundImage }) => backgroundImage});
+  filter: brightness(0) invert(1); /* Converts icons to white */
+
+  /* Rotate only the airplane icon */
+  ${({ backgroundImage }) =>
+    backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
 `;
 
 

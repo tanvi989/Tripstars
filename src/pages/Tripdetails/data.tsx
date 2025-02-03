@@ -361,6 +361,12 @@ thailand: {
     { name: "Phi Phi Islands", image: thailandImg3 },
     { name: "Floating Market", image: thailandImg4 },
     { name: "Elephant Sanctuary", image: thailandImg5 },
+    { name: "Phuket Beaches", image: thailandImg2 },
+    { name: "Phi Phi Islands", image: thailandImg3 },
+    { name: "Floating Market", image: thailandImg4 },
+    { name: "Phuket Beaches", image: thailandImg2 },
+    { name: "Phi Phi Islands", image: thailandImg3 },
+    { name: "Floating Market", image: thailandImg4 },
   ],
   trendingOffers: [
     { name: "Artboard 1", imgUrl: thailandTrendingImg1 },
