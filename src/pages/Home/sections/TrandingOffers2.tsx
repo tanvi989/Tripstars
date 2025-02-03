@@ -65,8 +65,11 @@ const PricingTag = styled.div`
   font-size: 1rem;
   z-index: 10;
 
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
+   @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+    @media (max-width: 400px) {
+    font-size: 0.7rem;
   }
 `;
 
