@@ -24,7 +24,7 @@ const BannerImage = styled.img`
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  margin: 0 15rem;
+  margin: 0 10rem;
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
