@@ -21,6 +21,7 @@ import Banner from "./sections/Banner";
 import BenefitsSection from "./sections/BenefitsSection";
 import BudgetSection from "./sections/BudgetSection";
 import ContactForm from "./sections/ContactForm";
+import VideoThumbnail from "./sections/VideoThumbnail";
 export default function HomePage() {
   return (
     <>
@@ -37,6 +38,7 @@ export default function HomePage() {
       {/* <Loader /> */}
 
       <VideoTestimonials />
+      <VideoThumbnail/>
       {/* <ImageSlider /> */}
     {/* <NewComponent /> */}
       <WhyTripstars />

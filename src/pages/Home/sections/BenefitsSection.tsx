@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Container = styled.div`
   width: 100%;
   background-color: #f8f9fa;
   padding: 4rem 1rem;
-  
+
   @media (min-width: 640px) {
     padding: 4rem 1.5rem;
   }
-  
+
   @media (min-width: 1024px) {
     padding: 4rem 2rem;
   }
@@ -30,7 +34,7 @@ const Title = styled.h2`
   font-weight: bold;
   color: #1a1a1a;
   margin-bottom: 1rem;
-  
+
   @media (min-width: 768px) {
     font-size: 2.5rem;
   }
@@ -46,13 +50,13 @@ const Description = styled.p`
 
 const CardsGrid = styled.div`
   display: none;
-  
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
-  
+
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -67,7 +71,7 @@ const Card = styled.div`
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -105,76 +109,51 @@ const CardDescription = styled.p`
   line-height: 1.5;
 `;
 
-const CarouselContainer = styled.div`
-  position: relative;
-  
+const MobileSwiper = styled.div`
   @media (min-width: 768px) {
     display: none;
   }
+
+  .swiper {
+    padding: 0.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #cbd5e0;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #3b82f6;
+  }
 `;
 
-const CarouselTrack = styled.div<{ activeSlide: number }>`
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-${props => props.activeSlide * 100}%);
-`;
-
-const CarouselSlide = styled.div`
-  width: 100%;
-  flex-shrink: 0;
-  padding: 0 1rem;
-`;
-
-const CarouselIndicators = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  gap: 0.5rem;
-`;
-
-const Indicator = styled.button<{ active: boolean }>`
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: ${props => props.active ? '#3b82f6' : '#cbd5e0'};
-  transition: background-color 0.2s ease;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-`;
-
-const BenefitsSection: React.FC = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  
+const BenefitsSection = () => {
   const cardData = [
     {
       title: "Customised Itineraries",
       description: "Enjoy our bespoke tour packages that can be tailored according to your preferences for personalised experience.",
-      icon: "https://cdn-icons-png.flaticon.com/512/5164/5164030.png"
+      icon: "https://cdn-icons-png.flaticon.com/512/5164/5164030.png",
     },
     {
       title: "Wallet-Friendly Prices",
       description: "Every traveller from worldwide can embark on unforgettable journeys with our unbeatable holiday package prices.",
-      icon: "https://cdn-icons-png.flaticon.com/512/2489/2489756.png"
+      icon: "https://cdn-icons-png.flaticon.com/512/2489/2489756.png",
     },
     {
       title: "Exciting Deals",
       description: "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value-for-money.",
-      icon: "https://cdn-icons-png.flaticon.com/512/3176/3176366.png"
+      icon: "https://cdn-icons-png.flaticon.com/512/3176/3176366.png",
     },
     {
       title: "24/7 Support",
       description: "Our customer support team is always available to assist you and resolve travel-related queries instantly.",
-      icon: "https://cdn-icons-png.flaticon.com/512/4233/4233839.png"
-    }
+      icon: "https://cdn-icons-png.flaticon.com/512/4233/4233839.png",
+    },
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % cardData.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <Container>
@@ -186,7 +165,6 @@ const BenefitsSection: React.FC = () => {
           </Description>
         </Header>
 
-        {/* Desktop/Tablet Grid */}
         <CardsGrid>
           {cardData.map((card, index) => (
             <Card key={index}>
@@ -199,11 +177,16 @@ const BenefitsSection: React.FC = () => {
           ))}
         </CardsGrid>
 
-        {/* Mobile Carousel */}
-        <CarouselContainer>
-          <CarouselTrack activeSlide={activeSlide}>
+        <MobileSwiper>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000 }}
+          >
             {cardData.map((card, index) => (
-              <CarouselSlide key={index}>
+              <SwiperSlide key={index}>
                 <Card>
                   <IconWrapper>
                     <Icon src={card.icon} alt={card.title} />
@@ -211,23 +194,13 @@ const BenefitsSection: React.FC = () => {
                   <CardTitle>{card.title}</CardTitle>
                   <CardDescription>{card.description}</CardDescription>
                 </Card>
-              </CarouselSlide>
+              </SwiperSlide>
             ))}
-          </CarouselTrack>
-          
-          <CarouselIndicators>
-            {cardData.map((_, index) => (
-              <Indicator
-                key={index}
-                active={activeSlide === index}
-                onClick={() => setActiveSlide(index)}
-              />
-            ))}
-          </CarouselIndicators>
-        </CarouselContainer>
+          </Swiper>
+        </MobileSwiper>
       </ContentWrapper>
     </Container>
   );
 };
 
-export default BenefitsSection; 
+export default BenefitsSection;

@@ -16,7 +16,7 @@ const BannerImage = styled.img`
 
   /* Responsive Styling */
   @media (max-width: 768px) {
-    height: 600px; /* Fixed height on smaller screens */
+    height: 30% /* Fixed height on smaller screens */
     padding: 5px;
   }
 `;
