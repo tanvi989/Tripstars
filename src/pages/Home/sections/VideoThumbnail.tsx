@@ -6,9 +6,25 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // Styled components remain the same except for CarouselContainer, CarouselTrack, CarouselSlide, and CarouselIndicators
+
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 0 15rem;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
+`;
+
+
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
   background-color: #f8f8f8;
@@ -155,6 +171,7 @@ const VideoThumbnail = () => {
   ];
 
   return (
+    <SliderContainer>
     <Wrapper>
       <CardsGrid>
         {videos.map((video, index) => (
@@ -198,6 +215,7 @@ const VideoThumbnail = () => {
         </Swiper>
       </MobileSwiper>
     </Wrapper>
+    </SliderContainer>
   );
 };
 
