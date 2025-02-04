@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import DesktopFooter from "./DesktopFooter";
+import { FaWhatsapp, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
+
+
 // Styled Components
 const FooterContainer = styled.footer`
   background-color: #101820;
@@ -82,6 +86,7 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 0;
 
     i {
       margin-left: 10px;
@@ -101,11 +106,18 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 
     li {
-      margin: 5px 0;
+      margin: 10px 0;
 
       a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         color: #4caf50;
         text-decoration: none;
+        
+        .icon {
+          font-size: 20px;
+        }
 
         &:hover {
           text-decoration: underline;
@@ -198,9 +210,6 @@ const FooterBottom = styled.div`
     height: 50px;
     display: block;
 
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
 `;
 
@@ -213,6 +222,37 @@ const FooterImage = styled.img`
   }
 `;
 
+const BranchDetails = styled.div`
+  margin-bottom: 15px;
+`
+
+const BranchAddress = styled.p`
+  font-size: 14px;
+  margin: 5px 0;
+  line-height: 1.4;
+  color: #4caf50;
+`;
+
+const BranchContacts = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+`;
+
+const ContactLink = styled.a`
+  color: #4caf50;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 // Social media icons
 const socialMediaLinks = [
   { href: "https://www.facebook.com/tripstarsholidays?rdid=dSUD1oQcaaH2mjCk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19qbFGvRJw%2F#", src: "https://images.wanderon.in/icons/facebook", alt: "Facebook" },
@@ -222,7 +262,44 @@ const socialMediaLinks = [
 ];
 
 // Dropdown content
-const footerSections = [
+interface FooterLink {
+  label: string;
+  href: string;
+  icon?: JSX.Element;
+  contacts?: { phone: string; whatsapp: string }[];
+}
+
+const footerSections: { title: string; links: FooterLink[] }[] = [
+  {
+    title: "Talk to us",
+    links: [
+      { label: "+91-9667775223", href: "", icon: <FaWhatsapp /> },
+      { label: "+91-9667775223", href: "tel:+919667775223", icon: <FaPhoneAlt /> },
+      { label: "011-45647130", href: "tel:01145647130", icon: <FaPhoneAlt /> },
+      { label: "info@travellandindia.com", href: "mailto:info@travellandindia.com", icon: <FaEnvelope /> },
+    ],
+  },
+  {
+    title: "Branches",
+    links: [
+      {
+        label:
+          "Delhi - NO-WZ-112-B, 3RD FLOOR,Subhash Nagar, Meenakshi Garden Subhash Nagar, near Utkarsh Bank, South West, Delhi, 110018",
+        href: "#",
+        contacts: [{ phone: "+91-9667775223", whatsapp: "+91-9667775223" }],
+      },
+      {
+        label: "Lucknow - B3/31, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh, 226010",
+        href: "#",
+        contacts: [{ phone: "+91-8188913377", whatsapp: "+91-8188913377" }],
+      },
+      {
+        label: "Kaithal - Bank Colony Rd, Mohalla Sundraon, Kaithal, Haryana, 136027",
+        href: "#",
+        contacts: [{ phone: "+91-7027737887", whatsapp: "+91-7027737887" }],
+      },
+    ],
+  },
   {
     title: "India Trips",
     links: [
@@ -284,10 +361,23 @@ const footerSections = [
 ];
 const Footer: React.FC = () => {
   const [dropdowns, setDropdowns] = useState<{ [key: string]: boolean }>({});
+  const [isMobile, setIsMobile] = useState(true);
 
   const toggleDropdown = (key: string) => {
     setDropdowns((prev) => ({ ...prev, [key]: !prev[key] }));
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newIsMobile = window.innerWidth <= 768;
+      setIsMobile(newIsMobile);
+    };
+  
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call initially to set the correct value
+  
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <FooterContainer>
@@ -306,8 +396,28 @@ const Footer: React.FC = () => {
             <ul>
               {section.links.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
+                  {section.title === "Branches" ? (
+                    <div>
+                      <BranchAddress>{link.label}</BranchAddress>
+                      {link.contacts && (
+                        <BranchContacts>
+                          <ContactLink href={`tel:${link.contacts[0].phone}`}>
+                            <FaPhoneAlt /> {link.contacts[0].phone}
+                          </ContactLink>
+                          {/* <ContactLink href={`https://wa.me/${link.contacts[0].whatsapp.replace(/[^0-9]/g, "")}`}> */}
+                          <ContactLink href="#">
+                            <FaWhatsapp /> {link.contacts[0].whatsapp}
+                          </ContactLink>
+                        </BranchContacts>
+                      )}
+                    </div>
+                  ) : (
+                    <a href={link.href}>
+                      {link.icon && <span className="icon">{link.icon}</span>}
+                      {link.label}
+                    </a>
+                  )}
+              </li>
               ))}
             </ul>
             <hr />
@@ -342,10 +452,14 @@ const Footer: React.FC = () => {
       </SocialContainer>
 
       <FooterBottom>
-        <FooterImage
+        {isMobile ? <FooterImage
+          src="https://images.wanderon.in/footer-mobile?updatedAt=1734433384777"
+          alt="Mobile Footer"
+        /> : <FooterImage
           src="https://images.wanderon.in/footer-desktop?updatedAt=1734433384777"
-          alt="Footer Graphics"
-        />
+          alt="Desktop Footer"
+        />}
+        
         <p>© 2025 TripStars – Holidays PVT LTD, All rights reserved</p>
       </FooterBottom>
     </FooterContainer>
