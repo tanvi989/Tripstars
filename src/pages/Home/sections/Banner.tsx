@@ -4,7 +4,6 @@ import styled from "styled-components";
 // Styled Component for Banner
 const BannerContainer = styled.div`
   text-align: center;
-  padding: 10px;
 `;
 
 const BannerImage = styled.img`
