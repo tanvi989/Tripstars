@@ -2,11 +2,26 @@ import React from "react";
 import styled from "styled-components";
 
 // Styled Components
+
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 0 15rem;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
   margin: 50px auto;
   background: #00a6db; /* Background color */
   padding: 40px;
@@ -137,6 +152,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
+    <SliderContainer>
     <Container>
       {/* Left Side - Desktop Only */}
       <Left>
@@ -203,6 +219,7 @@ const ContactForm: React.FC = () => {
         </Form>
       </Right>
     </Container>
+    </SliderContainer>
   );
 };
 

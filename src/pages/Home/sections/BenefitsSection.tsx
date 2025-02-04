@@ -5,6 +5,22 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+const SliderContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin: 0 15rem;
+  margin-top:10px;
+  @media (max-width: 1340px) {
+    margin: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    margin: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+  }
+`;
+
 const Container = styled.div`
   width: 100%;
   background-color: #f8f9fa;
@@ -156,6 +172,7 @@ const BenefitsSection = () => {
   ];
 
   return (
+    <SliderContainer>
     <Container>
       <ContentWrapper>
         <Header>
@@ -200,6 +217,7 @@ const BenefitsSection = () => {
         </MobileSwiper>
       </ContentWrapper>
     </Container>
+    </SliderContainer>
   );
 };
 
