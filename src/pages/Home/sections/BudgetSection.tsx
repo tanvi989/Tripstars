@@ -4,8 +4,7 @@ import styled from "styled-components";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  margin: 0 10rem;
-
+  margin: 0 15rem;
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -15,9 +14,6 @@ const SliderContainer = styled.div`
   @media (max-width: 768px) {
     margin: 0 1rem;
   }
-  @media (min-width: 2000px) {
-    margin: 0 20rem; // Increase margin for larger screens
-  }
 `;
 
 // Styled Components
@@ -26,13 +22,7 @@ const Section = styled.div`
   padding: 40px 20px;
   border-radius: 12px;
   text-align: center;
-  width: 90%;
   margin: auto;
-
-  @media (min-width: 2000px) {
-    max-width: 1800px; // Increase max-width for large screens
-    padding: 60px 30px; // Increase padding
-  }
 `;
 
 const Title = styled.h2`
