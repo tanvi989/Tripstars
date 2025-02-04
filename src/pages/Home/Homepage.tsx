@@ -20,6 +20,7 @@ import SwipeableSlider from "./sections/SwipeableSlider";
 import Banner from "./sections/Banner";
 import BenefitsSection from "./sections/BenefitsSection";
 import BudgetSection from "./sections/BudgetSection";
+import ContactForm from "./sections/ContactForm";
 export default function HomePage() {
   return (
     <>
@@ -47,6 +48,7 @@ export default function HomePage() {
       <BudgetSection/>
       <BenefitsSection/>
       <Banner/> 
+      <ContactForm/>
      {/* <ResponsiveBanner /> */}
       {/* <MediaMentions /> */}
     </>

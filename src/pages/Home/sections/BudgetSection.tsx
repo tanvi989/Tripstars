@@ -5,6 +5,7 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 10rem;
+
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -13,6 +14,9 @@ const SliderContainer = styled.div`
   }
   @media (max-width: 768px) {
     margin: 0 1rem;
+  }
+  @media (min-width: 2000px) {
+    margin: 0 20rem; // Increase margin for larger screens
   }
 `;
 
@@ -23,14 +27,22 @@ const Section = styled.div`
   border-radius: 12px;
   text-align: center;
   width: 90%;
-  max-width: 1200px;
   margin: auto;
+
+  @media (min-width: 2000px) {
+    max-width: 1800px; // Increase max-width for large screens
+    padding: 60px 30px; // Increase padding
+  }
 `;
 
 const Title = styled.h2`
   font-size: 24px;
   font-weight: normal;
   color: #555;
+
+  @media (min-width: 2000px) {
+    font-size: 36px; // Make the title larger
+  }
 `;
 
 const Highlight = styled.span`
@@ -50,6 +62,11 @@ const Container = styled.div`
 const Item = styled.div`
   width: 120px;
   height: 120px;
+
+  @media (min-width: 2000px) {
+    width: 180px; // Increase item size
+    height: 180px;
+  }
 `;
 
 const Image = styled.img`
