@@ -32,7 +32,6 @@ const Container = styled.div`
     flex-direction: column;
     padding: 20px;
     margin:10px auto;
-    width:90%;
   }
 `;
 
