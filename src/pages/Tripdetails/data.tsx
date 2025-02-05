@@ -112,7 +112,7 @@ export const destinationsData = {
       description: "Discover stunning locations and create unforgettable memories.",
     },
     thingsToDo: [
-      { name: "Bali Swing", image: baliImg1 },
+      // { name: "Bali Swing", image: baliImg1 },
       { name: "Banova Water Sport", image: baliImg2 },
       { name: "Kechak Dance", image: baliImg3 },
       { name: "Kintamani Tour", image: baliImg4 },
