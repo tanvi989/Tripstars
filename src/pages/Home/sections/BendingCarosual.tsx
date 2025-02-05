@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const TitleFrame = styled.div`
-  color: black;  // Change color if needed
+  color: black;
   font-size: 24px;
   font-weight: bold;
   padding: 15px 40px;
@@ -21,15 +21,13 @@ const TitleFrame = styled.div`
   text-transform: uppercase;
 `;
 
-
 const CarouselContainer = styled.div`
   position: relative;
   width: 90%;
-
-
   overflow: hidden;
   padding: 20px 0;
-    @media (max-width: 1340px) {
+
+  @media (max-width: 1340px) {
     margin: 0 5rem;
   }
   @media (max-width: 1080px) {
@@ -55,7 +53,6 @@ const Slide = styled.div<{ isFirst: boolean; isLast: boolean }>`
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
 
-  // Remove bending effect on mobile
   @media (min-width: 769px) {
     clip-path: ${(props) =>
       props.isFirst
@@ -148,6 +145,8 @@ const BendingCarousel: React.FC = () => {
   const [index, setIndex] = useState(0);
   const totalSlides = images.length;
   const slideWidth = 300; // Adjust slide width
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
   useEffect(() => {
     updateSlideStyles();
@@ -161,6 +160,24 @@ const BendingCarousel: React.FC = () => {
     setIndex((prev) => (prev > 0 ? prev - 1 : totalSlides - 1));
   };
 
+  // Handle touch gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50; // Minimum swipe distance to trigger action
+    if (touchStartX - touchEndX > swipeThreshold) {
+      handleNext();
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      handlePrev();
+    }
+  };
+
   // Update first & last slide styles dynamically
   const updateSlideStyles = () => {
     document.querySelectorAll(".slide").forEach((slide) => {
@@ -170,17 +187,22 @@ const BendingCarousel: React.FC = () => {
 
   return (
     <Container>
-     <TitleFrame>
-  JOURNEY IN FRAMES
-  <br />
-  <span style={{ fontSize: "16px", fontWeight: "normal" }}>
-    Pictures Perfect Moments
-  </span>
-</TitleFrame>
+      <TitleFrame>
+        JOURNEY IN FRAMES
+        <br />
+        <span style={{ fontSize: "16px", fontWeight: "normal" }}>
+          Pictures Perfect Moments
+        </span>
+      </TitleFrame>
 
       <CarouselContainer>
         <PrevButton onClick={handlePrev}>&#10094;</PrevButton>
-        <CarouselWrapper translateX={-index * slideWidth}>
+        <CarouselWrapper 
+          translateX={-index * slideWidth}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {images.map((image, idx) => (
             <Slide key={idx} isFirst={idx === index} isLast={idx === index + 3}>
               <img src={image.src} alt={image.caption} />
