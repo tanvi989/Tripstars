@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Tripdetailspage from "./pages/Tripdetails/Tripdetailspage";
 import NotFoundPage from './pages/NotFoundPage'
+import Faq from "./pages/Faq/Faq";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Popup />
       <Routes>
         <Route path="/" element={<HomePage />} />   
+        <Route path="/faq" element={<Faq/>} />   
         <Route path="/:location" element={<Tripdetailspage />} />
         <Route path="/tripdetails" element={<Thirdpage/>} />
         <Route path="*" element={<NotFoundPage />} />
