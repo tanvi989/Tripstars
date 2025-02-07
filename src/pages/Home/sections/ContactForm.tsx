@@ -32,6 +32,9 @@ const Container = styled.div`
     flex-direction: column;
     padding: 20px;
     margin:10px auto;
+    background:none;
+     box-shadow: none;
+
   }
 `;
 
@@ -168,7 +171,7 @@ const ContactForm: React.FC = () => {
           alt="Wanderlust Banner"
         />
 
-        <Title>Wanderlust Calling?</Title>
+        <Title>Tripstars Calling?</Title>
         <Subtitle>Allow Us to Call You Back!</Subtitle>
 
         <Form onSubmit={handleSubmit}>

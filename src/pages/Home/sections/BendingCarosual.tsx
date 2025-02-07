@@ -9,6 +9,9 @@ const Container = styled.div`
   text-align: center;
   width: 100%;
   padding: 20px;
+   @media (max-width: 768px) {
+padding: 0;
+  }
 `;
 
 const TitleFrame = styled.div`
@@ -99,14 +102,18 @@ const Caption = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
+     @media (max-width: 768px) {
+background:white;
+color:black;
+
+  }
 `;
 
 const Button = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #0096ff;
-  color: white;
+ 
   border: none;
   padding: 15px;
   cursor: pointer;
@@ -117,14 +124,23 @@ const Button = styled.button`
   &:hover {
     background: #007acc;
   }
+   
 `;
 
 const PrevButton = styled(Button)`
   left: 5px;
+     @media (max-width: 768px) {
+display:none;
+  }
 `;
 
 const NextButton = styled(Button)`
   right: 5px;
+     @media (max-width: 768px) {
+display:none;
+  }
+  
+
 `;
 
 // Image Data

@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import Tripdetailspage from "./pages/Tripdetails/Tripdetailspage";
 import NotFoundPage from './pages/NotFoundPage'
 import Faq from "./pages/Faq/Faq";
+import PaymentPolicies from "./pages/Paymentpolicy/PaymentPolicies";
 
 function App() {
   return (
@@ -21,13 +22,14 @@ function App() {
       <Popup />
       <Routes>
         <Route path="/" element={<HomePage />} />   
-        <Route path="/faq" element={<Faq/>} />   
+        <Route path="/faqs" element={<Faq/>} />   
         <Route path="/:location" element={<Tripdetailspage />} />
         <Route path="/tripdetails" element={<Thirdpage/>} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/terms-conditions" element={<PrivacyPolicyPage title="Terms & Conditions" />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
         <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
+        <Route path="/payment" element={<PaymentPolicies />} />   
       </Routes>
       <Footer />
     </div>

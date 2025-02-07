@@ -6,6 +6,7 @@ import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection
 import Ban from "./sections/Ban";
 import { destinationsData } from "./data";
 import CardSection from "./sections/CardSection";
+import FAQ from "./sections/FAQ";
 import ReviewSlider from "./sections/ReviewSlider";
 import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
@@ -13,6 +14,7 @@ import ExploreDestinations from "../Home/sections/ExploreDestinations";
 import TrendingOffers2 from "../../components/TrendingOffers2";
 import {Bali, similar, Vietnam, Thailand, Europe, Dubai} from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
+import Choose_your from "./sections/Choose_your";
 
 // Define a union type for location keys
 type LocationKey = keyof typeof destinationsData;
@@ -61,10 +63,13 @@ export default function Tripdetailspage() {
       {/* <Loader /> */}
       {/* <Loader /> */}
       {/* <ExploreDestinations /> */}
-      <DestinationSlider/>
+      {/* <DestinationSlider/>
+       */}
+       <Choose_your />
       <ReviewSlider  />
       {/* <ReviewCard/> */}
       {/* <TravelStyleCarousel /> */}
+      <FAQ />
       <TrendingOffers title="Similar packages" cards={similar}/>
     </>
   );
