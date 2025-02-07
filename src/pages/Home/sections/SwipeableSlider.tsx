@@ -5,7 +5,9 @@ import { useSwipeable } from "react-swipeable";
 import image1 from "../../../assets/advertisebanner/banner-1.jpg";
 import image2 from "../../../assets/advertisebanner/banner-2.jpg";
 import image3 from "../../../assets/advertisebanner/banner-3.jpg";
-
+import image4 from "../../../assets/advertisebanner/banner-4.jpg";
+import image5 from "../../../assets/advertisebanner/banner-5.jpg";
+// import image6 from "../../../assets/advertisebanner/banner-5.jpg";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
@@ -77,7 +79,7 @@ const SwipeableSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
  
   // Updated slides array with images from assets
-  const slides = [image1, image2, image3];
+  const slides = [image1, image2, image3, image4, image5];
 
 
   const handleNext = () => {

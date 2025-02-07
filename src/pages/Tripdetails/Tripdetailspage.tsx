@@ -4,6 +4,7 @@ import DynamicSlider from "./sections/DynamicSlider";
 import TrendingOffers from "./sections/TrendingOffers";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
 import Ban from "./sections/Ban";
+import Ban2 from "./sections/Ban2";
 import { destinationsData } from "./data";
 import CardSection from "./sections/CardSection";
 import FAQ from "./sections/FAQ";
@@ -39,10 +40,10 @@ export default function Tripdetailspage() {
 
   return (
     <>
-      <Ban
+      <Ban2
         image={banner?.image}
-        title={banner?.title}
-        description={banner?.description}
+        destination={banner?.title}
+    
       />
       <DynamicSlider
         title={`Things to do in `}
