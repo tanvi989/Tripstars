@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
-  background-color: #f8f8f8;
+
 
   @media (min-width: 768px) {
     padding: 3rem 2rem;
@@ -145,12 +145,24 @@ const MobileSwiper = styled.div`
     background: #0096d6;
   }
 `;
-
+const Title = styled.h2`
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color:#d5c156 ;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
 const VideoThumbnail = () => {
   const videos = [
     {
       thumbnail: "https://images.wanderon.in/4",
-      link: "https://www.youtube.com/watch?v=XXO0mdcyD6w",
+      link: "https://www.youtube.com/embed/lrb93i4EUi4",
       text: "Client Testimonials | WanderOn Experiences | Community Travel"
     },
     {
@@ -173,7 +185,10 @@ const VideoThumbnail = () => {
   return (
     <SliderContainer>
     <Wrapper>
+    <Title> Unforgettable Journeys, Captured in Moments ❤️</Title>
+    {/* Rest of your component */}
       <CardsGrid>
+
         {videos.map((video, index) => (
           <VideoCard key={index}>
             <VideoContainer href={video.link} target="_blank" rel="noopener noreferrer">
@@ -212,7 +227,7 @@ const VideoThumbnail = () => {
               </VideoCard>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> 
       </MobileSwiper>
     </Wrapper>
     </SliderContainer>

@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import 'swiper/css/navigation';
 import kashmir from "../../../assets/explore-india/himachal.jpg";
 // Import Swiper styles
@@ -251,7 +252,7 @@ const cards = [
       pricing: '₹32,999/- Onwards',
       info: [
         { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-        { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+        { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight included' },
       ],
     },
   ];
@@ -263,18 +264,17 @@ interface TrendingOffersProps {
 const TrendingOffers2: React.FC<TrendingOffersProps> = ({ title }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     const swiperElement = document.querySelector(
       ".swiper.trending-offers-slider"
-    ) as HTMLElement & { swiper?: any }; // Unique class name for this Swiper
+    ) as HTMLElement & { swiper?: any };
 
     if (swiperElement?.swiper) {
       const swiperInstance = swiperElement.swiper;
-
       swiperInstance.params.navigation.prevEl = prevRef.current;
       swiperInstance.params.navigation.nextEl = nextRef.current;
-
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
     }
@@ -282,79 +282,58 @@ const TrendingOffers2: React.FC<TrendingOffersProps> = ({ title }) => {
 
   return (
     <SliderContainer>
-      <SectionTitle>
-        <TitileHeading>{title}</TitileHeading>
-        <NavIcons>
-          <button ref={prevRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
-            </svg>
-          </button>
-          <button ref={nextRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-            </svg>
-          </button>
-        </NavIcons>
-
-      </SectionTitle>
-      <Swiper
-        className="trending-offers-slider" // Unique class name
-        modules={[Navigation]}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        spaceBetween={10}
-        slidesPerView={4}
-        breakpoints={{
-          1080: {
-            slidesPerView: 4,
-          },
-          768: {
-            slidesPerView: 4,
-          },
-          400: {
-            slidesPerView: 2,
-          },
-          300: {
-            slidesPerView: 2,
-          },
-        }}
-      >
-        {cards.map((card, index) => (
-          <SwiperSlide key={index}>
-            <Card>
-              <PricingTag>{card.pricing}</PricingTag>
-              <CardImage src={card.image} alt={card.title} />
-              <CardOverlay>
-                <Title>{card.title}</Title>
-                <Info>
-                  {card.info.map((item, idx) => (
-                    <InfoItem key={idx}>
-                      <Icon backgroundImage={item.icon} />
-                      {item.text}
-                    </InfoItem>
-                  ))}
-                </Info>
-              </CardOverlay>
-            </Card>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </SliderContainer>
+    <SectionTitle>
+      <TitileHeading>{title}</TitileHeading>
+      <NavIcons>
+        <button ref={prevRef}>
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 320 512">
+            <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+          </svg>
+        </button>
+        <button ref={nextRef}>
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 320 512">
+            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+          </svg>
+        </button>
+      </NavIcons>
+    </SectionTitle>
+    <Swiper
+      className="trending-offers-slider"
+      modules={[Navigation]}
+      navigation={{
+        prevEl: prevRef.current,
+        nextEl: nextRef.current,
+      }}
+      spaceBetween={10}
+      slidesPerView={4}
+      breakpoints={{
+        1080: { slidesPerView: 4 },
+        768: { slidesPerView: 4 },
+        400: { slidesPerView: 2 },
+        300: { slidesPerView: 2 },
+      }}
+    >
+      {cards.map((card, index) => (
+        <SwiperSlide key={index}>
+          <Card onClick={() => navigate(`/${card.title.toLowerCase()}`)}> {/* Handle click */}
+            <PricingTag>{card.pricing}</PricingTag>
+            <CardImage src={card.image} alt={card.title} />
+            <CardOverlay>
+              <Title>{card.title}</Title>
+              <Info>
+                {card.info.map((item, idx) => (
+                  <InfoItem key={idx}>
+                    <Icon backgroundImage={item.icon} />
+                    {item.text}
+                  </InfoItem>
+                ))}
+              </Info>
+            </CardOverlay>
+          </Card>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </SliderContainer>
   );
 };
 

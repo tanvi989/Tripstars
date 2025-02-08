@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import TrendingDestinations from './TrandingDestinations';
 
@@ -51,19 +51,15 @@ const SearchButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   position: absolute;
   right: 0;
   top: 0;
-
   border-radius: 100px;
   border: 0;
   outline: none;
-
   font-size: 18px;
   font-family: "Poppins", sans-serif !important;
   cursor: pointer;
-
   transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:hover {
@@ -83,17 +79,31 @@ const SearchButton = styled.button`
 const SearchBar = () => {
   const [showTrending, setShowTrending] = useState(false);
   const [searchTerm, setSearchTerm] = useState(''); // Track user input
+  const searchRef = useRef<HTMLDivElement>(null); // Reference for outside click detection
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value); // Update search term
+    setSearchTerm(e.target.value);
     if (!showTrending) {
-      setShowTrending(true); // Show trending on input
+      setShowTrending(true);
     }
   };
-  
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowTrending(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <SearchBarContainer>
+    <SearchBarContainer ref={searchRef}>
       <SearchIcon 
         src="https://images.emtcontent.com/holiday-img/home-img/search.svg"
         alt="Search Icon"
@@ -101,8 +111,8 @@ const SearchBar = () => {
       <SearchInput
         placeholder="Enter Your Dream Destination!"
         value={searchTerm}
-        onChange={handleInputChange} // Update search term on change
-        onClick={() => setShowTrending(true)} // Show dropdown on click
+        onChange={handleInputChange}
+        onClick={() => setShowTrending(true)}
       />
       <SearchButton>Search</SearchButton>
 

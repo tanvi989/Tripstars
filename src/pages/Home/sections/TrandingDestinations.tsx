@@ -31,6 +31,7 @@ const Container = styled.div`
 const ListItem = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
@@ -53,34 +54,63 @@ const Thumbnail = styled.img`
   margin-right: 1rem;
 `;
 
+const NameContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const Name = styled.div`
   font-size: 1rem;
   font-weight: 500;
   color: #333;
 `;
 
-const TrendingDestinations = ({ searchTerm }: { searchTerm: string }) => {
+const Tag = styled.span<{ bgColor: string }>`
+  font-size: 0.65rem;  /* Reduced from 0.75rem */
+  font-weight: 500;  /* Slightly lighter */
+  color: #fff;
+  background-color: ${({ bgColor }) => bgColor || '#666'};
+  padding: 4px 8px;  /* Reduced padding */
+  border-radius: 6px;  /* Slightly smaller radius */
+  margin-left: 8px;  /* Adjusted spacing */
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 
-  const navigate = useNavigate(); // Hook for navigation
+  &:hover {
+    transform: scale(1.05); /* Less aggressive hover effect */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const TrendingDestinations = ({ searchTerm }: { searchTerm: string }) => {
+  const navigate = useNavigate();
 
   const destinations = [
-    { name: 'bali', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'vietnam', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'thailand', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'kashmir', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'japan', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'london', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'paris', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'maldives', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'hawaii', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
-    { name: 'switzerland', image: 'https://images.emtcontent.com/holiday-img/home-img/CommoneEwOoH.png' },
+    { name: 'Maldives', tag: 'HONEYMOON', tagColor: '#FF4081' },  // Pink
+    { name: 'Europe', tag: 'TRENDING', tagColor: '#4CAF50' },  // Green
+    { name: 'Bali', tag: 'POPULAR', tagColor: '#FF5722' },  // Orange-Red
+    { name: 'Dubai', tag: 'IN SEASON', tagColor: '#03A9F4' },  // Blue
+    { name: 'Thailand', tag: 'BUDGET', tagColor: '#FFC107' },  // Yellow
+    { name: 'Abu Dhabi', tag: 'POPULAR', tagColor: '#673AB7' },  // Purple
+    { name: 'Singapore' },
+    { name: 'Malaysia' },
+    { name: 'Baku' },
+    { name: 'Turkey' },
+    { name: 'Australia' },
+    { name: 'New Zealand' },
+    { name: 'Japan' },
+    { name: 'Korea' },
+    { name: 'Kerala' },
+    { name: 'Himachal' },
+    { name: 'Ladakh' },
+    { name: 'Andaman' },
+    { name: 'Kashmir' },
   ];
+
   const handleDestinationClick = (destination: string) => {
-
-    const lowerCaseDestination = destination.toLowerCase();
-    navigate(`/${lowerCaseDestination}`);
+    navigate(`/${destination.toLowerCase()}`);
   };
-
   // Filter destinations based on searchTerm
   const filteredDestinations = destinations.filter(dest =>
     dest.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -90,8 +120,10 @@ const TrendingDestinations = ({ searchTerm }: { searchTerm: string }) => {
     <Container>
       {filteredDestinations.map((dest, i) => (
         <ListItem key={i} onClick={() => handleDestinationClick(dest.name)}>
-          <Thumbnail src={dest.image} alt={dest.name} />
-          <Name>{dest.name}</Name>
+          <NameContainer>
+            <Name>{dest.name}</Name>
+            {dest.tag && <Tag bgColor={dest.tagColor || '#ccc'}>{dest.tag}</Tag>}
+          </NameContainer>
         </ListItem>
       ))}
     </Container>

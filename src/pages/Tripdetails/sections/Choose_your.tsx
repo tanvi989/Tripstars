@@ -4,20 +4,26 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
-// Import your images
-import Australia from "../../../assets/PopularDestination/Australia.png";
-import Bali from "../../../assets/PopularDestination/Bali.png";
-import Dubai from "../../../assets/PopularDestination/Dubai.png";
-import Europe from "../../../assets/PopularDestination/Europe.png";
-import HongKong from "../../../assets/PopularDestination/Hong kong.png";
-import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
-import Singapore from "../../../assets/PopularDestination/Singapore.png";
-import Thailand from "../../../assets/PopularDestination/Thailand.png";
-import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
+// Importing images
+import family from "../../../assets/travelstyle/family.jpg";
+import couple from "../../../assets/travelstyle/couple.jpg";
+import group from "../../../assets/travelstyle/group.jpg";
+import honeymoon from "../../../assets/travelstyle/honeymoon.jpg";
+import adventure from "../../../assets/travelstyle/adventure.jpg";
+import beach from "../../../assets/travelstyle/beach.jpg";
+// Importing golden icons
+import familyIcon from "../../../assets/icons/family.png";
+import coupleIcon from "../../../assets/icons/couple.png";
+import groupIcon from "../../../assets/icons/group.png";
+import honeymoonIcon from "../../../assets/icons/honeymoon.png";
+import adventureIcon from "../../../assets/icons/adventure.png";
+import beachIcon from "../../../assets/icons/beach.png";
 
 // Styled components
 const Container = styled.div`
   padding: 0 15rem;
+  text-align: center;
+
   @media (max-width: 1340px) {
     padding: 0 5rem;
   }
@@ -25,28 +31,51 @@ const Container = styled.div`
     padding: 0 3rem;
   }
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 1.5rem 1rem;
   }
 `;
 
+// Title Wrapper
+const Title = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+`;
+
+// Styled "Travel Style" with gold linear gradient and cursive font
+const TravelStyleText = styled.span`
+  font-family: "Dancing Script", cursive; /* Ensure this font is available */
+  background: linear-gradient(to right, #FFD700, #FFA500); /* Gold gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
+// Cards Wrapper
 const CardsWrapper = styled.div`
   display: flex;
   width: 100%;
 `;
 
+// Swiper Card Styling
 const Card = styled.div`
   height: 100%;
-  cursor: pointer; /* Make the cards clickable */
+  cursor: pointer;
+  position: relative;
   @media (max-width: 1080px) {
     width: 100%;
   }
 `;
 
+// Image Wrapper
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
+  position: relative;
+
   img {
     width: 100%;
     height: 100%;
@@ -54,75 +83,51 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const SectionTitle = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+// Dark gradient overlay
+const Overlay = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+ background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
-
-  @media (max-width: 1340px) {
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-  }
-  @media (max-width: 768px) {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
+  padding-left: 10px;
 `;
 
-const TitileHeading = styled.h2`
-  font-size: 1.5rem;
+// Icon styling
+const Icon = styled.img`
+  width: 46px !important;
+  height: 46px !important;
+`;
+
+// Category Name - Removed underline
+const CategoryName = styled.span`
+  color: white;
+  font-size: 1.2rem;
   font-weight: 600;
-  text-transform: uppercase;
-  @media (max-width: 1080px) {
-    font-size: 2.3rem;
-  }
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-`;
-
-const NavIcons = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  button {
-    cursor: pointer;
-    border: 1px solid #000;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      width: 0.8rem;
-      path {
-        fill: #000;
-      }
-    }
-  }
+  margin-left: 10px;
 `;
 
 // Type definition for destinations
 type Destination = {
   name: string;
   imgUrl: string;
+  icon: string;
 };
 
-// Updated Destination data with new images
+// Adding icons to destinations
 const popularDestinationsData: Destination[] = [
-    { name: "Family", imgUrl: "https://www.tripzygo.in/images/interest/Family.jpg" },
-    { name: "Couple", imgUrl: "https://www.tripzygo.in/images/interest/Couple.jpg" },
-    { name: "Group", imgUrl: "https://www.tripzygo.in/images/interest/Group.jpg" },
-    { name: "Honeymoon", imgUrl: "https://www.tripzygo.in/images/interest/Honeymoon.jpg" },
-    { name: "Adventure", imgUrl: "https://images.pickyourtrail.com/adventure_14741845c1.png?w=162&h=215&format=auto&dpr=1&q=40" },
-    { name: "Beach", imgUrl: "https://images.pickyourtrail.com/beach_8eddedb6e3.png?w=162&h=215&format=auto&dpr=1&q=40" },
-  ];
-  
+  { name: "Family", imgUrl: family, icon: familyIcon },
+ 
+  { name: "Group", imgUrl: group, icon: groupIcon },
+  { name: "Honeymoon", imgUrl: honeymoon, icon: honeymoonIcon },
+  { name: "Adventure", imgUrl: adventure, icon: adventureIcon },
+  { name: "Beach", imgUrl: beach, icon: beachIcon },
+  { name: "Couple", imgUrl: couple, icon: coupleIcon },
+];
 
-export default function Choose_your() {
+export default function ChooseYour() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const navigate = useNavigate();
@@ -133,58 +138,25 @@ export default function Choose_your() {
 
   return (
     <Container>
-      <SectionTitle>
-        <TitileHeading>Choose your Lifestyle</TitileHeading>
-        <NavIcons>
-          <button ref={prevRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
-            </svg>
-          </button>
-          <button ref={nextRef}>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 320 512"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
-            </svg>
-          </button>
-        </NavIcons>
-      </SectionTitle>
+      {/* Title Section */}
+      <Title>
+        Choose Your <TravelStyleText>Travel Style</TravelStyleText>
+      </Title>
+
+      {/* Travel Cards */}
       <CardsWrapper>
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
           slidesPerView={1.8}
           breakpoints={{
-            1080: {
-              slidesPerView: 4.8,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            400: {
-              slidesPerView: 2,
-            },
+            1080: { slidesPerView: 4.8 },
+            768: { slidesPerView: 4 },
+            400: { slidesPerView: 2 },
           }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
           onInit={(swiper) => {
-            if (
-              swiper.params.navigation &&
-              typeof swiper.params.navigation !== "boolean"
-            ) {
+            if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
               swiper.params.navigation.prevEl = prevRef.current;
               swiper.params.navigation.nextEl = nextRef.current;
             }
@@ -197,6 +169,10 @@ export default function Choose_your() {
               <Card onClick={() => handleRedirect(item.name)}>
                 <ImageWrapper>
                   <img src={item.imgUrl} alt={item.name} />
+                  <Overlay>
+                    <Icon src={item.icon} alt={`${item.name} icon`} />
+                    <CategoryName>{item.name}</CategoryName>
+                  </Overlay>
                 </ImageWrapper>
               </Card>
             </SwiperSlide>

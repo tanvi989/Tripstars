@@ -3,6 +3,9 @@ import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import { useNavigate } from "react-router-dom";
+import FlightsIncludedIcon from '../../../assets/icons/flights-included.png';
+
 import 'swiper/css/navigation';
 import VietnamImage from '../../../assets/tranding-offers/Vietnam.png';
 import TurkeyImage from '../../../assets/tranding-offers/Turkey.jpg';
@@ -13,6 +16,7 @@ import EuropeImage from '../../../assets/tranding-offers/Europe 1.jpg';
 import DubaiImage from '../../../assets/tranding-offers/Dubai.jpg';
 import BaliImage from '../../../assets/tranding-offers/Bali.jpg';
 // Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -182,6 +186,7 @@ const Icon = styled.span<{ backgroundImage: string }>`
   filter: brightness(0) invert(1);
   ${({ backgroundImage }) =>
     backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
+  
 `;
 
 const cards = [
@@ -191,7 +196,7 @@ const cards = [
     pricing: '₹99,999/- Onwards',
     info: [
       { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+      { icon: FlightsIncludedIcon },
     ],
   },
   {
@@ -267,6 +272,7 @@ interface TrendingOffersProps {
 const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const swiperElement = document.querySelector(
@@ -339,7 +345,14 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title }) => {
       >
         {cards.map((card, index) => (
           <SwiperSlide key={index}>
-            <Card>
+       <Card
+  onClick={(event) => {
+    event.stopPropagation(); // Prevent Swiper from blocking clicks
+    navigate(`/${card.title.toLowerCase().replace(/\s+/g, "-")}`);
+  }}
+>
+
+
               <PricingTag>{card.pricing}</PricingTag>
               <CardImage src={card.image} alt={card.title} />
               <CardOverlay>

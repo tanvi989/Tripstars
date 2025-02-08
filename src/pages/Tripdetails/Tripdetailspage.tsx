@@ -8,7 +8,7 @@ import Ban2 from "./sections/Ban2";
 import { destinationsData } from "./data";
 import CardSection from "./sections/CardSection";
 import FAQ from "./sections/FAQ";
-import ReviewSlider from "./sections/ReviewSlider";
+import ReviewSlider from "./sections/Review1";
 import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
@@ -64,14 +64,16 @@ export default function Tripdetailspage() {
       {/* <Loader /> */}
       {/* <Loader /> */}
       {/* <ExploreDestinations /> */}
-      {/* <DestinationSlider/>
-       */}
+     {/* <DestinationSlider/> */}
+     
        <Choose_your />
-      <ReviewSlider  />
+      {/* <ReviewSlider  /> */}
       {/* <ReviewCard/> */}
       {/* <TravelStyleCarousel /> */}
-      <FAQ />
+
+      {/* <ReviewSlider /> */}
       <TrendingOffers title="Similar packages" cards={similar}/>
+            <FAQ />
     </>
   );
 }

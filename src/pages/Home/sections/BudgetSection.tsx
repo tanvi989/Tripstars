@@ -74,7 +74,7 @@ const Item = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 150px;
+  // height: 150px;
 `;
 
 // Mobile Slider Wrapper (only for mobile)
