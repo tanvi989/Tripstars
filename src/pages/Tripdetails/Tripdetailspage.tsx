@@ -80,7 +80,7 @@ export default function Tripdetailspage() {
       <ReviewSlider  />
       {/* <ReviewCard/> */}
       {/* <TravelStyleCarousel /> */}
-      <FAQ />
+      {/* <FAQ /> */}
       <TrendingOffers title="Similar packages" cards={similar}/>
     </>
   );
