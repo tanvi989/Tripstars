@@ -44,7 +44,119 @@ import europe3 from "../assets/Tripdetails/europe/Europe 3.jpg"
 import europe4 from "../assets/Tripdetails/europe/Europe 4.jpg"
 import europe5 from "../assets/Tripdetails/europe/Europe 5.jpg"
 
+//australia
+import australia1 from "../assets/Tripdetails/new/australia/Australia 1.jpg"
+import australia2 from "../assets/Tripdetails/new/australia/Australia 2.jpg"
+import australia3 from "../assets/Tripdetails/new/australia/Australia 3.jpg"
+import australia4 from "../assets/Tripdetails/new/australia/Australia 4.jpg"
+import australia5 from "../assets/Tripdetails/new/australia/Australia 5.jpg"
 
+
+//baku
+import baku1 from "../assets/Tripdetails/new/baku/baku 1.jpg";
+import baku2 from "../assets/Tripdetails/new/baku/baku 2.jpg";
+import baku3 from "../assets/Tripdetails/new/baku/baku 3(1).jpg";
+import baku4 from "../assets/Tripdetails/new/baku/baku 3.jpg";
+import baku5 from "../assets/Tripdetails/new/baku/baku 4(1).jpg";
+import baku6 from "../assets/Tripdetails/new/baku/baku 4.jpg";
+
+import baku7 from "../assets/Tripdetails/new/baku/baku 5.jpg";
+import baku8 from "../assets/Tripdetails/new/baku/baku 6.jpg";
+
+//hong-kong
+import hong1 from "../assets/Tripdetails/new/hong-kong/Hong kong 1 (1).jpg"
+import hong2 from "../assets/Tripdetails/new/hong-kong/Hong kong 1.jpg"
+import hong3 from "../assets/Tripdetails/new/hong-kong/Hong kong 2 (1).jpg"
+import hong4 from "../assets/Tripdetails/new/hong-kong/Hong kong 2.jpg"
+import hong5 from "../assets/Tripdetails/new/hong-kong/Hong kong 3.jpg"
+import hong7 from "../assets/Tripdetails/new/hong-kong/Hong kong 4.jpg"
+import hong8 from "../assets/Tripdetails/new/hong-kong/Hong kong 5.jpg"
+import hong9 from "../assets/Tripdetails/new/hong-kong/Hong kong 6.jpg"
+import hong10 from "../assets/Tripdetails/new/hong-kong/Hong kong 7.jpg"
+
+
+
+//japan
+import japan1 from "../assets/Tripdetails/new/japan/Japan 1.jpg"
+import japan2 from "../assets/Tripdetails/new/japan/Japan 2(1).jpg"
+import japan3 from "../assets/Tripdetails/new/japan/Japan 2.jpg"
+import japan4 from "../assets/Tripdetails/new/japan/Japan 3.jpg"
+
+import japan5 from "../assets/Tripdetails/new/japan/Japan 4.jpg"
+import japan6 from "../assets/Tripdetails/new/japan/Japan 5.jpg"
+import japan7 from "../assets/Tripdetails/new/japan/Japan 6.jpg"
+import japan8 from "../assets/Tripdetails/new/japan/Japan 7.jpg"
+
+//turkey
+//malaysia
+import turkey1 from "../assets/Tripdetails/new/turkey/Turkey 1.jpg"
+import turkey2 from "../assets/Tripdetails/new/turkey/Turkey 2 (1).jpg"
+import turkey3 from "../assets/Tripdetails/new/turkey/Turkey 2.jpg"
+import turkey4 from "../assets/Tripdetails/new/turkey/Turkey 3 (1).jpg"
+import turkey5 from "../assets/Tripdetails/new/turkey/Turkey 3.jpg"
+import turkey6 from "../assets/Tripdetails/new/turkey/Turkey 4.jpg"
+import turkey7 from "../assets/Tripdetails/new/turkey/Turkey 5.jpg"
+
+import turkey8 from "../assets/Tripdetails/new/turkey/Turkey 6.jpg"
+
+import turkey9 from "../assets/Tripdetails/new/turkey/Turkey 7.jpg"
+
+
+//malaysia
+import malaysia1 from "../assets/Tripdetails/new/malaysia/Malaysia 1.jpg"
+import malaysia2 from "../assets/Tripdetails/new/malaysia/Malaysia 2.jpg"
+import malaysia3 from "../assets/Tripdetails/new/malaysia/Malaysia 3.jpg"
+import malaysia4 from "../assets/Tripdetails/new/malaysia/Malaysia 4.jpg"
+import malaysia5 from "../assets/Tripdetails/new/malaysia/Malaysia 5.jpg"
+import malaysia6 from "../assets/Tripdetails/new/malaysia/Malaysia 6.jpg"
+
+//singapore
+
+import singapore1 from   "../assets/Tripdetails/new/singapore/singapore 1.jpg"
+
+import singapore2 from   "../assets/Tripdetails/new/singapore/singapore 2.jpg"
+
+import singapore3 from   "../assets/Tripdetails/new/singapore/singapore 3.jpg"
+
+import singapore4 from   "../assets/Tripdetails/new/singapore/singapore 6.jpg"
+
+import singapore5 from   "../assets/Tripdetails/new/singapore/singapore 5.jpg";
+//maldives
+import maldives1 from "../assets/Tripdetails/new/maldives/Maldives 1.jpg";
+import maldives2 from "../assets/Tripdetails/new/maldives/Maldives 2.jpg";
+
+import maldives3 from "../assets/Tripdetails/new/maldives/Maldives 3.jpg";
+
+import maldives4 from "../assets/Tripdetails/new/maldives/Maldives 4.jpg";
+
+import maldives5 from "../assets/Tripdetails/new/maldives/Maldives 5.jpg";
+
+import maldives6 from "../assets/Tripdetails/new/maldives/Maldives 6.jpg";
+import maldives7 from "../assets/Tripdetails/new/maldives/Maldives 7.jpg";
+
+
+//mauritius
+
+import mauritius1 from "../assets/Tripdetails/new/mauritius/Mauritius 1.jpg"
+import mauritius2 from "../assets/Tripdetails/new/mauritius/Mauritius 2.jpg"
+import mauritius3 from "../assets/Tripdetails/new/mauritius/Mauritius 3.jpg"
+import mauritius4 from "../assets/Tripdetails/new/mauritius/Mauritius 4.jpg"
+import mauritius5 from "../assets/Tripdetails/new/mauritius/Mauritius 5.jpg"
+import mauritius6 from "../assets/Tripdetails/new/mauritius/Mauritius 6.jpg"
+
+import mauritius7 from "../assets/Tripdetails/new/mauritius/Mauritius 7.jpg"
+import mauritius8 from "../assets/Tripdetails/new/mauritius/Mauritius 8.jpg"
+import mauritius9 from "../assets/Tripdetails/new/mauritius/Mauritius 9.jpg"
+ 
+
+
+//south aftric
+import southafrica1 from "../assets/Tripdetails/new/south affrica/South affrica 1.jpg"
+import southafrica2 from "../assets/Tripdetails/new/south affrica/South affrica 2.jpg"
+import southafrica3 from "../assets/Tripdetails/new/south affrica/South affrica 3.jpg"
+import southafrica4 from "../assets/Tripdetails/new/south affrica/South affrica 4.jpg"
+import southafrica5 from "../assets/Tripdetails/new/south affrica/South affrica 5.jpg"
+import southafrica6 from "../assets/Tripdetails/new/south affrica/South affrica 6.jpg"
 // Card 1 - Bali Popular Destination
 export const Bali = [
   {
@@ -396,3 +508,824 @@ export const similar = [
     ],
   },
 ];
+//tanvi added data
+export const Australia = [
+  {
+    title: "Kashmir",
+    image: australia1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: australia2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: australia3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: australia4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: australia5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+export const southAfrica = [
+  {
+    title: "Kashmir",
+    image: southafrica1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: southafrica2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: southafrica3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: southafrica4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: southafrica5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: southafrica6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Singapore = [
+  {
+    title: "Kashmir",
+    image: singapore1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: singapore2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: singapore3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: singapore4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: singapore5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Mauritius = [
+  {
+    title: "Kashmir",
+    image: mauritius1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: mauritius2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: mauritius3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: mauritius4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+ 
+  {
+    title: "Ladakh",
+    image: mauritius5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: mauritius6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: mauritius7,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: mauritius8,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: mauritius9,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Baku = [
+  {
+    title: "Kashmir",
+    image: baku1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: baku2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: baku3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: baku4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: baku5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: baku6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+
+  {
+    title: "Ladakh",
+    image: baku7,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+
+];
+
+
+export const  Hongkong = [
+  {
+    title: "Kashmir",
+    image: hong1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: hong2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: hong3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: hong4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: hong5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+
+  {
+    title: "Goa",
+    image: hong7,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: hong8,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: hong9,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: hong10,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Japan = [
+  {
+    title: "Kashmir",
+    image: japan1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image:japan2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: japan3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: japan4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: japan5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: japan6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: japan7,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: japan8,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  
+];
+
+
+export const Malaysia = [
+  {
+    title: "Kashmir",
+    image: malaysia1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: malaysia2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: malaysia3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: malaysia4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: malaysia5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+export const Maldives = [
+  {
+    title: "Kashmir",
+    image: maldives1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: maldives2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: maldives3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: maldives4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: maldives5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: maldives6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: maldives7,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Turkey = [
+  {
+    title: "Kashmir",
+    image: turkey1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: turkey2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: turkey3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: turkey4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: turkey5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: turkey6,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: turkey7,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: turkey8,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: turkey9,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Baatytyli = [
+  {
+    title: "Kashmir",
+    image: bali1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: bali2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: bali3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: bali4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: bali5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Bajyuuiali = [
+  {
+    title: "Kashmir",
+    image: bali1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: bali2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: bali3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: bali4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: bali5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+
+export const Bkjkaali = [
+  {
+    title: "Kashmir",
+    image: bali1,
+    pricing: "₹29,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Goa",
+    image: bali2,
+    pricing: "₹18,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Andaman",
+    image: bali3,
+    pricing: "₹42,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Himachal Pradesh",
+    image: bali4,
+    pricing: "₹35,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Ladakh",
+    image: bali5,
+    pricing: "₹49,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+];
+
+

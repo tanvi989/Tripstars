@@ -172,7 +172,7 @@ const cards = [
     image: SouthAfricaImage,
     location: "South Africa",
     price: "₹ 2,79,000/-",
-    url: "/south-africa",
+    url: "/southAfrica",
   },
 ];
 
