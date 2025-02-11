@@ -4,7 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import thumbnil1 from "../../../assets/thumbnil/THUBNAIL 1a (1).jpg"
+import thumbnil2 from "../../../assets/thumbnil/THUBNAIL 1a.jpg"
+import thumbnil3 from "../../../assets/thumbnil/THUBNAIL 3.jpg"
+import thumbnil4 from "../../../assets/thumbnil/THUBNAIL 4.jpg"
+import thumbnil5 from "../../../assets/thumbnil/THUBNAIL 5.jpg"
 // Styled components remain the same except for CarouselContainer, CarouselTrack, CarouselSlide, and CarouselIndicators
 
 const SliderContainer = styled.div`
@@ -161,22 +165,28 @@ const Title = styled.h2`
 const VideoThumbnail = () => {
   const videos = [
     {
-      thumbnail: "https://images.wanderon.in/4",
-      link: "https://www.youtube.com/embed/lrb93i4EUi4",
-      text: "Client Testimonials | WanderOn Experiences | Community Travel"
+      thumbnail: "https://i.ytimg.com/vi/lrb93i4EUi4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDAlxvChgpICVVkOxVat_FQwNYD9g",
+      link: "https://youtu.be/lrb93i4EUi4?si=CTVW5Owqiry78BKb",
+      text: "Bali Bliss : Aditya Gadhvi's Unforgettable Journey"
     },
     {
-      thumbnail: "https://images.wanderon.in/2",
+      thumbnail:thumbnil1,
       link: "https://www.youtube.com/watch?v=abc123",
       text: "Adventure Trips | Himalayan Treks | WanderOn Journeys"
     },
+   
     {
-      thumbnail: "https://images.wanderon.in/3",
-      link: "https://www.youtube.com/watch?v=def456",
-      text: "Group Travel Experiences | Curated Trips | WanderOn"
+      thumbnail:thumbnil3,
+      link: "https://www.youtube.com/watch?v=ghi789",
+      text: "Travel Guides | Destination Videos | WanderOn TV"
     },
-    {
-      thumbnail: "https://images.wanderon.in/1",
+     {
+      thumbnail:thumbnil4,
+      link: "https://www.youtube.com/watch?v=ghi789",
+      text: "Travel Guides | Destination Videos | WanderOn TV"
+    },
+     {
+      thumbnail:thumbnil5,
       link: "https://www.youtube.com/watch?v=ghi789",
       text: "Travel Guides | Destination Videos | WanderOn TV"
     }

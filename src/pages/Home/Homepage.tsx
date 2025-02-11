@@ -51,7 +51,7 @@ export default function HomePage() {
       <PartnersSection />
       <BudgetSection/>
       <BenefitsSection/>
-      <Banner/> 
+      {/* <Banner/>  */}
       <ContactForm/>
       <BendingCarosual />
       {/* <TravelSection /> */}
