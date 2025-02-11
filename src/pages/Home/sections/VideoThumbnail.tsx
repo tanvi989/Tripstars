@@ -171,8 +171,8 @@ const VideoThumbnail = () => {
     },
     {
       thumbnail:thumbnil1,
-      link: "https://www.youtube.com/watch?v=abc123",
-      text: "Adventure Trips | Himalayan Treks | WanderOn Journeys"
+      link: "https://youtu.be/LyfnbIjW5Q0?si=cc1JVf0YM6gzFa_R",
+      text: "Happy Travellers | Mr. Chirag | Vietnam Tours | Tripstars Holidays"
     },
    
     {
