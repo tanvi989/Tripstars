@@ -96,22 +96,17 @@ interface CardData {
 }
 
 const cardData: CardData[] = [
-  { name: "Paris", image: Australia },
-  { name: "London", image: Eiffel },
-  { name: "Rome", image: Japan },
-  { name: "Barcelona", image: Swiss },
-  { name: "Amsterdam", image: Australia },
-  { name: "Berlin", image: Swiss },
-  { name: "Prague", image: Eiffel },
-  { name: "Vienna", image: Australia },
-  { name: "Zurich", image: Swiss },
-  { name: "Budapest", image: Eiffel },
-  { name: "Copenhagen", image: Eiffel },
-  { name: "Stockholm", image: Eiffel },
-  { name: "Helsinki", image: Eiffel },
-  { name: "Oslo", image: Eiffel },
-  { name: "Athens", image: Eiffel },
+  { name: "Austria", image: "https://images.pickyourtrail.com/austria_min_3bcfd0c970.png?w=99&h=99&format=auto&dpr=1&q=40" },
+  { name: "Finland", image: "https://images.pickyourtrail.com/finland_min_6b2b83ba7b.png?w=99&h=99&format=auto&dpr=1&q=40" },
+  { name: "Norway", image: "https://images.pickyourtrail.com/norway_min_b6c1dbb1da.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Norway URL
+  { name: "Italy", image: "https://images.pickyourtrail.com/italy_min_6b0dbc2ad0.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Italy URL
+  { name: "Switzerland", image: "https://images.pickyourtrail.com/switzerland_min_523a70365c.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Switzerland URL
+  { name: "France", image: "https://images.pickyourtrail.com/france_min_3510647d1e.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual France URL
+  { name: "United Kingdom", image: "https://images.pickyourtrail.com/uk_min_32ffe790a9.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual UK URL
+  { name: "Turkey", image: "https://images.pickyourtrail.com/turkey_min_2529e81509.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Turkey URL
+  { name: "Spain", image: "https://images.pickyourtrail.com/spain_min_b811280a6a.png?w=99&h=99&format=auto&dpr=1&q=40" }, // Replace with actual Spain URL
 ];
+
 
 // ExploreEurope Component
 const ExploreEurope: React.FC = () => {

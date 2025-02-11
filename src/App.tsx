@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Popup />
+      {/* <Popup /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />   
         <Route path="/faqs" element={<Faq/>} />   

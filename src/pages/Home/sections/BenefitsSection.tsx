@@ -1,230 +1,190 @@
 import React from "react";
 import styled from "styled-components";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
-const SliderContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  margin-top: 10px;
-  width: 90%;
-  
-  @media (min-width: 1024px) {
-    width: 80%;
-  }
-`;
+// Define Types
+interface Benefit {
+  title: string;
+  description: string;
+  iconUrl: string;
+}
 
-const Container = styled.div`
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 3rem 1rem;
+// Benefits Data
+const benefits: Benefit[] = [
+  {
+    title: "Customised Itineraries",
+    description:
+      "Enjoy our bespoke tour packages that can be tailored according to your preferences for a personalised experience.",
+    iconUrl: "https://images.emtcontent.com/holiday-img/home-img/sun_bed.png",
+  },
+  {
+    title: "Wallet-Friendly Prices",
+    description:
+      "Every traveller from worldwide can embark on unforgettable journeys with our unbeatable holiday package prices.",
+    iconUrl: "https://images.emtcontent.com/holiday-img/home-img/low.png",
+  },
+  {
+    title: "Exciting Deals",
+    description:
+      "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value-for-money.",
+    iconUrl: "https://images.emtcontent.com/holiday-img/home-img/ec_deal.png",
+  },
+  {
+    title: "24/7 Support",
+    description:
+      "Our customer support team is always available to assist you and resolve travel-related queries instantly.",
+    iconUrl: "https://images.emtcontent.com/holiday-img/home-img/support.png",
+  },
+];
 
-  @media (min-width: 640px) {
-    padding: 4rem 1.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 5rem 2rem;
-  }
-`;
-
-const ContentWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const Header = styled.div`
-  text-align: center;
-  margin-bottom: 2rem;
-`;
-
-const Title = styled.h2`
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #1a1a1a;
-  margin-bottom: 0.8rem;
-
-  @media (min-width: 768px) {
-    font-size: 2.5rem;
-  }
-`;
-
-const Description = styled.p`
-  font-size: 1rem;
-  color: #4a5568;
-  max-width: 36rem;
-  margin: 0 auto;
-  line-height: 1.6;
-
-  @media (min-width: 768px) {
-    font-size: 1.125rem;
-  }
-`;
-
-/* Grid for Large Screens (1024px+) */
-const CardsGrid = styled.div`
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-`;
-
-/* Swiper for Mobile & Mid-sized Screens (600px - 1024px) */
-const ResponsiveSwiper = styled.div`
-  display: block;
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-
-  .swiper {
-    padding: 0.5rem;
-    padding-bottom: 2rem;
-  }
-
-  .swiper-pagination-bullet {
-    width: 0.5rem;
-    height: 0.5rem;
-    background: #cbd5e0;
-    opacity: 1;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #3b82f6;
-  }
-`;
-
-/* Styled Card Component */
-const Card = styled.div`
-  background: white;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
+// Styled Components
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgb(255, 255, 255);
+  padding: 0 15rem;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  @media (max-width: 1340px) {
+    padding: 0 5rem;
+  }
+  @media (max-width: 1080px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
   }
 `;
 
-const IconWrapper = styled.div`
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: #ebf5ff;
-  border-radius: 50%;
+const Title = styled.h2`
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+
+const Description = styled.p`
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 600px;
+`;
+
+const BenefitsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+
+  @media (max-width: 1080px) {
+    flex-wrap: nowrap; /* Prevents wrapping on smaller desktops */
+    overflow-x: auto; /* Allows scrolling if needed */
+    justify-content: flex-start; /* Aligns cards in a row */
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    display: none; /* Hide on mobile */
+  }
+`;
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-`;
-
-const Icon = styled.img`
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
-`;
-
-const CardTitle = styled.h3`
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
+  width: 250px;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cce7ff;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
-const CardDescription = styled.p`
-  color: #4a5568;
-  text-align: center;
-  line-height: 1.5;
+const Icon = styled.div<{ imageUrl: string }>`
+  width: 60px;
+  height: 60px;
+  background-image: url(${(props) => props.imageUrl});
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
 `;
 
-const BenefitsSection = () => {
-  const cardData = [
-    {
-      title: "Customised Itineraries",
-      description: "Enjoy our bespoke tour packages that can be tailored according to your preferences for a personalised experience.",
-      icon: "https://cdn-icons-png.flaticon.com/512/5164/5164030.png",
-    },
-    {
-      title: "Wallet-Friendly Prices",
-      description: "Every traveller can embark on unforgettable journeys with our unbeatable holiday package prices.",
-      icon: "https://cdn-icons-png.flaticon.com/512/2489/2489756.png",
-    },
-    {
-      title: "Exciting Deals",
-      description: "Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value for money.",
-      icon: "https://cdn-icons-png.flaticon.com/512/3176/3176366.png",
-    },
-    {
-      title: "24/7 Support",
-      description: "Our customer support team is always available to assist you and resolve travel-related queries instantly.",
-      icon: "https://cdn-icons-png.flaticon.com/512/4233/4233839.png",
-    },
-  ];
+const CardText = styled.div`
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
 
+  p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+`;
+
+const SwiperContainer = styled.div`
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 0;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+// BenefitCard Component
+const BenefitCard: React.FC<Benefit> = ({ title, description, iconUrl }) => (
+  <Card>
+    <Icon imageUrl={iconUrl} />
+    <CardText>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </CardText>
+  </Card>
+);
+
+// Main Component
+const BenefitsSection: React.FC = () => {
   return (
-    <SliderContainer>
-      <Container>
-        <ContentWrapper>
-          <Header>
-            <Title>Benefits of Booking With Us</Title>
-            <Description>
-              Discover the unrivalled benefits that promise memorable journeys all along.
-            </Description>
-          </Header>
+    <Section>
+      <Title>Benefits of Booking With Us</Title>
+      <Description>
+        Discover the unrivalled benefits that promise memorable journeys all along.
+      </Description>
 
-          {/* Large Screen Grid (1024px+) */}
-          <CardsGrid>
-            {cardData.map((card, index) => (
-              <Card key={index}>
-                <IconWrapper>
-                  <Icon src={card.icon} alt={card.title} />
-                </IconWrapper>
-                <CardTitle>{card.title}</CardTitle>
-                <CardDescription>{card.description}</CardDescription>
-              </Card>
-            ))}
-          </CardsGrid>
+      {/* Desktop & Tablet View */}
+      <BenefitsContainer>
+        {benefits.map((benefit, index) => (
+          <BenefitCard key={index} {...benefit} />
+        ))}
+      </BenefitsContainer>
 
-          {/* Swiper for Mobile & Mid-Sized Screens */}
-          <ResponsiveSwiper>
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              spaceBetween={16}
-              slidesPerView={1}
-              breakpoints={{
-                600: { slidesPerView: 1 }, // Mobile
-                768: { slidesPerView: 2 }, // Mid-size screens (tablets/small desktops)
-              }}
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 5000 }}
-            >
-              {cardData.map((card, index) => (
-                <SwiperSlide key={index}>
-                  <Card>
-                    <IconWrapper>
-                      <Icon src={card.icon} alt={card.title} />
-                    </IconWrapper>
-                    <CardTitle>{card.title}</CardTitle>
-                    <CardDescription>{card.description}</CardDescription>
-                  </Card>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </ResponsiveSwiper>
-        </ContentWrapper>
-      </Container>
-    </SliderContainer>
+      {/* Mobile Swiper View */}
+      <SwiperContainer>
+        <Swiper spaceBetween={10} slidesPerView={1.2} breakpoints={{
+          480: { slidesPerView: 1.5 },
+          640: { slidesPerView: 2 }
+        }}>
+          {benefits.map((benefit, index) => (
+            <SwiperSlide key={index}>
+              <BenefitCard {...benefit} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </SwiperContainer>
+    </Section>
   );
 };
 

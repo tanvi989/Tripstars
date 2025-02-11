@@ -23,6 +23,7 @@ import BudgetSection from "./sections/BudgetSection";
 import ContactForm from "./sections/ContactForm";
 import VideoThumbnail from "./sections/VideoThumbnail";
 import BendingCarosual from "./sections/BendingCarosual";
+import TravelSection from "./sections/TravelSection";
 export default function HomePage() {
   return (
     <>
@@ -53,6 +54,7 @@ export default function HomePage() {
       <Banner/> 
       <ContactForm/>
       <BendingCarosual />
+      {/* <TravelSection /> */}
      {/* <ResponsiveBanner /> */}
       {/* <MediaMentions /> */}
     </>
