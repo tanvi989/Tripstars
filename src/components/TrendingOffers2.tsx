@@ -103,8 +103,26 @@ const Info = styled.div`
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 15px;
   font-size: 0.8rem;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+
+  .stacked-text {
+    display: inline-block;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .stacked-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+  }
 `;
 
 interface TrendingOffersProps {

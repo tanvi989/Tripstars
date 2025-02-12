@@ -666,79 +666,79 @@ export const Mauritius = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Goa",
-    image: mauritius2,
-    pricing: "₹18,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Andaman",
-    image: mauritius3,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Himachal Pradesh",
-    image: mauritius4,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Goa",
+  //   image: mauritius2,
+  //   pricing: "₹18,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Andaman",
+  //   image: mauritius3,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Himachal Pradesh",
+  //   image: mauritius4,
+  //   pricing: "₹35,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
  
-  {
-    title: "Ladakh",
-    image: mauritius5,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Ladakh",
-    image: mauritius6,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Ladakh",
-    image: mauritius7,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Ladakh",
-    image: mauritius8,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Ladakh",
-    image: mauritius9,
-    pricing: "₹49,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Ladakh",
+  //   image: mauritius5,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Ladakh",
+  //   image: mauritius6,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Ladakh",
+  //   image: mauritius7,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Ladakh",
+  //   image: mauritius8,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
+  // {
+  //   title: "Ladakh",
+  //   image: mauritius9,
+  //   pricing: "₹49,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
 ];
 
 

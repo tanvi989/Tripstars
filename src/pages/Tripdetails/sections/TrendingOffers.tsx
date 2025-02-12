@@ -156,22 +156,16 @@ const Title = styled.div`
   }
 `;
 
-const Info = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  margin-top: 10px;
-  flex-wrap:wrap;
-`;
-
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 15px;
   font-size: 0.8rem;
+  margin-right: 10px;
+  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 0.7rem;
+    margin-right: 5px;
   }
 `;
 
@@ -185,9 +179,28 @@ const Icon = styled.span<{ backgroundImage: string }>`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   filter: brightness(0) invert(1); /* Converts icons to white */
 
-  /* Rotate only the airplane icon */
+  @media (max-width: 768px) {
+    height: 14px;
+    width: 14px;
+    margin-right: 3px;
+  }
+
   ${({ backgroundImage }) =>
     backgroundImage.includes("airplane-mode-on.png") && "transform: rotate(-90deg);"}
+`;
+
+const Info = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  justify-content: space-between;
+  gap: 50px /* Add spacing between items */
+
+  @media (max-width: 768px) {
+    gap: 25px; /* Reduce spacing for mobile */
+  }
 `;
 
 
@@ -282,13 +295,24 @@ const TrendingOffers: React.FC<TrendingOffersProps> = ({ title , cards}) => {
               <CardOverlay>
                 <Title>{card.title}</Title>
                 <Info>
-                  {card.info.map((item, idx) => (
-                    <InfoItem key={idx}>
-                      <Icon backgroundImage={item.icon} />
-                      {item.text}
-                    </InfoItem>
-                  ))}
-                </Info>
+  {card.info.map((item, idx) => (
+    <InfoItem key={idx}>
+      <Icon backgroundImage={item.icon} />
+      {item.text === "Flight" ? (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: "1.1" }}>
+          <span style={{ fontSize: "0.8rem" }}>with</span>
+          <span style={{ fontSize: "0.8rem", fontWeight: "bold" }}>Flight</span>
+        </div>
+      ) : (
+        <span style={{ fontSize: "0.8rem" }}>{item.text}</span>
+      )}
+    </InfoItem>
+  ))}
+</Info>
+
+
+
+
               </CardOverlay>
             </Card>
           </SwiperSlide>
