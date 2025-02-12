@@ -7,8 +7,9 @@ import MediaMentions from "./sections/MediaMentions";
 import PartnersSection from "./sections/PartnersSection";
 import PopularDestinations from "./sections/PopularDestinations";
 import TrendingOffers from "./sections/TrendingOffers";
-import TrendingOffers2 from "./sections/TrandingOffers2";
+import TrendingOffers22 from  "../../pages/Tripdetails/sections/TrendingOffers";
 import VideoTestimonials from "./sections/VideoTestimonials";
+import {similar} from "../../components/data";
 import WhyTripstars from "./sections/WhyTripstars";
 import NewComponent from "./sections/NewComponent";
 import Popup from "../../components/common/Popup";
@@ -23,6 +24,7 @@ import BudgetSection from "./sections/BudgetSection";
 import ContactForm from "./sections/ContactForm";
 import VideoThumbnail from "./sections/VideoThumbnail";
 import BendingCarosual from "./sections/BendingCarosual";
+import TrendingOffers2 from "./sections/TrandingOffers2";
 import TravelSection from "./sections/TravelSection";
 export default function HomePage() {
   return (
@@ -46,7 +48,8 @@ export default function HomePage() {
       <WhyTripstars />
       <ExploreEurope />
   
-      <TrendingOffers2 title="Explore India"/>
+      {/* <TrendingOffers2 title="Explore India"/> */}
+      <TrendingOffers22 title="Similar packages" cards={similar}/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
       <BudgetSection/>
