@@ -104,7 +104,8 @@ const Icon = styled.img`
 // Category Name - Removed underline
 const CategoryName = styled.span`
   color: white;
-  font-size: 1.2rem;
+  font-family:'Dancing Script';
+  font-size: 1.4rem;
   font-weight: 600;
   margin-left: 10px;
 `;

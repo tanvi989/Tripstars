@@ -455,48 +455,66 @@ export const Europe = [
 // Card 3 - similar Packages
 export const similar = [
   {
-    title: "Nepal",
-    image: nepal,
-    pricing: "₹32,999/- Onwards",
+    title: 'Kashmir',
+    image: kashmir,  // ✅ Correct imported image
+    pricing: '₹29,999/- Onwards',
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
   {
-    title: "Kashmir",
-    image: kashmir,
-    pricing: "₹32,999/- Onwards",
+    title: 'Goa',
+    image: goa,  // ✅ Correct imported image
+    pricing: '₹18,999/- Onwards',
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '4N/5D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
   {
-    title: "Goa",
-    image: goa,
-    pricing: "₹32,999/- Onwards",
+    title: 'Andaman',
+    image: andaman,  // ✅ Correct imported image
+    pricing: '₹42,999/- Onwards',
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
   {
-    title: "Andaman",
-    image: andaman,
-    pricing: "₹32,999/- Onwards",
+    title: 'Himachal Pradesh',
+    image: himachal,  // ✅ Correct imported image
+    pricing: '₹35,999/- Onwards',
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '7N/8D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
   {
-    title: "Ladakh",
-    image: ladakh,
-    pricing: "₹32,999/- Onwards",
+    title: 'Ladakh',
+    image: ladakh,  // ✅ Correct imported image
+    pricing: '₹49,999/- Onwards',
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
+  },
+  {
+    title: 'North East',
+    image: north,  // ✅ Correct imported image
+    pricing: '₹55,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '8N/9D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+    ],
+  },
+  {
+    title: 'Nepal',
+    image: nepal,  // ✅ Correct imported image
+    pricing: '₹32,999/- Onwards',
+    info: [
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
 ];

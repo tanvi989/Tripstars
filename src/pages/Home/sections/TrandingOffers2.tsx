@@ -5,7 +5,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import 'swiper/css/navigation';
-import kashmir from "../../../assets/explore-india/himachal.jpg";
+import kashmir from "../../../assets/explore-india/kashmir.jpg";
 // Import Swiper styles
 import goa from "../../../assets/explore-india/goa.jpg";
 import andaman from "../../../assets/explore-india/andaman.jpg";

@@ -49,7 +49,7 @@ export default function HomePage() {
       <ExploreEurope />
   
       {/* <TrendingOffers2 title="Explore India"/> */}
-      <TrendingOffers22 title="Similar packages" cards={similar}/>
+      <TrendingOffers22 title="Explore India" cards={similar}/>
       {/* <BudgetFriendly /> */}
       <PartnersSection />
       <BudgetSection/>

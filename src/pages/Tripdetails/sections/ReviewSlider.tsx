@@ -27,12 +27,12 @@ const SliderContainer = styled.div`
 `;
 
 const PageContainer = styled.div`
-  background-color: #f6f8fa;
+
   padding: 32px;
   font-family: "Arial", sans-serif;
   color: #333;
   border-radius: 16px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
 
   @media (max-width: 480px) {
     padding: 16px;
@@ -44,7 +44,7 @@ const OverallRatingSection = styled.div`
   margin-bottom: 40px;
   padding: 32px;
   border-radius: 20px;
-  background: linear-gradient(145deg, #fff, #f0f2f5);
+
   box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.1);
 
   h1 {
@@ -126,7 +126,7 @@ const ReviewContainer = styled.div`
   background: linear-gradient(145deg, #ffffff, #f7f8fa);
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.12);
   text-align: center;
   transition: all 0.3s ease-in-out;
   display: flex;
@@ -158,6 +158,8 @@ const Stars = styled.div`
     &:nth-child(n + 5) {
       fill: #d1d1d1;
     }
+
+   
   }
 `;
 
@@ -185,7 +187,7 @@ const User = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(145deg, #e2e8f0, #ffffff);
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,7 +285,7 @@ const ReviewSlider = () => {
     <SliderContainer>
       <TitleHeading>Reviews</TitleHeading>
       <PageContainer>
-        <OverallRatingSection>
+        {/* <OverallRatingSection>
           <h1>Good</h1>
           <div className="stars">
             <StarIcon />
@@ -299,7 +301,7 @@ const ReviewSlider = () => {
             <CheckIcon />
             Trusted Reviews
           </div>
-        </OverallRatingSection>
+        </OverallRatingSection> */}
         <SwiperContainer>
           <Swiper
             modules={[Pagination, A11y]}
