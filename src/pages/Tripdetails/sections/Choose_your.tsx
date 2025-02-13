@@ -12,12 +12,12 @@ import honeymoon from "../../../assets/travelstyle/honeymoon.jpg";
 import adventure from "../../../assets/travelstyle/adventure.jpg";
 import beach from "../../../assets/travelstyle/beach.jpg";
 // Importing golden icons
-import familyIcon from "../../../assets/icons/family.png";
-import coupleIcon from "../../../assets/icons/couple.png";
-import groupIcon from "../../../assets/icons/group.png";
-import honeymoonIcon from "../../../assets/icons/honeymoon.png";
-import adventureIcon from "../../../assets/icons/adventure.png";
-import beachIcon from "../../../assets/icons/beach.png";
+import familyIcon from "../../../assets/icons/family.svg";
+import coupleIcon from "../../../assets/icons/couple.svg";
+import groupIcon from "../../../assets/icons/group.svg";
+import honeymoonIcon from "../../../assets/icons/honeymoon.svg";
+import adventureIcon from "../../../assets/icons/adventure.svg";
+import beachIcon from "../../../assets/icons/beach.svg";
 
 // Styled components
 const Container = styled.div`
@@ -97,8 +97,8 @@ const Overlay = styled.div`
 
 // Icon styling
 const Icon = styled.img`
-  width: 46px !important;
-  height: 46px !important;
+  width: 72px !important;
+  height: 80px !important;
 `;
 
 // Category Name - Removed underline
