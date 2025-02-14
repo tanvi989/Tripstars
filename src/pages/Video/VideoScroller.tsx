@@ -260,6 +260,7 @@ const VideoScroller: React.FC = () => {
       } else {
         video.pause();
         setIsPlaying(false);
+        
       }
     }
   };
