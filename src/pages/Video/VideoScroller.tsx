@@ -221,16 +221,16 @@ const VideoScroller: React.FC = () => {
   const [saved, setSaved] = useState(false);
   
   const videoSources = [Video1, Video2, Video3, Video4, Video5, Video6, Video7];
-
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (index === activeIndex) {
-        video?.play();
+        video?.play().catch(error => console.error("Auto-play failed:", error)); // Catch autoplay errors
       } else {
         video?.pause();
       }
     });
   }, [activeIndex]);
+  
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -283,13 +283,16 @@ const handleShare = () => {
       <VideoContainer ref={containerRef} onScroll={handleScroll}>
         {videoSources.map((video, index) => (
          <VideoWrapper key={index}>
-         <Video
-           ref={(el) => (videoRefs.current[index] = el)}
-           src={video}
-           loop
-           playsInline
-           onClick={() => togglePlayPause(index)}
-         />
+      <Video
+  ref={(el) => (videoRefs.current[index] = el)}
+  src={video}
+  loop
+  playsInline
+  muted // Ensure autoplay works
+  autoPlay // Start playing immediately
+  onClick={() => togglePlayPause(index)}
+/>
+
          
          {/* Floating Like, Share, Save Buttons (Only on Mobile) */}
          <FloatingButtons>
