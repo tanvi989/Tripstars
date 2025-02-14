@@ -97,7 +97,6 @@ const Video = styled.video`
   object-fit: cover;
   cursor: pointer;
 `;
-
 const PlayPauseButton = styled.button<{ show: boolean }>`
   position: absolute;
   background: rgba(0, 0, 0, 0.6);
@@ -108,7 +107,9 @@ const PlayPauseButton = styled.button<{ show: boolean }>`
   cursor: pointer;
   transition: opacity 0.3s, transform 0.3s;
 
-  ${({ show }) => !show && "opacity: 0; pointer-events: none;"} /* Hide when playing */
+  /* Hide button when playing */
+  opacity: ${({ show }) => (show ? 1 : 0)};
+  pointer-events: ${({ show }) => (show ? "auto" : "none")};
 
   /* Mobile: Centered */
   top: 50%;
@@ -123,6 +124,7 @@ const PlayPauseButton = styled.button<{ show: boolean }>`
     transform: translateX(-50%);
   }
 `;
+
 
 
 const DescriptionContainer = styled.div`
@@ -235,10 +237,13 @@ const VideoScroller: React.FC = () => {
               playsInline
               onClick={() => togglePlayPause(index)}
             />
-            {/* Play/Pause Button for Desktop */}
-            <PlayPauseButton onClick={() => togglePlayPause(index)}>
-              {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
-            </PlayPauseButton>
+           <PlayPauseButton 
+  show={!isPlaying}  // Show button when video is paused
+  onClick={() => togglePlayPause(index)}
+>
+  {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+</PlayPauseButton>
+
           </VideoWrapper>
         ))}
       </VideoContainer>
