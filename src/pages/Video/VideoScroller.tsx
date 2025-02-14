@@ -288,7 +288,7 @@ const handleShare = () => {
   src={video}
   loop
   playsInline
-  muted // Ensure autoplay works
+
   autoPlay // Start playing immediately
   onClick={() => togglePlayPause(index)}
 />
