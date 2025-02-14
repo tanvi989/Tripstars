@@ -14,11 +14,15 @@ import Tripdetailspage from "./pages/Tripdetails/Tripdetailspage";
 import NotFoundPage from './pages/NotFoundPage'
 import Faq from "./pages/Faq/Faq";
 import PaymentPolicies from "./pages/Paymentpolicy/PaymentPolicies";
+import VideoScroller from "./pages/Video/VideoScroller";
 
 function App() {
+  const isVideoPage = location.pathname === "/video"; // Check if we are on the /video page
   return (
+    
     <div className="App">
-      <Navbar />
+  {/* Hide Navbar only if not on /video */}
+  {!isVideoPage && <Navbar />}
       {/* <Popup /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />   
@@ -30,8 +34,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage title="Privacy Policy" />} />
         <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
         <Route path="/payment" element={<PaymentPolicies />} />   
+        <Route path="/video" element={<VideoScroller />} />   
       </Routes>
-      <Footer />
+         {/* Hide Footer only if not on /video */}
+         {!isVideoPage && <Footer />}
     </div>
   );
 }
