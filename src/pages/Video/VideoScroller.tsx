@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaPlay, FaPause } from "react-icons/fa"; // Import Play/Pause Icons
+import { FaHeart, FaShare, FaBookmark } from "react-icons/fa"; // Import Like, Share, Save Icons
 
 // Import videos
 import Video1 from "../../assets/Videos/Testimonial/1.mp4";
@@ -16,7 +17,7 @@ const videoData = [
   {
     title: "Aishwarya's Dubai Vacation",
     tags: ["Dubai", "Skyline", "Luxury", "Shopping", "Cultural Moments"],
-    description: "Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh.",
+    description: "Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh.Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh. Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh ",
   },
   {
     title: "Dubai's Iconic Landmarks",
@@ -62,6 +63,51 @@ const Container = styled.div`
   }
 `;
 
+const FloatingButtons = styled.div`
+  position: absolute;
+  right: 10px;
+  bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width: 1024px) {
+    display: none; /* Hide on desktop */
+  }
+`;
+
+const ActionButton = styled.button<{ active?: boolean }>`
+  background: ${({ active }) => (active ? "#e63946" : "rgba(0, 0, 0, 0.6)")};
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+
+  &:hover {
+    background: ${({ active }) => (active ? "#d62828" : "rgba(255, 255, 255, 0.3)")};
+  }
+`;
+
+
+
+const VideoWrapper = styled.div`
+  width: 100%;
+  height: 100vh; /* Full height for each video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  position: relative;
+
+  @media (max-width: 1024px) { /* Mobile fix */
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+`;
+
 const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -81,15 +127,7 @@ const VideoContainer = styled.div`
   }
 `;
 
-const VideoWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  position: relative;
-`;
+
 
 const Video = styled.video`
   width: 100%;
@@ -179,7 +217,9 @@ const VideoScroller: React.FC = () => {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-
+  const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
+  
   const videoSources = [Video1, Video2, Video3, Video4, Video5, Video6, Video7];
 
   useEffect(() => {
@@ -223,28 +263,49 @@ const VideoScroller: React.FC = () => {
       }
     }
   };
+const handleShare = () => {
+  if (navigator.share) {
+    navigator.share({
+      title: videoData[activeIndex].title,
+      text: videoData[activeIndex].description,
+      url: window.location.href, // Current page URL
+    })
+    .then(() => console.log("Shared successfully!"))
+    .catch((error) => console.error("Error sharing:", error));
+  } else {
+    alert("Sharing not supported on this browser.");
+  }
+};
 
   return (
     <Container>
       <VideoContainer ref={containerRef} onScroll={handleScroll}>
         {videoSources.map((video, index) => (
-          <VideoWrapper key={index}>
-            <Video
-              ref={(el) => (videoRefs.current[index] = el)}
-              src={video}
-              muted
-              loop
-              playsInline
-              onClick={() => togglePlayPause(index)}
-            />
-           <PlayPauseButton 
-  show={!isPlaying}  // Show button when video is paused
-  onClick={() => togglePlayPause(index)}
->
-  {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
-</PlayPauseButton>
+         <VideoWrapper key={index}>
+         <Video
+           ref={(el) => (videoRefs.current[index] = el)}
+           src={video}
+           loop
+           playsInline
+           onClick={() => togglePlayPause(index)}
+         />
+         
+         {/* Floating Like, Share, Save Buttons (Only on Mobile) */}
+         <FloatingButtons>
+           <ActionButton active={liked} onClick={() => setLiked(!liked)}>
+             <FaHeart />
+           </ActionButton>
+           <ActionButton onClick={handleShare}>
+  <FaShare />
+</ActionButton>
 
-          </VideoWrapper>
+           <ActionButton active={saved} onClick={() => setSaved(!saved)}>
+             <FaBookmark />
+           </ActionButton>
+         </FloatingButtons>
+       
+       </VideoWrapper>
+       
         ))}
       </VideoContainer>
 
