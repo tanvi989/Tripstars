@@ -219,7 +219,8 @@ const VideoScroller: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
-  
+  const [isMuted, setIsMuted] = useState(true); // Start muted
+
   const videoSources = [Video1, Video2, Video3, Video4, Video5, Video6, Video7];
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -253,17 +254,24 @@ const VideoScroller: React.FC = () => {
 
   const togglePlayPause = (index: number) => {
     const video = videoRefs.current[index];
-    if (video) {
-      if (video.paused) {
-        video.play();
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
-        
+    const togglePlayPause = (index: number) => {
+      const video = videoRefs.current[index];
+      if (video) {
+        if (video.paused) {
+          // If the video was paused, unmute it and play
+          video.muted = isMuted; // Set the mute based on the state
+          video.play();
+          setIsPlaying(true);
+        } else {
+          video.pause();
+          setIsPlaying(false);
+        }
       }
-    }
+    };
+    
+    
   };
+  
 const handleShare = () => {
   if (navigator.share) {
     navigator.share({
@@ -283,15 +291,21 @@ const handleShare = () => {
       <VideoContainer ref={containerRef} onScroll={handleScroll}>
         {videoSources.map((video, index) => (
          <VideoWrapper key={index}>
-      <Video
+<Video
   ref={(el) => (videoRefs.current[index] = el)}
   src={video}
   loop
   playsInline
-
-  autoPlay // Start playing immediately
-  onClick={() => togglePlayPause(index)}
+  autoPlay // Ensures the video plays automatically
+  onClick={() => {
+    setIsMuted(false); // Unmute the video when the user clicks to play
+    togglePlayPause(index);
+  }} // Toggle play/pause on click
+  muted={isMuted} // Controlled mute state
 />
+
+
+
 
          
          {/* Floating Like, Share, Save Buttons (Only on Mobile) */}
