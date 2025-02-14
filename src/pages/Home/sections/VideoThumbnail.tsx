@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import thumbnil1 from "../../../assets/thumbnil/THUBNAIL 1a (1).jpg"
-import thumbnil2 from "../../../assets/thumbnil/THUBNAIL 1a.jpg"
 import thumbnil3 from "../../../assets/thumbnil/THUBNAIL 3.jpg"
 import thumbnil4 from "../../../assets/thumbnil/THUBNAIL 4.jpg"
 import thumbnil5 from "../../../assets/thumbnil/THUBNAIL 5.jpg"
-// Styled components remain the same except for CarouselContainer, CarouselTrack, CarouselSlide, and CarouselIndicators
 
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 15rem;
+
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -26,29 +25,27 @@ const SliderContainer = styled.div`
   }
 `;
 
-
 const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
 
-
   @media (min-width: 768px) {
-    padding: 3rem 2rem;
+    // padding: 3rem 2rem;
   }
 `;
 
-const CardsGrid = styled.div`
-  display: none;
-  
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+const Title = styled.h2`
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #d5c156;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 
@@ -57,11 +54,9 @@ const VideoCard = styled.div`
   border-radius: 15px;
   border: 2px solid #b0e0e6;
   padding: 10px;
-  width: 100%;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 0 auto;
 `;
 
 const VideoContainer = styled.a`
@@ -82,6 +77,7 @@ const Thumbnail = styled.img`
 `;
 
 const PlayButton = styled.div`
+display:none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -100,6 +96,7 @@ const PlayButton = styled.div`
   }
 
   @media (min-width: 768px) {
+  display:none;
     width: 70px;
     height: 70px;
   }
@@ -124,44 +121,11 @@ const VideoText = styled.div`
   text-align: center;
 
   @media (min-width: 768px) {
-    font-size: 16px;
-    padding: 20px 15px;
+    // font-size: 16px;
+    // padding: 20px 15px;
   }
 `;
 
-const MobileSwiper = styled.div`
-  @media (min-width: 768px) {
-    display: none;
-  }
-
-  .swiper {
-    padding-bottom: 40px;
-  }
-
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: #bbb;
-    opacity: 1;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #0096d6;
-  }
-`;
-const Title = styled.h2`
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color:#d5c156 ;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
 const VideoThumbnail = () => {
   const videos = [
     {
@@ -170,23 +134,22 @@ const VideoThumbnail = () => {
       text: "Bali Bliss : Aditya Gadhvi's Unforgettable Journey"
     },
     {
-      thumbnail:thumbnil1,
+      thumbnail: thumbnil1,
       link: "https://youtu.be/LyfnbIjW5Q0?si=cc1JVf0YM6gzFa_R",
-      text: "Happy Travellers | Mr. Chirag | Vietnam Tours | Tripstars Holidays"
+      text: "Happy Travellers | Vietnam Tours | Tripstars Holidays"
     },
-   
     {
-      thumbnail:thumbnil3,
+      thumbnail: thumbnil3,
       link: "https://www.youtube.com/watch?v=ghi789",
       text: "Travel Guides | Destination Videos | WanderOn TV"
     },
-     {
-      thumbnail:thumbnil4,
+    {
+      thumbnail: thumbnil4,
       link: "https://www.youtube.com/watch?v=ghi789",
       text: "Travel Guides | Destination Videos | WanderOn TV"
     },
-     {
-      thumbnail:thumbnil5,
+    {
+      thumbnail: thumbnil5,
       link: "https://www.youtube.com/watch?v=ghi789",
       text: "Travel Guides | Destination Videos | WanderOn TV"
     }
@@ -194,33 +157,19 @@ const VideoThumbnail = () => {
 
   return (
     <SliderContainer>
-    <Wrapper>
-    <Title> Unforgettable Journeys, Captured in Moments ❤️</Title>
-    {/* Rest of your component */}
-      <CardsGrid>
-
-        {videos.map((video, index) => (
-          <VideoCard key={index}>
-            <VideoContainer href={video.link} target="_blank" rel="noopener noreferrer">
-              <Thumbnail src={video.thumbnail} alt={`Video ${index + 1}`} />
-              <PlayButton>
-                <PlayIcon viewBox="0 0 24 24">
-                  <path d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z" />
-                </PlayIcon>
-              </PlayButton>
-            </VideoContainer>
-            <VideoText>{video.text}</VideoText>
-          </VideoCard>
-        ))}
-      </CardsGrid>
-
-      <MobileSwiper>
+      <Wrapper>
+        <Title> Unforgettable Journeys, Captured in Moments ❤️</Title>
+        
+        {/* Swiper for Desktop and Mobile */}
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={20}
-          slidesPerView={1}
+          slidesPerView={1} // Default for mobile
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
+          breakpoints={{
+            768: { slidesPerView: 3 }, // Show 3 videos per row on desktop
+          }}
         >
           {videos.map((video, index) => (
             <SwiperSlide key={index}>
@@ -237,9 +186,8 @@ const VideoThumbnail = () => {
               </VideoCard>
             </SwiperSlide>
           ))}
-        </Swiper> 
-      </MobileSwiper>
-    </Wrapper>
+        </Swiper>
+      </Wrapper>
     </SliderContainer>
   );
 };
