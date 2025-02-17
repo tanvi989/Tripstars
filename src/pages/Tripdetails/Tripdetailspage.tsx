@@ -16,8 +16,9 @@ import TrendingOffers2 from "../../components/TrendingOffers2";
 import {Bali, similar, Vietnam, Thailand, Europe, Dubai, Australia , Baku, Hongkong, Japan, Malaysia,Maldives, Mauritius, Singapore, southAfrica, Turkey} from "../../components/data";
 import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
+import PopularDestinations from "../Home/sections/PopularDestinations";
+import PopularDestinations2 from "./sections/DestinationProps";
 
-// Define a union type for location keys
 type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
   // const location = "Bali"; // Set to "Bali" for now
@@ -41,15 +42,17 @@ export default function Tripdetailspage() {
   return (
     <>
       <Ban2
-        image={banner?.image}
+        image={banner?.image} 
         destination={banner?.title}
     
       />
-      <DynamicSlider
+  <PopularDestinations2 title="Things to do in "    highlightWord={banner?.title} thingsToDo={destinationsData.bali.thingsToDo} />
+      {/* <PopularDestinations /> */}
+      {/* <DynamicSlider
         title={`Things to do in `}
         highlightedWord={banner?.title}
         destinations={thingsToDo}
-      />
+      /> */}
 {location == "turkey" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Turkey} />: ""}
 {location == "southAfrica" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={southAfrica} />: ""}
 {location == "singapore" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Singapore} />: ""} 

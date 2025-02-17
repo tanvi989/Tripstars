@@ -17,16 +17,16 @@ import TrendingOffers from "../Tripdetails/sections/TrendingOffers.tsx";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
 import styled from "styled-components";
 import DynamicSlider from "./sections/DynamicSlider";
-import img1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Bali swing.png";
-import img2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Banova water sport.png";
-import img3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kechak dance.png";
-import img4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kintamani tour.png";
-import img5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/NUSA PANEDA.png";
-import img6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Tanah lot temple.png";
-import img7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Ulundanu temple.png";
-import img8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mtv ride.png";
-import img9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice terace 2.png";
-import img10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice terace.png";
+import img1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import img10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
 import HelpCard from "./sections/HelpCard.tsx";
 import trandingimg1 from "../../assets/Tripdetails/bali/itinerary/Artboard 1.png";
 import trandingimg2 from "../../assets/Tripdetails/bali/itinerary/Artboard 2.png";
@@ -189,11 +189,7 @@ export default function Thirdpage() {
               <Highlight />
             </OverviewWrapper>
           </PageWrapper>
-          <DynamicSlider
-            title="Things to do in"
-            highlightedWord="Bali"
-            destinations={ThingsToDoInBali}
-          />
+       
 
           {/* <PricingTables /> */}
           <TabbedTable />

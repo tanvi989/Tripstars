@@ -1,15 +1,18 @@
 // src/data.js
 
 // bali
-import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Bali swing.png";
-import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Banova water sport.png";
-import baliImg3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kechak dance.png";
-import baliImg4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kintamani tour.png";
-import baliImg5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/NUSA PANEDA.png";
-import baliImg6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Tanah lot temple.png";
-import baliImg7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Ulundanu temple.png";
-import baliImg8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mtv ride.png";
-import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice terace 2.png";
+import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/kecak-dance.png";
+import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/kintamani-volcano.png";
+import baliImg3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/nusa-penida.png";
+import baliImg4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/tanah-lot-temple.png";
+import baliImg5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/git-git-waterfall.png";
+import baliImg6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/benova-watersports.png";
+import baliImg7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-market.png";
+import baliImg8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/river-rafting.png";
+import baliImg10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-swing.png";
+import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ulun-danu-temple.png";
+import baliImg12 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice-terrace.png";
 
 // Updated Vietnam Trip Details
 import vietnamImg1 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/Ba na hills.png";
@@ -156,16 +159,20 @@ export const destinationsData = {
       description: "Discover stunning locations and create unforgettable memories.",
     },
     thingsToDo: [
-      // { name: "Bali Swing", image: baliImg1 },
-      { name: "Banova Water Sport", image: baliImg2 },
-      { name: "Kechak Dance", image: baliImg3 },
-      { name: "Kintamani Tour", image: baliImg4 },
-      { name: "Nusa Paneda", image: baliImg5 },
-      { name: "Tanah Lot Temple", image: baliImg6 },
-      { name: "Ulun Danu Temple", image: baliImg7 },
-      { name: "MTV Ride", image: baliImg8 },
-      { name: "Rice Terrace", image: baliImg9 },
+      { name: "Kechak Dance", image: baliImg1 },
+      { name: "Kintamani Volcano", image: baliImg2 },
+      { name: "Nusa Penida", image: baliImg3 },
+      { name: "Tanah Lot Temple", image: baliImg4 },
+      { name: "Gitgit Waterfall", image: baliImg5 },
+      { name: "Benova Water Sport", image: baliImg6 },
+      { name: "Ubud Market", image: baliImg7 },
+      { name: "ATV Ride", image: baliImg8 },
+      { name: "River Rafting", image: baliImg9 },
+      { name: "Bali Swing", image: baliImg10 },
+      { name: "Ulun Danu Temple", image: baliImg11 },
+      { name: "Rice Terrace", image: baliImg12 },
     ],
+    
    
   },
   malaysia: {
