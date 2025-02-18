@@ -112,7 +112,7 @@ const FooterSection = styled.div<{ isOpen: boolean }>`
         display: flex;
         align-items: center;
         gap: 10px;
-        color: #4caf50;
+        color: #ffd700;
         text-decoration: none;
         
         .icon {
@@ -143,7 +143,7 @@ const FooterContact = styled.div`
   }
 
   a {
-    color: #4caf50;
+    color: #ffd700;
     text-decoration: none;
 
     &:hover {
@@ -230,7 +230,7 @@ const BranchAddress = styled.p`
   font-size: 14px;
   margin: 5px 0;
   line-height: 1.4;
-  color: #4caf50;
+  color: #ffd700;
 `;
 
 const BranchContacts = styled.div`
@@ -241,7 +241,7 @@ const BranchContacts = styled.div`
 `;
 
 const ContactLink = styled.a`
-  color: #4caf50;
+  color: #ffd700;
   text-decoration: none;
   display: flex;
   align-items: center;
