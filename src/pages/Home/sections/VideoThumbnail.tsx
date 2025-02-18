@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import thumbnil1 from "../../../assets/thumbnil/THUBNAIL 1a (1).jpg"
-import thumbnil3 from "../../../assets/thumbnil/THUBNAIL 3.jpg"
-import thumbnil4 from "../../../assets/thumbnil/THUBNAIL 4.jpg"
-import thumbnil5 from "../../../assets/thumbnil/THUBNAIL 5.jpg"
+import thumbnil1 from "../../../assets/thumbnil/1.jpg"
+import thumbnil2 from "../../../assets/thumbnil/2.jpg"
+import thumbnil3 from "../../../assets/thumbnil/3.jpg"
+import thumbnil4 from "../../../assets/thumbnil/4.jpg"
+
 
 const SliderContainer = styled.div`
   position: relative;
@@ -135,23 +136,23 @@ const VideoThumbnail = () => {
     },
     {
       thumbnail: thumbnil1,
-      link: "https://youtu.be/LyfnbIjW5Q0?si=cc1JVf0YM6gzFa_R",
+      link: "https://www.youtube.com/watch?v=LyfnbIjW5Q0",
       text: "Happy Travellers | Vietnam Tours | Tripstars Holidays"
     },
     {
+      thumbnail: thumbnil2,
+      link: "https://www.youtube.com/watch?v=ybYvJyN5cv4",
+      text: "Our Unforgettable | Dubai Trip with | Tripstars Holidays"
+    },
+    {
       thumbnail: thumbnil3,
-      link: "https://www.youtube.com/watch?v=ghi789",
-      text: "Travel Guides | Destination Videos | WanderOn TV"
+      link: "https://www.youtube.com/watch?v=myIKYrcJ7WY",
+      text: "Akash Jain's Memorable Family Trip | to Vietnam with Tripstars."
     },
     {
       thumbnail: thumbnil4,
-      link: "https://www.youtube.com/watch?v=ghi789",
-      text: "Travel Guides | Destination Videos | WanderOn TV"
-    },
-    {
-      thumbnail: thumbnil5,
-      link: "https://www.youtube.com/watch?v=ghi789",
-      text: "Travel Guides | Destination Videos | WanderOn TV"
+      link: "https://www.youtube.com/shorts/8QpandkwtYg",
+      text: "Mr. Omkar Tambe's | Romantic Bali Honeymoon | Tripstars Holidays."
     }
   ];
 

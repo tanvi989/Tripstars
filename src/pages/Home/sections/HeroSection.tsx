@@ -4,6 +4,13 @@ import { useSwipeable } from "react-swipeable";
 import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
+
+import australia from "../../../assets/banner/australia.jpg";
+import bali from "../../../assets/banner/bali.jpg";
+import europe from "../../../assets/banner/europe.jpg";
+import hongKong from "../../../assets/banner/hong-kong.jpg";
+import vietnam from "../../../assets/banner/vietnam.jpg";
+
 // Define types for styled component props
 type SlideProps = {
   bgImage: string;
@@ -64,13 +71,7 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const images = [
-    "https://images.emtcontent.com/holiday-img/home-img/rajasthan-banner-home.png",
-    "https://images.emtcontent.com/holiday-img/home-img/kerala_newbb.png",
-    "https://images.emtcontent.com/holiday-img/home-img/dubai_newbb.png",
-    "https://images.emtcontent.com/holiday-img/home-img/europe-banner-home.webp",
-  ];
-
+  const images = [australia, bali, europe, hongKong];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
