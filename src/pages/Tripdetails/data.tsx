@@ -58,38 +58,28 @@ import bakuImg5 from "../../assets/Tripdetails/new/baku/things-to-do-square-imag
 import bakuImg6 from "../../assets/Tripdetails/new/baku/things-to-do-square-images/shahdagh.png";
 import bakuImg7 from "../../assets/Tripdetails/new/baku/things-to-do-square-images/yanar-dag.png";
 
-// Import images for "Things to Do"
-
-import thailandImg1 from "../../assets/Tripdetails/thailand/Things to do/Bangkok city Tour.png";
-import thailandImg2 from "../../assets/Tripdetails/thailand/Things to do/Krabi 4 island tour.png";
-import thailandImg3 from "../../assets/Tripdetails/thailand/Things to do/Marine park thailand.png";
-import thailandImg4 from "../../assets/Tripdetails/thailand/Things to do/Phi phi island tour.png";
-import thailandImg5 from "../../assets/Tripdetails/thailand/Things to do/phuket city tour.png";
-import thailandImg6 from "../../assets/Tripdetails/thailand/Things to do/Safari world.png";
-
 //australia
-import australiaImg1 from "../../assets/Tripdetails4/australia/things-to-do/blue-mountains.png"
-import australiaImg2 from "../../assets/Tripdetails4/australia/things-to-do/gold-coast.png"
-import australiaImg3 from "../../assets/Tripdetails4/australia/things-to-do/great-ocean-road.png"
-import australiaImg4 from "../../assets/Tripdetails4/australia/things-to-do/harbour-bridge.png"
-import australiaImg5 from "../../assets/Tripdetails4/australia/things-to-do/kangaroo-island.png"
-import australiaImg6 from "../../assets/Tripdetails4/australia/things-to-do/phillip-island.png"
-import australiaImg7 from "../../assets/Tripdetails4/australia/things-to-do/sea-world.png"
-import australiaImg8 from "../../assets/Tripdetails4/australia/things-to-do/sydney-opera-house.png"
-import australiaImg9 from "../../assets/Tripdetails4/australia/things-to-do/warner-bros.png"
-
+import australiaImg1 from "../../assets/Tripdetails/new/australia/things-to-do-square/blue-mountains.png"
+import australiaImg2 from "../../assets/Tripdetails/new/australia/things-to-do-square/gold-coast.png"
+import australiaImg3 from "../../assets/Tripdetails/new/australia/things-to-do-square/great-ocean-road.png"
+import australiaImg4 from "../../assets/Tripdetails/new/australia/things-to-do-square/harbour-bridge.png"
+import australiaImg5 from "../../assets/Tripdetails/new/australia/things-to-do-square/kangaroo-island.png"
+import australiaImg6 from "../../assets/Tripdetails/new/australia/things-to-do-square/phillip-island.png"
+import australiaImg7 from "../../assets/Tripdetails/new/australia/things-to-do-square/sea-world.png"
+import australiaImg8 from "../../assets/Tripdetails/new/australia/things-to-do-square/sydney-opera-house.png"
+import australiaImg9 from "../../assets/Tripdetails/new/australia/things-to-do-square/warner-bros.png"
 
 
 // Europe Images
-import europeImg1 from "../../assets/Tripdetails4/europe/Things to do_/Cable car.png";
-import europeImg2 from "../../assets/Tripdetails4/europe/Things to do_/Cruise on river seine.png";
-import europeImg3 from "../../assets/Tripdetails4/europe/Things to do_/Switzer land.png";
-import europeImg4 from "../../assets/Tripdetails4/europe/Things to do_/VENICE.png";
-import europeImg5 from "../../assets/Tripdetails4/europe/Things to do_/Vatican city PNG.png";
-import europeImg6 from "../../assets/Tripdetails4/europe/Things to do_/eiffel tower.png";
-import europeImg7 from "../../assets/Tripdetails4/europe/Things to do_/leaning tower pissa.png";
-import europeImg8 from "../../assets/Tripdetails4/europe/Things to do_/mt. titlis.png";
-import europeImg9 from "../../assets/Tripdetails4/europe/Things to do_/st marks square.png";
+import europeImg1 from "../../assets/Tripdetails/new/europe/things-to-do-europe/cable-car.png";
+import europeImg2 from "../../assets/Tripdetails/new/europe/things-to-do-europe/cruise-on-river-seine.png";
+import europeImg3 from "../../assets/Tripdetails/new/europe/things-to-do-europe/eiffel-tower.png";
+import europeImg4 from "../../assets/Tripdetails/new/europe/things-to-do-europe/leaning-tower-of-pissa.png";
+import europeImg5 from "../../assets/Tripdetails/new/europe/things-to-do-europe/mount-titlis.png";
+import europeImg6 from "../../assets/Tripdetails/new/europe/things-to-do-europe/st-mark_s-square.png";
+import europeImg7 from "../../assets/Tripdetails/new/europe/things-to-do-europe/switzerland.png";
+import europeImg8 from "../../assets/Tripdetails/new/europe/things-to-do-europe/vatican-city.png";
+import europeImg9 from "../../assets/Tripdetails/new/europe/things-to-do-europe/venice.png";
 
 
 //HONG KONG
