@@ -50,7 +50,7 @@ const TrendingOffersWrapper = styled.div`
     padding-top: 0;
     margin-top: 0;
     padding: 0 10px; /* Adjust padding for smaller screens */
-  }
+} 
 `;
 
 const PageWrapper = styled.div`

@@ -96,13 +96,13 @@ import hongkongimg7 from "../../assets/Tripdetails/new/hong-kong/things-to-do-ho
 
 
 // Japan Images
-import japanImg1 from "../../assets/Tripdetails4/japan/things-to-do/Arakurayama Sengen Park.png";
-import japanImg2 from "../../assets/Tripdetails4/japan/things-to-do/Osaka Castle.png";
-import japanImg3 from "../../assets/Tripdetails4/japan/things-to-do/Tokyo Tower.png";
-import japanImg4 from "../../assets/Tripdetails4/japan/things-to-do/cherry blossom.png";
-import japanImg5 from "../../assets/Tripdetails4/japan/things-to-do/kamikochi.png";
-import japanImg6 from "../../assets/Tripdetails4/japan/things-to-do/mount fuji.png";
-import japanImg7 from "../../assets/Tripdetails4/japan/things-to-do/tokyo station.png";
+import japanImg1 from "../../assets/Tripdetails/new/japan/Things to do square/arakurayama-sengen-park.png";
+import japanImg2 from "../../assets/Tripdetails/new/japan/Things to do square/cherry-blossom.png";
+import japanImg3 from "../../assets/Tripdetails/new/japan/Things to do square/kamikochi.png";
+import japanImg4 from "../../assets/Tripdetails/new/japan/Things to do square/mount-fuji.png";
+import japanImg5 from "../../assets/Tripdetails/new/japan/Things to do square/okayama-korakuen.png";
+import japanImg6 from "../../assets/Tripdetails/new/japan/Things to do square/osaka-castle.png";
+import japanImg7 from "../../assets/Tripdetails/new/japan/Things to do square/tokyo-station.png";
 
 
 // Malaysia Images
