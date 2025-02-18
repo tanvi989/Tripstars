@@ -54,7 +54,7 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <NotFoundContainer>
-      <Title>404 - Page Not Found</Title>
+      <Title>403 - Page Not Found</Title>
       <Subtitle>
         Oops! The page you're looking for doesn't exist or has been moved.
       </Subtitle>
