@@ -1,24 +1,27 @@
 // src/data.js
 
 // bali
-import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Bali swing.png";
-import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Banova water sport.png";
-import baliImg3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kechak dance.png";
-import baliImg4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Kintamani tour.png";
-import baliImg5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/NUSA PANEDA.png";
-import baliImg6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Tanah lot temple.png";
-import baliImg7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/Ulundanu temple.png";
-import baliImg8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mtv ride.png";
-import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice terace 2.png";
+import baliImg1 from "../../assets/Tripdetails/bali/ThingsToDoInBali/atv-ride.png";
+import baliImg2 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-swing.png";
+import baliImg3 from "../../assets/Tripdetails/bali/ThingsToDoInBali/kecak-dance.png";
+import baliImg4 from "../../assets/Tripdetails/bali/ThingsToDoInBali/kintamani-volcano.png";
+import baliImg5 from "../../assets/Tripdetails/bali/ThingsToDoInBali/git-git-waterfall.png";
+import baliImg6 from "../../assets/Tripdetails/bali/ThingsToDoInBali/benova-watersports.png";
+import baliImg7 from "../../assets/Tripdetails/bali/ThingsToDoInBali/nusa-penida.png";
+import baliImg8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice-terrace.png";
+import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/river-rafting.png";
+import baliImg10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/tanah-lot-temple.png";
+import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-market.png";
+import baliImg12 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ulun-danu-temple.png";
 
 // Updated Vietnam Trip Details
-import vietnamImg1 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/Ba na hills.png";
-import vietnamImg2 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/Chu chi tunnel.png";
-import vietnamImg3 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/City tour ha noi.png";
-import vietnamImg4 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/Cruise.png";
-import vietnamImg5 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/French village.png";
-import vietnamImg6 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/GOLDEN BRIDGE.png";
-import vietnamImg7 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/Mekong delta.png";
+import vietnamImg1 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/ba-na-hills.png";
+import vietnamImg2 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/chu-chi-tunnel.png";
+import vietnamImg3 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/french-village.png";
+import vietnamImg4 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/golden-bridge.png";
+import vietnamImg5 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/ha-long-bay-cruise.png";
+import vietnamImg6 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/golden-bridge.png";
+import vietnamImg7 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/mekong-delta.png";
 // Turkey Images
 import turkeyImg1 from "../../assets/Tripdetails4/turkey/things-to-do/Cappadocia.png";
 import turkeyImg2 from "../../assets/Tripdetails4/turkey/things-to-do/Galata Tower.png";
@@ -83,13 +86,13 @@ import europeImg9 from "../../assets/Tripdetails/new/europe/things-to-do-europe/
 
 
 //HONG KONG
-import hongkongimg1 from "../../assets/Tripdetails4/hong-kong/things-to-do/Hong Kong Disneyland.png"
-import hongkongimg2 from "../../assets/Tripdetails4/hong-kong/things-to-do/Ocean Park.png"
-import hongkongimg3 from "../../assets/Tripdetails4/hong-kong/things-to-do/Shanghai Tower.png"
-import hongkongimg4 from "../../assets/Tripdetails4/hong-kong/things-to-do/Sky 100 Hong Kong Observation Deck.png"
-import hongkongimg5 from "../../assets/Tripdetails4/hong-kong/things-to-do/Ten Thousand Buddhas Monastery.png"
-import hongkongimg6 from "../../assets/Tripdetails4/hong-kong/things-to-do/Tian Tan Buddha.png"
-import hongkongimg7 from "../../assets/Tripdetails4/hong-kong/things-to-do/Victoria Harbour.png"
+import hongkongimg1 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/hong-kong-disneyland.png"
+import hongkongimg2 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/ocean-park.png"
+import hongkongimg3 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/shanghai-tower.png"
+import hongkongimg4 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/sky-100-hong-kong-observation-deck.png"
+import hongkongimg5 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/ten-thousand-buddhas-monastery.png"
+import hongkongimg6 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/tian-tan-buddha.png"
+import hongkongimg7 from "../../assets/Tripdetails/new/hong-kong/things-to-do-hong-kong/victoria-harbour.png"
 
 
 // Japan Images
@@ -294,28 +297,28 @@ singapore: {
 
 },
 
-thailand: {
-  banner: {
-    image:
-      "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
-    title: "Thailand",
-    description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
-  },
-  thingsToDo: [
-    { name: "Grand Palace", image: thailandImg1 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Elephant Sanctuary", image: thailandImg5 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-    { name: "Phuket Beaches", image: thailandImg2 },
-    { name: "Phi Phi Islands", image: thailandImg3 },
-    { name: "Floating Market", image: thailandImg4 },
-  ],
+// thailand: {
+//   banner: {
+//     image:
+//       "https://media.easemytrip.com/media/ppc/destination/Common/CommonxW4yz5.png",
+//     title: "Thailand",
+//     description: "Explore the stunning beaches, vibrant culture, and historic landmarks of Thailand.",
+//   },
+//   thingsToDo: [
+//     { name: "Grand Palace", image: thailandImg1 },
+//     { name: "Phuket Beaches", image: thailandImg2 },
+//     { name: "Phi Phi Islands", image: thailandImg3 },
+//     { name: "Floating Market", image: thailandImg4 },
+//     { name: "Elephant Sanctuary", image: thailandImg5 },
+//     { name: "Phuket Beaches", image: thailandImg2 },
+//     { name: "Phi Phi Islands", image: thailandImg3 },
+//     { name: "Floating Market", image: thailandImg4 },
+//     { name: "Phuket Beaches", image: thailandImg2 },
+//     { name: "Phi Phi Islands", image: thailandImg3 },
+//     { name: "Floating Market", image: thailandImg4 },
+//   ],
 
-},
+// },
 turkey: {
   banner: {
     image:
