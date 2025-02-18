@@ -3,13 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import bgImage from "../../../assets/images/backgrounds/Videotestimonials-bg.png";
 
-import Video1 from "../../../assets/Videos/Testimonial/1.mp4";
-import Video2 from "../../../assets/Videos/Testimonial/2.mp4";
-import Video3 from "../../../assets/Videos/Testimonial/3.mp4";
-import Video4 from "../../../assets/Videos/Testimonial/4.mp4";
-import Video5 from "../../../assets/Videos/Testimonial/5.mp4";
-import Video6 from "../../../assets/Videos/Testimonial/6.mp4";
-import Video7 from "../../../assets/Videos/Testimonial/7.mp4";
+import Video1 from "../../../assets/Videos/Testimonial gif/1.gif";
+import Video2 from "../../../assets/Videos/Testimonial gif/2.gif";
+import Video3 from "../../../assets/Videos/Testimonial gif/3.gif";
+import Video4 from "../../../assets/Videos/Testimonial gif/4.gif";
+import Video5 from "../../../assets/Videos/Testimonial gif/5.gif";
+import Video6 from "../../../assets/Videos/Testimonial gif/6.gif";
+import Video7 from "../../../assets/Videos/Testimonial gif/7.gif";
+
 
 const Container = styled.div`
   padding: 0 10rem;
@@ -112,9 +113,6 @@ const ImageWrapper = styled.div`
 
 const testimonials = [
   {
-    videoUrl: Video1,
-  },
-  {
     videoUrl: Video2,
   },
   {
@@ -173,20 +171,14 @@ export default function VideoTestimonials() {
           >
             {testimonials.map((item, index) => (
               <SwiperSlide key={index}>
-                <Card>
+              <Card>
+                <a href="/video">
                   <ImageWrapper>
-                    <video
-                      src={item.videoUrl}
-                      autoPlay
-                      playsInline
-                      loop
-                      muted
-                      controls
-                      onPlay={handlePlay}
-                    />
+                    <img src={item.videoUrl} alt={`Testimonial ${index + 1}`} />
                   </ImageWrapper>
-                </Card>
-              </SwiperSlide>
+                </a>
+              </Card>
+            </SwiperSlide>
             ))}
           </Swiper>
         </CardsWrapper>
