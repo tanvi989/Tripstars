@@ -4,6 +4,11 @@ import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+import Img1 from "../../../assets/images/WhyTripstars/15k Customers.png";
+import Img2 from "../../../assets/images/WhyTripstars/Award.png";
+import Img3 from "../../../assets/images/WhyTripstars/Customer service.png";
+
+
 // Optional fade-in animation (can be removed if not needed)
 const fadeIn = keyframes`
   from {
@@ -241,21 +246,22 @@ const StaticForm: React.FC = () => {
             />
           </div>
 
-          {/* Additional Logos */}
-          {/* <div className="logo-container">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-              alt="Google Logo"
-            />
-            // {/* <img
-            //   src="https://www.freepik.com/free-vector/instagram-vector-social-media-icon-7-june-2021-bangkok-thailand_18246125.htm#fromView=search&page=1&position=1&uuid=d86f3ee4-3553-4d28-bb0f-4004d76d8391&query=facebook+logo+"
-            //   alt="FIFA Logo"
-            // /> */}
-            {/* <img
-              src="https://img.freepik.com/free-psd/3d-facebook-icon-vibrant-blue-transparent-background_84443-30332.jpg?t=st=1739953397~exp=1739956997~hmac=9896566e4b763e7e8093c9f41124a37d7b3bfba7b87b0cef73461c9ac8b1efa3&w=740"
-              alt="24 Hours Logo"
-            />
-          </div> */}
+{/* Additional Logos */}
+<div className="logo-container">
+  <img
+    src="https://tripstarsholidays.com/assets/15k%20Customers-C1ZGsemc.png"
+    alt="Google Logo"
+  />
+  <img
+    src="https://tripstarsholidays.com/assets/Award-BCL_SkQ2.png"
+    alt="24 Hours Logo"
+  />
+   <img
+    src=" https://tripstarsholidays.com/assets/Google%20Rating-9m3tBkj7.png"
+    alt="24 Hours Logo"
+  />
+ 
+</div>
 
 
           <ul>

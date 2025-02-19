@@ -13,6 +13,7 @@ import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.png";
 const Container = styled.div`
   width: 100%;
   padding: 0 15rem;
+  padding-top: 20px;
   @media (max-width: 1340px) {
     padding: 0 5rem;
   }

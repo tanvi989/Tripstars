@@ -132,17 +132,17 @@ const VideoThumbnail = () => {
     {
       thumbnail: "https://i.ytimg.com/vi/lrb93i4EUi4/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDAlxvChgpICVVkOxVat_FQwNYD9g",
       link: "https://youtu.be/lrb93i4EUi4?si=CTVW5Owqiry78BKb",
-      text: "Bali Bliss : Aditya Gadhvi's Unforgettable Journey"
+      text: "Bali Bliss : Aditya Gadhvi's Unforgettable Journey | Tripstars Holiday"
     },
     {
       thumbnail: thumbnil1,
       link: "https://www.youtube.com/watch?v=LyfnbIjW5Q0",
-      text: "Happy Travellers | Vietnam Tours | Tripstars Holidays"
+      text: "Happy Travellers Family Group | Vietnam Tours | With Tripstars Holidays"
     },
     {
       thumbnail: thumbnil2,
       link: "https://www.youtube.com/watch?v=ybYvJyN5cv4",
-      text: "Our Unforgettable | Dubai Trip with | Tripstars Holidays"
+      text: "Piyush patels's Family Trip | Vietnam Tours | with Tripstars Holidays"
     },
     {
       thumbnail: thumbnil3,
