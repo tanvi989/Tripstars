@@ -91,7 +91,7 @@ export default function WhyTripstars() {
   return (
     <Container>
       <SectionTitle>
-        <TitileHeading>Why Tripstars?</TitileHeading>
+        <TitileHeading>Why Tripstars? </TitileHeading>
       </SectionTitle>
       <CardsWrapper>
         <Swiper
