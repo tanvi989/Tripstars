@@ -2,40 +2,36 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 // Import local images
-import image1 from "../../../assets/JourneyInFrame/bali.jpg";
+import image1 from "../../../assets/JourneyInFrame/dubai.jpg";
 import image2 from "../../../assets/JourneyInFrame/disneyland.jpg";
-import image3 from "../../../assets/JourneyInFrame/Kashmir.jpg";
-import image9 from "../../../assets/JourneyInFrame/dubai2.jpg";
+import image3 from "../../../assets/JourneyInFrame/singapore.jpg"
 import image16 from "../../../assets/JourneyInFrame/vietnam1.jpg";
-import image5 from "../../../assets/JourneyInFrame/Paris.jpg";
-import image6 from "../../../assets/JourneyInFrame/Shimla.jpg";
-import image7 from "../../../assets/JourneyInFrame/dubai.jpg";
+import image6 from "../../../assets/JourneyInFrame/bali.jpg";
 import image10 from "../../../assets/JourneyInFrame/ferrari-world.jpg";
 import image12 from "../../../assets/JourneyInFrame/malaysia.jpg";
-import image13 from "../../../assets/JourneyInFrame/paris(1).jpg";
-import image14 from "../../../assets/JourneyInFrame/singapore.jpg";
-import image15 from "../../../assets/JourneyInFrame/vietnam.jpg";
-import image8 from "../../../assets/JourneyInFrame/dubai1.jpg";
+import image13 from "../../../assets/JourneyInFrame/dubai1.jpg";
+import image14 from "../../../assets/JourneyInFrame/Kashmir.jpg";
+import image4 from "../../../assets/JourneyInFrame/vietnam.jpg";
+import image15 from "../../../assets/JourneyInFrame/Paris.jpg";
+import image8 from "../../../assets/JourneyInFrame/dubai2.jpg";
 import image17 from "../../../assets/JourneyInFrame/warner-bros.jpg";
 
 const images = [
-  { src: image1, caption: "Bali" },
-  { src: image2, caption: "Disneyland" },
-  { src: image3, caption: "Kashmir" },
-  { src: image9, caption: "Dubai" },
-  { src: image16, caption: "Vietnam" },
-  { src: image9, caption: "Dubai" },
-  { src: image5, caption: "Paris" },
-  { src: image6, caption: "Shimla" },
-  { src: image7, caption: "Dubai" },
-  { src: image10, caption: "Ferrari World" },
-  { src: image12, caption: "Malaysia" },
-  { src: image13, caption: "Paris" },
-  { src: image14, caption: "Singapore" },
-  { src: image15, caption: "Vietnam" },
-  { src: image8, caption: "Dubai" },
-  { src: image17, caption: "Warner Bros" },
+  { src: image1, alt: "Dubai" },
+  { src: image2, alt: "Disneyland" },
+  { src: image3, alt: "Singapore" },
+  { src: image4, alt: "Vietnam" },
+  { src: image6, alt: "Bali" },
+  { src: image8, alt: "Dubai" },
+  { src: image10, alt: "Ferrari World" },
+  { src: image12, alt: "Malaysia" },
+  { src: image13, alt: "Dubai" },
+  { src: image14, alt: "Kashmir" },
+  { src: image15, alt: "Paris" },
+  { src: image16, alt: "Vietnam" },
+  { src: image17, alt: "Warner Bros" },
 ];
+
 
 
 // Styled Components
@@ -242,8 +238,8 @@ const BendingCarousel: React.FC = () => {
         >
           {images.map((image, idx) => (
             <Slide key={idx} isFirst={idx === index} isLast={idx === index + 3}>
-              <img src={image.src} alt={image.caption} />
-              <Caption>{image.caption}</Caption>
+              <img src={image.src} alt={image.alt} />
+              <Caption>{image.alt}</Caption>
             </Slide>
           ))}
         </CarouselWrapper>

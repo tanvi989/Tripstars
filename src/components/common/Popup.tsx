@@ -202,6 +202,7 @@ const PaxCounter = styled.div`
   span {
     font-size: 14px;
   }
+
 `;
 
 const StaticForm: React.FC = () => {
@@ -245,9 +246,9 @@ const StaticForm: React.FC = () => {
           </div>
 
           <div className="logo-container">
-            <img src={logo1} alt="15k Customers"/>
-            <img src={logo2} alt="Award"/>
-            <img src={logo3} alt="Customer Service"/>
+            <img src={logo1} alt="15k Customers" style={{ width: "100px", height: "auto" }} />
+            <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }}/>
+            <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }}/>
           </div>
           <ul>
             <li>
