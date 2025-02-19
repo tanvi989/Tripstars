@@ -4,12 +4,19 @@ import { useSwipeable } from "react-swipeable";
 import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
-
+// Importing images for mobile and desktop
 import australia from "../../../assets/banner/australia.jpg";
 import bali from "../../../assets/banner/bali.jpg";
 import europe from "../../../assets/banner/europe.jpg";
 import hongKong from "../../../assets/banner/hong-kong.jpg";
 import vietnam from "../../../assets/banner/vietnam.jpg";
+
+// Mobile images
+import australiaMobile from "../../../assets/banner/mobile web banner/australia.jpg";
+import baliMobile from "../../../assets/banner/mobile web banner/bali.jpg";
+import europeMobile from "../../../assets/banner/mobile web banner/europe.jpg";
+import hongKongMobile from "../../../assets/banner/mobile web banner/hong kong.jpg";
+import vietnamMobile from "../../../assets/banner/mobile web banner/vietnam.jpg";
 
 // Define types for styled component props
 type SlideProps = {
@@ -71,18 +78,21 @@ const HeroText = styled.h1`
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  const images = [australia, bali, europe, hongKong];
+  // Default desktop images and mobile images
+  const desktopImages = [australia, bali, europe, hongKong, vietnam];
+  const mobileImages = [australiaMobile, baliMobile, europeMobile, hongKongMobile, vietnamMobile];
+  
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? desktopImages.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === desktopImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -92,6 +102,10 @@ const HeroSection: React.FC = () => {
     preventScrollOnSwipe: true,
     trackMouse: true, // Optional: Enables swipe on desktop using mouse drag
   });
+
+  // Detect screen size to decide which image set to use
+  const isMobile = window.innerWidth <= 768;
+  const images = isMobile ? mobileImages : desktopImages;
 
   return (
     <SliderContainer {...swipeHandlers}>

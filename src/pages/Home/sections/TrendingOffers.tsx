@@ -22,7 +22,7 @@ import "swiper/css/navigation";
 
 const SliderContainer = styled.div`
   position: relative;
-  margin: 0 15rem;
+  margin: -2rem 15rem 0;  /* Move it up by 2rem */
   @media (max-width: 1340px) {
     margin: 0 5rem;
   }
@@ -30,7 +30,7 @@ const SliderContainer = styled.div`
     margin: 0 3rem;
   }
   @media (max-width: 768px) {
-    margin: 0 1rem;
+    margin: -1rem 1rem 0; /* Smaller shift for mobile */
   }
 `;
 

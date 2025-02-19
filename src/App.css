@@ -22,3 +22,7 @@ body {
 .swiper-container-free-mode > .swiper-wrapper {
   transition-timing-function: linear;
 }
+.ExploreEurope, .ExploreIndia {
+  margin: 0;
+  padding: 0;
+}

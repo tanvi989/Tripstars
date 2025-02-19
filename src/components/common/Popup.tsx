@@ -4,10 +4,10 @@ import { FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import Img1 from "../../../assets/images/WhyTripstars/15k Customers.png";
-import Img2 from "../../../assets/images/WhyTripstars/Award.png";
-import Img3 from "../../../assets/images/WhyTripstars/Customer service.png";
-
+import logo1 from "../../assets/popup/Customers.png";
+import logo2 from "../../assets/popup/Awardwinners .png";
+import logo3 from "../../assets/popup/Customerservice.png";
+import logoImg from "../../assets/images/logo/logo.png";
 
 // Optional fade-in animation (can be removed if not needed)
 const fadeIn = keyframes`
@@ -177,7 +177,7 @@ const RightPanel = styled.div`
     transition: background 0.3s;
 
     &:hover {
-      background: #218838;
+      background:rgb(255, 255, 255);
     }
   }
 `;
@@ -240,30 +240,15 @@ const StaticForm: React.FC = () => {
         <LeftPanel>
           {/* Main Logo */}
           <div className="main-logo">
-            <img
-              src="http://localhost:5173/src/assets/images/logo/logo.png"
-              alt="Main Logo"
-            />
+          <img src={logoImg} alt="Main Logo" />
+
           </div>
 
-{/* Additional Logos */}
-<div className="logo-container">
-  <img
-    src="https://tripstarsholidays.com/assets/15k%20Customers-C1ZGsemc.png"
-    alt="Google Logo"
-  />
-  <img
-    src="https://tripstarsholidays.com/assets/Award-BCL_SkQ2.png"
-    alt="24 Hours Logo"
-  />
-   <img
-    src=" https://tripstarsholidays.com/assets/Google%20Rating-9m3tBkj7.png"
-    alt="24 Hours Logo"
-  />
- 
-</div>
-
-
+          <div className="logo-container">
+            <img src={logo1} alt="15k Customers"/>
+            <img src={logo2} alt="Award"/>
+            <img src={logo3} alt="Customer Service"/>
+          </div>
           <ul>
             <li>
               <FaCheckCircle size={14} /> 100% Customised Trips
