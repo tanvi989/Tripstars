@@ -13,7 +13,7 @@ const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
   padding-bottom: 100px;
-  margin: -2rem 15rem 0;  /* Move it up by 2rem */
+  margin: -5rem 40rem 0;  /* Move it up by 2rem */
 
   @media (max-width: 1340px) {
     margin: 0 5rem;
