@@ -9,9 +9,9 @@ import Img5 from "../../../assets/images/WhyTripstars/Google Rating.png";
 
 const Container = styled.div`
   padding: 0 15rem;
-  margin-top: 2rem;
+  margin-top: -1rem; /* Moves content higher */
   @media (max-width: 1340px) {
-    padding: 0 5rem;
+    padding: -1rem 0 5rem;
   }
   @media (max-width: 1080px) {
     padding: 0 3rem;
@@ -23,6 +23,7 @@ const Container = styled.div`
 
 const CardsWrapper = styled.div`
   width: 100%;
+  margin: 1rem 0; /* Reduced to move cards higher */
   display: flex;
   margin: 2rem 0;
   img {
@@ -31,7 +32,7 @@ const CardsWrapper = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
@@ -64,7 +65,7 @@ const TitileHeading = styled.h2`
 const ImageWrapper = styled.div`
   img {
     width: 100%;
-    height: 100%;
+    height: auto; /* Maintains aspect ratio */
     object-fit: cover;
   }
 `;

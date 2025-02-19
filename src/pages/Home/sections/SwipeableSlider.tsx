@@ -12,8 +12,8 @@ import image5 from "../../../assets/advertisebanner/banner-5.jpg";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
+  padding:10px;
   width: 70%;
-  padding-top: 70px;
   max-width: 1000px;
   margin: 10px auto;
 

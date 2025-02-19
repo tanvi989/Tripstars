@@ -24,7 +24,7 @@ const fadeIn = keyframes`
 // Use a static container instead of a Popup overlay
 const StaticContainer = styled.div`
   padding: 2rem;
-  background: #f9f9f9;
+  background:rgb(255, 255, 255);
   animation: ${fadeIn} 0.4s ease-out;
 `;
 

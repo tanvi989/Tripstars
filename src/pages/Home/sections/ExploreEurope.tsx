@@ -13,9 +13,9 @@ import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.png";
 const Container = styled.div`
   width: 100%;
   padding: 0 15rem;
-  padding-top: 20px;
+
   @media (max-width: 1340px) {
-    padding: 0 5rem;
+    padding: -1rem 0 5rem;
   }
   @media (max-width: 1080px) {
     padding: 0 3rem;
@@ -29,12 +29,11 @@ const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: -1rem; /* Moves cards higher */
+
   @media (max-width: 768px) {
     gap: 1rem;
-  }
-  .box_title {
-    margin-top: 1.2rem;
-    text-align: center;
+    margin-top: -0.5rem; /* Smaller adjustment for mobile */
   }
 `;
 

@@ -30,7 +30,7 @@ const SliderContainer = styled.div`
     margin: 0 3rem;
   }
   @media (max-width: 768px) {
-    margin: -1rem 1rem 0; /* Smaller shift for mobile */
+    margin: -1.5rem 2rem 0; /* Smaller shift for mobile */
   }
 `;
 
