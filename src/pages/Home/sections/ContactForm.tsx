@@ -23,7 +23,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 50px auto;
-  background: #00a6db; /* Background color */
+  background:rgb(0, 0, 0); /* Background color */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);

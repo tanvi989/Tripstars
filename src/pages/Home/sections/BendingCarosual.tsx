@@ -1,6 +1,25 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
+// Import local images
+import image1 from "../../../assets/JourneyInFrame/bali.jpg";
+import image2 from "../../../assets/JourneyInFrame/disneyland.jpg";
+import image3 from "../../../assets/JourneyInFrame/Kashmir.jpg";
+import image4 from "../../../assets/JourneyInFrame/Nepal.jpg";
+import image5 from "../../../assets/JourneyInFrame/Paris.jpg";
+import image6 from "../../../assets/JourneyInFrame/Shimla.jpg";
+import image7 from "../../../assets/JourneyInFrame/dubai.jpg";
+import image8 from "../../../assets/JourneyInFrame/dubai1.jpg";
+import image9 from "../../../assets/JourneyInFrame/dubai2.jpg";
+import image10 from "../../../assets/JourneyInFrame/ferrari-world.jpg";
+import image11 from "../../../assets/JourneyInFrame/goa.jpg";
+import image12 from "../../../assets/JourneyInFrame/malaysia.jpg";
+import image13 from "../../../assets/JourneyInFrame/paris(1).jpg";
+import image14 from "../../../assets/JourneyInFrame/singapore.jpg";
+import image15 from "../../../assets/JourneyInFrame/vietnam.jpg";
+import image16 from "../../../assets/JourneyInFrame/vietnam1.jpg";
+import image17 from "../../../assets/JourneyInFrame/warner-bros.jpg";
+
 // Styled Components
 const Container = styled.div`
   display: flex;
@@ -10,7 +29,7 @@ const Container = styled.div`
   width: 100%;
   padding: 20px;
    @media (max-width: 768px) {
-padding: 0;
+    padding: 0;
   }
 `;
 
@@ -102,10 +121,9 @@ const Caption = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
-     @media (max-width: 768px) {
-background:white;
-color:black;
-
+  @media (max-width: 768px) {
+    background: white;
+    color: black;
   }
 `;
 
@@ -113,7 +131,6 @@ const Button = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
- 
   border: none;
   padding: 15px;
   cursor: pointer;
@@ -124,43 +141,48 @@ const Button = styled.button`
   &:hover {
     background: #007acc;
   }
-   
 `;
 
 const PrevButton = styled(Button)`
   left: 5px;
-     @media (max-width: 768px) {
-display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
 const NextButton = styled(Button)`
   right: 5px;
-     @media (max-width: 768px) {
-display:none;
+  @media (max-width: 768px) {
+    display: none;
   }
-  
-
 `;
 
-// Image Data
+// Image Data - 17 local images
 const images = [
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/vietnam%202", caption: "🇻🇳 Vietnam" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/dubai%20re%2001?updatedAt=1711452484035", caption: "🇦🇪 Dubai" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/bhutan%204", caption: "🇧🇹 Bhutan" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/kerala-trips-1", caption: "🇮🇳 Kerala" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/meghalaya%201?updatedAt=1711451040355", caption: "🇯🇵 Japan" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/uttarakhand-re-2?updatedAt=1711452678546", caption: "🇲🇻 Maldives" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/rajasthan-gallery-image-4", caption: "🇨🇭 Switzerland" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/himachal%20re?updatedAt=1711452816194", caption: "🇮🇹 Italy" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/spiti-re?updatedAt=1711452870760", caption: "🇺🇸 USA" },
-  { src: "https://images.wanderon.in/new-homepage-data/Gallery/thailand-gallery%203?updatedAt=1711450980744", caption: "🇫🇷 France" }
+  { src: image1, caption: "Bali" },
+  { src: image2, caption: "Disneyland" },
+  { src: image3, caption: "Kashmir" },
+  { src: image4, caption: "Nepal" },
+  { src: image5, caption: "Paris" },
+  { src: image6, caption: "Shimla" },
+  { src: image7, caption: "Dubai" },
+  { src: image8, caption: "Dubai (Alternate)" },
+  { src: image9, caption: "Dubai (Night)" },
+  { src: image10, caption: "Ferrari World" },
+  { src: image11, caption: "Goa" },
+  { src: image12, caption: "Malaysia" },
+  { src: image13, caption: "Paris (Alternate)" },
+  { src: image14, caption: "Singapore" },
+  { src: image15, caption: "Vietnam" },
+  { src: image16, caption: "Vietnam (Alternate)" },
+  { src: image17, caption: "Warner Bros" },
 ];
+
 
 const BendingCarousel: React.FC = () => {
   const [index, setIndex] = useState(0);
   const totalSlides = images.length;
-  const slideWidth = 300; // Adjust slide width
+  const slideWidth = 300; // Adjust slide width as needed
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
@@ -213,7 +235,7 @@ const BendingCarousel: React.FC = () => {
 
       <CarouselContainer>
         <PrevButton onClick={handlePrev}>&#10094;</PrevButton>
-        <CarouselWrapper 
+        <CarouselWrapper
           translateX={-index * slideWidth}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}

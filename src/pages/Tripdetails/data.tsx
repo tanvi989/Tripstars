@@ -53,11 +53,11 @@ import thailandImg6 from "../../assets/Tripdetails/new/thailand/things-to-do-tha
 import thailandImg7 from "../../assets/Tripdetails/new/thailand/things-to-do-thailand/Île-aux-cerfs.png";
 
 // Singapore Images
-import singaporeImg1 from "../../assets/Tripdetails/singapore/Things to do/Garden by the bay.png";
-import singaporeImg2 from "../../assets/Tripdetails/singapore/Things to do/Marina bay sand.png";
-import singaporeImg3 from "../../assets/Tripdetails/singapore/Things to do/Sentosa Island tour.png";
-import singaporeImg4 from "../../assets/Tripdetails/singapore/Things to do/Singapore City tour.png";
-import singaporeImg5 from "../../assets/Tripdetails/singapore/Things to do/singapore Night safari.png";
+import singaporeImg1 from "../../assets/Tripdetails/new/singapore/things-to-do-singapore/garden-by-the-bay.png";
+import singaporeImg2 from "../../assets/Tripdetails/new/singapore/things-to-do-singapore/marina-bay-sands.png";
+import singaporeImg3 from "../../assets/Tripdetails/new/singapore/things-to-do-singapore/night-safari.png";
+import singaporeImg4 from "../../assets/Tripdetails/new/singapore/things-to-do-singapore/sentosa-island-tour.png";
+import singaporeImg5 from "../../assets/Tripdetails/new/singapore/things-to-do-singapore/singapore-city-tour.png";
 
 // Baku Images
 import bakuImg1 from "../../assets/Tripdetails/new/baku/things-to-do-square-images/atashgah-zoroastrian-fire-temple.png";
@@ -109,14 +109,15 @@ import japanImg6 from "../../assets/Tripdetails/new/japan/Things to do square/os
 import japanImg7 from "../../assets/Tripdetails/new/japan/Things to do square/tokyo-station.png";
 
 // Malaysia (Additional) Images
-import malaysiaImg1 from "../../assets/Tripdetails4/malaysia/things-to-do/Bako National Park.png";
-import malaysiaImg2 from "../../assets/Tripdetails4/malaysia/things-to-do/Batu caves.png";
-import malaysiaImg3 from "../../assets/Tripdetails4/malaysia/things-to-do/Langkawi Sky Bridge.png";
-import malaysiaImg4 from "../../assets/Tripdetails4/malaysia/things-to-do/Langkawi.png";
-import malaysiaImg5 from "../../assets/Tripdetails4/malaysia/things-to-do/Menara Kuala Lumpur.png";
-import malaysiaImg6 from "../../assets/Tripdetails4/malaysia/things-to-do/Penang Hill.png";
-import malaysiaImg7 from "../../assets/Tripdetails4/malaysia/things-to-do/Petronas Twin Towers.png";
-import malaysiaImg8 from "../../assets/Tripdetails4/malaysia/things-to-do/Putra Mosque.png";
+import malaysiaImg1 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/bako-national-park.png";
+import malaysiaImg2 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/batu-caves.png";
+import malaysiaImg3 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/langkawi-sky-bridge.png";
+import malaysiaImg4 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/langkawi-skybridge-cable-car.png";
+import malaysiaImg5 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/langkawi.png";
+import malaysiaImg6 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/menara-kuala-lumpur.png";
+import malaysiaImg7 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/penang-hill.png";
+import malaysiaImg8 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/petronas-twin-towers.png";
+import malaysiaImg9 from "../../assets/Tripdetails/new/malaysia/things-to-do-malaysia/putra-mosque.png";
 
 // Maldives Images
 import maldivesImg1 from "../../assets/Tripdetails/new/maldives/things-to-do-maldives/alimathaa.png";
@@ -178,11 +179,12 @@ export const destinationsData = {
       { name: "Bako National Park", image: malaysiaImg1 },
       { name: "Batu Caves", image: malaysiaImg2 },
       { name: "Langkawi Sky Bridge", image: malaysiaImg3 },
-      { name: "Langkawi", image: malaysiaImg4 },
-      { name: "Menara Kuala Lumpur", image: malaysiaImg5 },
-      { name: "Penang Hill", image: malaysiaImg6 },
-      { name: "Petronas Twin Towers", image: malaysiaImg7 },
-      { name: "Putra Mosque", image: malaysiaImg8 },
+      { name: "Skybridge Cable Car", image: malaysiaImg4 },
+      { name: "Langkawi", image: malaysiaImg5 },
+      { name: "Menara Kuala Lumpur", image: malaysiaImg6 },
+      { name: "Penang Hill", image: malaysiaImg7 },
+      { name: "Petronas Twin Towers", image: malaysiaImg8 },
+      { name: "Putra Mosque", image: malaysiaImg9 },
     ],
   },
   australia: {
@@ -290,11 +292,11 @@ export const destinationsData = {
         "Experience the vibrant culture and iconic landmarks of Singapore.",
     },
     thingsToDo: [
-      { name: "Gardens by the Bay", image: singaporeImg1 },
+      { name: "Garden by the Bay", image: singaporeImg1 },
       { name: "Marina Bay Sands", image: singaporeImg2 },
-      { name: "Sentosa Island Tour", image: singaporeImg3 },
-      { name: "Singapore City Tour", image: singaporeImg4 },
-      { name: "Singapore Night Safari", image: singaporeImg5 },
+      { name: "Night Safari", image: singaporeImg3 },
+      { name: "Sentosa Island Tour", image: singaporeImg4 },
+      { name: "Singapore City Tour", image: singaporeImg5 },
     ],
   },
   thailand: {
@@ -422,7 +424,7 @@ export const destinationsData = {
       { name: "Hong Kong Disneyland", image: hongkongImg1 },
       { name: "Ocean Park", image: hongkongImg2 },
       { name: "Shanghai Tower", image: hongkongImg3 },
-      { name: "Sky 100 Hong Kong Observation Deck", image: hongkongImg4 },
+      { name: "Hong Kong Observation Deck", image: hongkongImg4 },
       { name: "Ten Thousand Buddhas Monastery", image: hongkongImg5 },
       { name: "Tian Tan Buddha", image: hongkongImg6 },
       { name: "Victoria Harbour", image: hongkongImg7 },

@@ -10,12 +10,12 @@ import image4 from "../../../assets/advertisebanner/banner-4.jpg";
 import image5 from "../../../assets/advertisebanner/banner-5.jpg";
 
 const SliderContainer = styled.div`
-
   position: relative;
   overflow: hidden;
   width: 70%;
-  max-width: 2000px;
-  margin: 20px auto;
+  padding-top: 70px;
+  max-width: 1000px;
+  margin: 10px auto;
 
   @media (max-width: 1340px) {
     width: 90%;
@@ -52,7 +52,7 @@ const Slide = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
+  margin: 10 auto;
   cursor: pointer; /* Add pointer cursor to indicate clickability */
 
   @media (max-width: 2000px) {
