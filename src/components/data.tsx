@@ -162,36 +162,36 @@ export const Bali = [
   {
     title: "Ultimate Bali & Nusa Penida",
     image: bali1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Bali with Gili",
-    image: bali2,
-    pricing: "₹18,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Bali Essence",
-    image: bali5,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹74,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
-    title: "Enchanting Bali",
-    image: bali4,
-    pricing: "₹35,999/- Onwards",
+    title: "Bali with Gili",
+    image: bali2,
+    pricing: "₹82,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Bali Essence",
+    image: bali5,
+    pricing: "₹65,500/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
+    title: "Enchanting Bali",
+    image: bali4,
+    pricing: "₹64,999/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -203,25 +203,25 @@ export const Vietnam = [
   {
     title: "Vietnam Highlights Discovery",
     image: Vietnam1,
-    pricing: "₹35,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Vietnam Explorer",
-    image: Vietnam2,
-    pricing: "₹49,999/- Onwards",
+    pricing: "₹1,00,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
+    title: "Vietnam Explorer",
+    image: Vietnam2,
+    pricing: "₹1,04,599/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
     title: "Vietnam Wonders",
     image: Vietnam3,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹1,10,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -230,16 +230,16 @@ export const Vietnam = [
   {
     title: "Classic Vietnam",
     image: Vietnam4,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹92,599/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
-    title: "Vietnam with Sapa",
+    title: "Vietnam with Spa",
     image: Vietnam5,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹1,22,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -248,9 +248,9 @@ export const Vietnam = [
   {
     title: "Vietnam with Phu Quoc",
     image: Vietnam6,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹1,15,999/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "9N/10D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -270,27 +270,27 @@ export const Dubai = [
   {
     title: "Dream Dubai",
     image: dubai1,
-    pricing: "₹35,999/- Onwards",
+    pricing: "₹82,999/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
-    title: "Fascinating Dubai with Abu Dhabi",
+    title: "Dubai with Abu Dhabi",
     image: dubai2,
-    pricing: "₹49,999/- Onwards",
+    pricing: "₹91,499/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: " 5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
     title: "Dubai & Abu Dhabi Wonders",
     image: dubai3,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹1,01,499/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -338,16 +338,16 @@ export const Thailand = [
   {
     title: "Vibrant Thailand",
     image: thailand1,
-    pricing: "₹35,999/- Onwards",
+    pricing: "₹47,999/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
     title: "Phuket, Krabi & Bangkok Explorer",
     image: thailand2,
-    pricing: "₹49,999/- Onwards",
+    pricing: "₹76,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -356,9 +356,9 @@ export const Thailand = [
   {
     title: "Super Saver– Krabi & Phuket",
     image: thailand3,
-    pricing: "₹55,999/- Onwards",
+    pricing: "₹64,998/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "8N/9D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -412,9 +412,9 @@ export const Europe = [
     ],
   },
   {
-    title: "Ladakh",
-    image: europe2,
-    pricing: "₹49,999/- Onwards",
+    title: "Little Tibet Experience",
+    image: ladakh,
+    pricing: "₹61,699/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -450,19 +450,17 @@ export const Europe = [
 ];
 
 
-
-
 // Card 3 - similar Packages
 export const similar = [
-  {
-    title: 'Kashmir',
-    image: kashmir,  // ✅ Correct imported image
-    pricing: '₹29,999/- Onwards',
-    info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
-      { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
-    ],
-  },
+  // {
+  //   title: 'Kashmir',
+  //   image: kashmir,  // ✅ Correct imported image
+  //   pricing: '₹60,999/- Onwards',
+  //   info: [
+  //     { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
+  //     { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
+  //   ],
+  // },
   {
     title: 'Goa',
     image: goa,  // ✅ Correct imported image
@@ -473,11 +471,11 @@ export const similar = [
     ],
   },
   {
-    title: 'Andaman',
+    title: 'Essence of Andaman',
     image: andaman,  // ✅ Correct imported image
-    pricing: '₹42,999/- Onwards',
+    pricing: '₹45,999/- Onwards',
     info: [
-      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '6N/7D' },
+      { icon: 'https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png', text: '5N/6D' },
       { icon: 'https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png', text: 'Flight' },
     ],
   },
@@ -520,15 +518,15 @@ export const similar = [
 ];
 //tanvi added data
 export const Australia = [
-  {
-    title: "Kashmir",
-    image: australia1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Kashmir",
+  //   image: australia1,
+  //   pricing: "₹29,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Goa",
     image: australia2,
@@ -539,9 +537,9 @@ export const Australia = [
     ],
   },
   {
-    title: "Andaman",
+    title: "Andamans Iconic Nature ",
     image: australia3,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹55,327/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -568,15 +566,15 @@ export const Australia = [
 ];
 
 export const southAfrica = [
-  {
-    title: "Kashmir",
-    image: southafrica1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Kashmir",
+  //   image: southafrica1,
+  //   pricing: "₹29,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Goa",
     image: southafrica2,
@@ -629,27 +627,27 @@ export const Singapore = [
   {
     title: "Singapore Highlights",
     image: singapore1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Enchanting Singapore",
-    image: singapore2,
-    pricing: "₹18,999/- Onwards",
+    pricing: "₹76,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
+    title: "Enchanting Singapore",
+    image: singapore2,
+    pricing: "₹81,499/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
     title: "Singapore & Malaysia",
     image: singapore3,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹97,999/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -678,9 +676,9 @@ export const Mauritius = [
   {
     title: "Magical Mauritius",
     image: mauritius1,
-    pricing: "₹29,999/- Onwards",
+    pricing: "₹89,799/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -761,15 +759,15 @@ export const Mauritius = [
 
 
 export const Baku = [
-  {
-    title: "Kashmir",
-    image: baku1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Kashmir",
+  //   image: baku1,
+  //   pricing: "₹29,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Goa",
     image: baku2,
@@ -779,15 +777,15 @@ export const Baku = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Andaman",
-    image: baku3,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Andaman",
+  //   image: baku3,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Himachal Pradesh",
     image: baku4,
@@ -831,9 +829,9 @@ export const Baku = [
 
 export const  Hongkong = [
   {
-    title: "Kashmir",
+    title: "Beautiful Kashmir",
     image: hong1,
-    pricing: "₹29,999/- Onwards",
+    pricing: "₹60,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -848,15 +846,15 @@ export const  Hongkong = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Andaman",
-    image: hong3,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Andaman",
+  //   image: hong3,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Himachal Pradesh",
     image: hong4,
@@ -885,15 +883,15 @@ export const  Hongkong = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Andaman",
-    image: hong8,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Andaman",
+  //   image: hong8,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Himachal Pradesh",
     image: hong9,
@@ -917,11 +915,11 @@ export const  Hongkong = [
 
 export const Japan = [
   {
-    title: "Kashmir",
+    title: "Magical Kashmir",
     image: japan1,
-    pricing: "₹29,999/- Onwards",
+    pricing: "₹79,199/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "7N/8D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -934,15 +932,15 @@ export const Japan = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Andaman",
-    image: japan3,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Andaman",
+  //   image: japan3,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Himachal Pradesh",
     image: japan4,
@@ -1011,15 +1009,15 @@ export const Malaysia = [
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
-  {
-    title: "Andaman",
-    image: malaysia3,
-    pricing: "₹42,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Andaman",
+  //   image: malaysia3,
+  //   pricing: "₹42,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Himachal Pradesh",
     image: malaysia4,
@@ -1044,27 +1042,27 @@ export const Maldives = [
   {
     title: "Split Stay Paradise",
     image: maldives1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
-  {
-    title: "Maldives Beach Villa Getway",
-    image: maldives2,
-    pricing: "₹18,999/- Onwards",
+    pricing: "₹1,29,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "4N/5D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
   {
+    title: "Maldives Beach Villa Getway",
+    image: maldives2,
+    pricing: "₹1,00,099/- Onwards",
+    info: [
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
+      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+    ],
+  },
+  {
     title: "Maldives Water Villa Getaway",
     image: maldives3,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹1,07,199/- Onwards",
     info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
+      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "3N/4D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
     ],
   },
@@ -1127,7 +1125,7 @@ export const Turkey = [
     ],
   },
   {
-    title: "Andaman",
+    title: "Andaman Blue",
     image: turkey3,
     pricing: "₹42,999/- Onwards",
     info: [
@@ -1212,9 +1210,9 @@ export const Baatytyli = [
     ],
   },
   {
-    title: "Andaman",
+    title: "Andaman-Super Saver",
     image: bali3,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹39,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -1261,7 +1259,7 @@ export const Bajyuuiali = [
     ],
   },
   {
-    title: "Andaman",
+    title: "Andaman Fun Filled",
     image: bali3,
     pricing: "₹42,999/- Onwards",
     info: [
@@ -1291,15 +1289,15 @@ export const Bajyuuiali = [
 
 
 export const Bkjkaali = [
-  {
-    title: "Kashmir",
-    image: bali1,
-    pricing: "₹29,999/- Onwards",
-    info: [
-      { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
-      { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
-    ],
-  },
+  // {
+  //   title: "Kashmir",
+  //   image: bali1,
+  //   pricing: "₹29,999/- Onwards",
+  //   info: [
+  //     { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
+  //     { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
+  //   ],
+  // },
   {
     title: "Goa",
     image: bali2,
@@ -1310,9 +1308,9 @@ export const Bkjkaali = [
     ],
   },
   {
-    title: "Andaman",
+    title: "Andaman Best Seller",
     image: bali3,
-    pricing: "₹42,999/- Onwards",
+    pricing: "₹45,999/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "6N/7D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },

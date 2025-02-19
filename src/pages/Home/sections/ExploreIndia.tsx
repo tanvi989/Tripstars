@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
+  padding-bottom: 100px;
   margin: 0 15rem;
 
   @media (max-width: 1340px) {
