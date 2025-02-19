@@ -5,20 +5,38 @@ import styled from "styled-components";
 import image1 from "../../../assets/JourneyInFrame/bali.jpg";
 import image2 from "../../../assets/JourneyInFrame/disneyland.jpg";
 import image3 from "../../../assets/JourneyInFrame/Kashmir.jpg";
-import image4 from "../../../assets/JourneyInFrame/Nepal.jpg";
+import image9 from "../../../assets/JourneyInFrame/dubai2.jpg";
+import image16 from "../../../assets/JourneyInFrame/vietnam1.jpg";
 import image5 from "../../../assets/JourneyInFrame/Paris.jpg";
 import image6 from "../../../assets/JourneyInFrame/Shimla.jpg";
 import image7 from "../../../assets/JourneyInFrame/dubai.jpg";
-import image8 from "../../../assets/JourneyInFrame/dubai1.jpg";
-import image9 from "../../../assets/JourneyInFrame/dubai2.jpg";
 import image10 from "../../../assets/JourneyInFrame/ferrari-world.jpg";
-import image11 from "../../../assets/JourneyInFrame/goa.jpg";
 import image12 from "../../../assets/JourneyInFrame/malaysia.jpg";
 import image13 from "../../../assets/JourneyInFrame/paris(1).jpg";
 import image14 from "../../../assets/JourneyInFrame/singapore.jpg";
 import image15 from "../../../assets/JourneyInFrame/vietnam.jpg";
-import image16 from "../../../assets/JourneyInFrame/vietnam1.jpg";
+import image8 from "../../../assets/JourneyInFrame/dubai1.jpg";
 import image17 from "../../../assets/JourneyInFrame/warner-bros.jpg";
+
+const images = [
+  { src: image1, caption: "Bali" },
+  { src: image2, caption: "Disneyland" },
+  { src: image3, caption: "Kashmir" },
+  { src: image9, caption: "Dubai" },
+  { src: image16, caption: "Vietnam" },
+  { src: image5, caption: "Paris" },
+  { src: image6, caption: "Shimla" },
+  { src: image7, caption: "Dubai" },
+  { src: image9, caption: "Dubai" },
+  { src: image10, caption: "Ferrari World" },
+  { src: image12, caption: "Malaysia" },
+  { src: image13, caption: "Paris (Alternate)" },
+  { src: image14, caption: "Singapore" },
+  { src: image15, caption: "Vietnam" },
+  { src: image8, caption: "Dubai" },
+  { src: image17, caption: "Warner Bros" },
+];
+
 
 // Styled Components
 const Container = styled.div`
@@ -158,25 +176,6 @@ const NextButton = styled(Button)`
 `;
 
 // Image Data - 17 local images
-const images = [
-  { src: image1, caption: "Bali" },
-  { src: image2, caption: "Disneyland" },
-  { src: image3, caption: "Kashmir" },
-  { src: image4, caption: "Nepal" },
-  { src: image5, caption: "Paris" },
-  { src: image6, caption: "Shimla" },
-  { src: image7, caption: "Dubai" },
-  { src: image8, caption: "Dubai (Alternate)" },
-  { src: image9, caption: "Dubai (Night)" },
-  { src: image10, caption: "Ferrari World" },
-  { src: image11, caption: "Goa" },
-  { src: image12, caption: "Malaysia" },
-  { src: image13, caption: "Paris (Alternate)" },
-  { src: image14, caption: "Singapore" },
-  { src: image15, caption: "Vietnam" },
-  { src: image16, caption: "Vietnam (Alternate)" },
-  { src: image17, caption: "Warner Bros" },
-];
 
 
 const BendingCarousel: React.FC = () => {
