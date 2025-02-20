@@ -13,7 +13,8 @@ import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/river-rafti
 import baliImg10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/tanah-lot-temple.png";
 import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-market.png";
 import baliImg12 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ulun-danu-temple.png";
-
+import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-banner.jpg";
+import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 // Vietnam Images
 import vietnamImg1 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/ba-na-hills.png";
 import vietnamImg2 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/chu-chi-tunnel.png";
@@ -147,7 +148,7 @@ export const destinationsData = {
   bali: {
     banner: {
       image:
-        "https://media.easemytrip.com/media/ppc/destination/Common/CommonnzjdHm.png",
+        baliImg13,
       title: "Bali",
       description:
         "Discover stunning locations and create unforgettable memories.",

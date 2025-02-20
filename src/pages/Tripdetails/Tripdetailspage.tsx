@@ -1,5 +1,6 @@
 // src/components/Tripdetailspage.js
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import DynamicSlider from "./sections/DynamicSlider";
 import TrendingOffers from "./sections/TrendingOffers";
 import CherryBlossomsSection from "../Tripdetails/sections/CherryBlossomsSection";
@@ -19,7 +20,8 @@ import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
 import PopularDestinations2 from "./sections/DestinationProps";
 import StaticReviews from "./sections/StaticReviews";
-
+import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-banner.jpg";
+import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 
 type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
@@ -27,8 +29,14 @@ export default function Tripdetailspage() {
   // const location = "dubai"; // Set to "Bali" for now
   // const location = "singapore";
   // const location = "thailand";
+    // ✅ Update isMobile state when window resizes
+    useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
   const { location } = useParams<{ location: string }>();
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   // Narrow the type of location to a valid key or undefined
   const validLocation = location as LocationKey;
 
@@ -40,6 +48,9 @@ export default function Tripdetailspage() {
   }
 
   const { thingsToDo, banner } = locationData;
+ // ✅ Correctly set the banner image for Bali (desktop vs mobile)
+ const bannerImage =
+ location === "bali" ? (isMobile ? baliImg14 : baliImg13) : locationData.banner.image;
 
   return (
     <>
