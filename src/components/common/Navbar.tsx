@@ -14,8 +14,11 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 999999;
+  opacity: 0.9;
+   border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
+  border-bottom-right-radius: 10px;  /* Adds radius to bottom right */
 
-  background: rgba(0, 0, 0, 0.5);
+  background: #071A29;
   transition: all 0.5s ease-in-out;
   &.active {
     background-color: #000;
@@ -38,7 +41,7 @@ const Logo = styled.div`
   @media (max-width: 768px) {
     width: 25%;
     img {
-      width: 5rem;
+      width: 6rem;
     }
   }
 `;

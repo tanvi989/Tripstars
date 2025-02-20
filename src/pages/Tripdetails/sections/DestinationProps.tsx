@@ -55,7 +55,6 @@ const NameWrapper = styled.div`
 //   overflow: hidden;
 //   text-overflow: ellipsis;
 `;
-
 const SectionTitle = styled.div`
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -63,7 +62,13 @@ const SectionTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {  // Adjust the breakpoint as needed
+    padding-top: 0;
+    margin-top: 0;
+  }
 `;
+
 
 const TitleHeading = styled.h2`
   font-size: 1.5rem;

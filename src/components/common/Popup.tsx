@@ -1,361 +1,200 @@
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import { FaCheckCircle } from "react-icons/fa";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import logo1 from "../../assets/popup/Customers.png";
-import logo2 from "../../assets/popup/Awardwinners .png";
-import logo3 from "../../assets/popup/Customerservice.png";
 import logoImg from "../../assets/images/logo/logo.png";
+import { useEffect, useState } from "react";
 
-// Optional fade-in animation (can be removed if not needed)
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-`;
-
-// Use a static container instead of a Popup overlay
-const StaticContainer = styled.div`
-  padding: 2rem;
-  background:rgb(255, 255, 255);
-  animation: ${fadeIn} 0.4s ease-out;
-`;
-
-const ContentWrapper = styled.div`
-  background: white;
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 0 auto;
+const NavbarContainer = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  animation: ${fadeIn} 0.4s ease-out;
+  height:86px;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 999999;
+  opacity: 0.9;
+   border-bottom-left-radius: 10px;   /* Adds radius to bottom left */
+  border-bottom-right-radius: 10px;  /* Adds radius to bottom right */
 
+  background: #071A29;
+  transition: all 0.5s ease-in-out;
+  &.active {
+    background-color: #000;
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 1080px) {
+    &.active {
+      padding: 1rem 2rem;
+    }
+  }
   @media (max-width: 768px) {
-    flex-direction: column;
+  height: 71px;
   }
 `;
 
-const LeftPanel = styled.div`
-  background: rgb(11, 11, 11);
-  color: white;
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .main-logo {
-    margin-bottom: 20px;
+const Logo = styled.div`
+  width: 25%;
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 768px) {
+    width: 25%;
     img {
-      width: 150px;
-      height: auto;
-    }
-  }
-
-  .logo-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-
-  img {
-    width: 70px;
-    height: auto;
-  }
-
-  ul {
-    list-style: none;
-    margin: 15px 0 0 0;
-    padding: 0;
-
-    li {
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      gap: 8px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const RightPanel = styled.div`
-  padding: 20px;
-  flex: 1;
-  position: relative;
-
-  @media (max-width: 768px) {
-    padding-left: 33px;
-    padding-top: 14%;
-    height: 80vh;
-  }
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .row {
-    display: flex;
-    gap: 10px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-
-  label {
-    font-size: 12px;
-    color: #555;
-  }
-
-  input,
-  select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 12px;
-    outline: none;
-    transition: border-color 0.3s;
-
-    &:focus {
-      border-color: #0a0a52;
-    }
-
-    @media (max-width: 768px) {
-      padding: 11px;
-    }
-  }
-
-  .custom-datepicker {
-    width: 100%;
-    border: 1px solid #ddd;
-    padding: 5px;
-    font-size: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-
-    &:hover {
-      border-color: #0a0a52;
-    }
-
-    @media (max-width: 768px) {
-      padding: 11px;
-    }
-  }
-
-  button {
-    padding: 8px;
-    background: rgb(9, 9, 9);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s;
-
-    &:hover {
-      background:rgb(255, 255, 255);
+      width: 5rem;
     }
   }
 `;
 
-const PaxCounter = styled.div`
+const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  button {
-    padding: 5px 10px;
-    background: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      background: #bbb;
+  justify-content: end;
+  width: 50%;
+  li {
+    padding: 0 0.6rem;
+    a {
+      color: #fff;
     }
   }
 
-  span {
-    font-size: 14px;
+  @media (max-width: 1080px) {
+    /* display: none; */
+    position: absolute;
+    background-color: #000000;
+    width: 80vw;
+    height: 100svh;
+    top: 0;
+    right: 0;
+    display: block;
+    transform: translateX(80vw);
+    transition: all 0.4s ease-in-out;
+    &.active_menu {
+      transform: translateX(0px);
+    }
+    li {
+      padding: 1rem 1rem;
+      border-bottom: 1px solid #ffffff43;
+      a {
+        font-size: 0.9rem;
+      }
+    }
+    .close_icon {
+      display: flex;
+      justify-content: end;
+      svg {
+        width: 2rem;
+        path {
+          fill: #fff;
+        }
+      }
+      display: none;
+      @media (max-width: 1080px) {
+        display: flex;
+      }
+    }
   }
-
 `;
 
-const StaticForm: React.FC = () => {
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [pax, setPax] = useState(1);
-  const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    email: "",
-    destination: "",
-    departureCity: "",
-  });
+const MenuBtn = styled.div`
+  svg {
+    width: 2rem;
+    fill: #fff;
+  }
+  display: none;
+  @media (max-width: 1080px) {
+    display: block;
+  }
+`;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+// const AuthButtonContainer = styled.div`
+//   width: 25%;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   .login_btn {
+//     margin-right: 1.3rem;
+//     color: #fff;
+//   }
+//   .signup_btn {
+//     background-color: #000;
+//     color: #fff;
+//     padding: 0.7rem 1.2rem;
+//     border-radius: 0.5rem;
+//   }
+// `;
+
+export default function Navbar() {
+  const [navBg, setNavBg] = useState<boolean>(false);
+  const [active, setIsActive] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsActive((prev) => !prev);
   };
 
-  const handlePaxChange = (increment: boolean) => {
-    setPax((prev) => (increment ? prev + 1 : prev - 1));
+  const changeNavBg = () => {
+    window.scrollY >= 300 ? setNavBg(true) : setNavBg(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData, startDate, pax);
-  };
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavBg);
+  }, []);
 
   return (
-    <StaticContainer>
-      <ContentWrapper>
-        <LeftPanel>
-          {/* Main Logo */}
-          <div className="main-logo">
-          <img src={logoImg} alt="Main Logo" />
+    <NavbarContainer className={navBg ? "active" : ""}>
+      <Logo>
+        <img src={logoImg} alt="" />
+      </Logo>
+      <NavLinksContainer className={active ? "active_menu" : ""}>
+        <li className="close_icon" onClick={toggleMenu}>
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </li>
+        <li>
+          <Link to="/">Flights</Link>
+        </li>
+        <li>
+          <Link to="/">Hotels</Link>
+        </li>
+        <li>
+          <Link to="/">Holidays</Link>
+        </li>
+        <li>
+          <Link to="/">Blog</Link>
+        </li>
+        <li>
+          <Link to="/">Offers</Link>
+        </li>
+        <li>
+          <Link to="/">Contact</Link>
+        </li>
+      </NavLinksContainer>
 
-          </div>
-
-          <div className="logo-container">
-            <img src={logo1} alt="15k Customers" style={{ width: "100px", height: "auto" }} />
-            <img src={logo2} alt="Award" style={{ width: "100px", height: "auto" }}/>
-            <img src={logo3} alt="Customer Service" style={{ width: "100px", height: "auto" }}/>
-          </div>
-          <ul>
-            <li>
-              <FaCheckCircle size={14} /> 100% Customised Trips
-            </li>
-            <li>
-              <FaCheckCircle size={14} /> 95% Visa Success Rate
-            </li>
-            <li>
-              <FaCheckCircle size={14} /> 24x7 Concierge
-            </li>
-          </ul>
-        </LeftPanel>
-
-        <RightPanel>
-          <h3>Plan Your Dream Vacation</h3>
-          <form onSubmit={handleSubmit}>
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              required
-            />
-
-            <label>Contact Number</label>
-            <input
-              type="tel"
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-              placeholder="Your Contact Number"
-              required
-            />
-
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              required
-            />
-
-            <div className="row">
-              <div>
-                <label>Destination</label>
-                <select
-                  name="destination"
-                  value={formData.destination}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Destination</option>
-                  <option value="maldives">Maldives</option>
-                  <option value="bali">Bali</option>
-                  <option value="dubai">Dubai</option>
-                  <option value="thailand">Thailand</option>
-                </select>
-              </div>
-              <div>
-                <label>Departure City</label>
-                <input
-                  type="text"
-                  name="departureCity"
-                  value={formData.departureCity}
-                  onChange={handleChange}
-                  placeholder="Departure City"
-                  required
-                />
-              </div>
-            </div>
-
-            <label>Travel Date</label>
-            <DatePicker
-              selected={startDate}
-              dateFormat="dd-MM-yyyy"
-              placeholderText="Pick your travel date"
-              isClearable
-              className="custom-datepicker"
-              onChange={(date) => setStartDate(date)}
-            />
-
-            <label>Number of Pax</label>
-            <PaxCounter>
-              <button
-                type="button"
-                onClick={() => handlePaxChange(false)}
-                disabled={pax <= 1}
-              >
-                -
-              </button>
-              <span>{pax}</span>
-              <button type="button" onClick={() => handlePaxChange(true)}>
-                +
-              </button>
-            </PaxCounter>
-
-            <button type="submit">Submit</button>
-          </form>
-        </RightPanel>
-      </ContentWrapper>
-    </StaticContainer>
+      <MenuBtn onClick={toggleMenu}>
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M432 176H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 272H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16zM432 368H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h352c8.8 0 16 7.2 16 16s-7.2 16-16 16z"></path>
+        </svg>
+      </MenuBtn>
+      {/* <AuthButtonContainer>
+        <div className="login_btn">Log in</div>
+        <div className="signup_btn">Sign Up</div>
+      </AuthButtonContainer> */}
+    </NavbarContainer>
   );
-};
-
-export default StaticForm;
+}

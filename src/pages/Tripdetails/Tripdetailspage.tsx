@@ -18,6 +18,8 @@ import DestinationSlider from "./sections/DestinationSlider";
 import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
 import PopularDestinations2 from "./sections/DestinationProps";
+import StaticReviews from "./sections/StaticReviews";
+
 
 type LocationKey = keyof typeof destinationsData;
 export default function Tripdetailspage() {
@@ -81,8 +83,9 @@ export default function Tripdetailspage() {
       {/* <DestinationSlider/>
        */}
       <Choose_your />
-      <ReviewSlider />
-      {/* <ReviewCard/> */}
+
+       
+       <StaticReviews />
       {/* <TravelStyleCarousel /> */}
       {/* <FAQ /> */}
       <TrendingOffers title="Similar packages" cards={similar} />
