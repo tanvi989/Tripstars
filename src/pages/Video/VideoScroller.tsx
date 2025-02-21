@@ -18,7 +18,9 @@ const videoData = [
     title: "Aishwarya's Dubai Vacation",
     tags: ["Dubai", "Skyline", "Luxury", "Shopping", "Cultural Moments"],
     description: "Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh.Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh. Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh ",
-  },
+  
+  
+  },          
   {
     title: "Dubai's Iconic Landmarks",
     tags: ["Landmarks", "Shopping", "Culture"],
