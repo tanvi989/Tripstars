@@ -290,39 +290,37 @@ const handleShare = () => {
     <Container>
       <VideoContainer ref={containerRef} onScroll={handleScroll}>
         {videoSources.map((video, index) => (
-         <VideoWrapper key={index}>
-<Video
-  ref={(el) => (videoRefs.current[index] = el)}
-  src={video}
-  loop
-  playsInline
-  autoPlay // Ensures the video plays automatically
-  onClick={() => {
-    setIsMuted(false); // Unmute the video when the user clicks to play
-    togglePlayPause(index);
-  }} // Toggle play/pause on click
-  muted={isMuted} // Controlled mute state
-/>
-
-
-
-
-         
-         {/* Floating Like, Share, Save Buttons (Only on Mobile) */}
-         <FloatingButtons>
-           <ActionButton active={liked} onClick={() => setLiked(!liked)}>
-             <FaHeart />
-           </ActionButton>
-           <ActionButton onClick={handleShare}>
-  <FaShare />
-</ActionButton>
-
-           <ActionButton active={saved} onClick={() => setSaved(!saved)}>
-             <FaBookmark />
-           </ActionButton>
-         </FloatingButtons>
-       
-       </VideoWrapper>
+      <VideoWrapper key={index}>
+      <Video
+        ref={(el) => (videoRefs.current[index] = el)}
+        src={video}
+        loop
+        playsInline
+        autoPlay
+        onClick={() => {
+          setIsMuted(false);
+          togglePlayPause(index);
+        }}
+        muted={isMuted}
+      />
+    
+      {/* Floating Title at the Bottom */}
+      <TitleContainer>{videoData[index].title}</TitleContainer>
+    
+      {/* Floating Like, Share, Save Buttons */}
+      <FloatingButtons>
+        <ActionButton active={liked} onClick={() => setLiked(!liked)}>
+          <FaHeart />
+        </ActionButton>
+        <ActionButton onClick={handleShare}>
+          <FaShare />
+        </ActionButton>
+        <ActionButton active={saved} onClick={() => setSaved(!saved)}>
+          <FaBookmark />
+        </ActionButton>
+      </FloatingButtons>
+    </VideoWrapper>
+    
        
         ))}
       </VideoContainer>

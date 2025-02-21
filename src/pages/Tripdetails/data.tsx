@@ -12,8 +12,9 @@ import baliImg8 from "../../assets/Tripdetails/bali/ThingsToDoInBali/rice-terrac
 import baliImg9 from "../../assets/Tripdetails/bali/ThingsToDoInBali/river-rafting.png";
 import baliImg10 from "../../assets/Tripdetails/bali/ThingsToDoInBali/tanah-lot-temple.png";
 import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-market.png";
+// import baliImg11 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ubud-market.png";
 import baliImg12 from "../../assets/Tripdetails/bali/ThingsToDoInBali/ulun-danu-temple.png";
-import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-banner.jpg";
+import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banner.png";
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 // Vietnam Images
 import vietnamImg1 from "../../assets/Tripdetails/vietnam/Things to do in vietnam/ba-na-hills.png";
