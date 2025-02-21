@@ -12,7 +12,7 @@ import image5 from "../../../assets/advertisebanner/banner-5.jpg";
 const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  width: 70%;
+  width: 65%;
   max-width: 2000px;
   margin: 50px auto;
 
@@ -25,14 +25,20 @@ const SliderContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
     margin-top: 20px;
   }
 
   @media (max-width: 480px) {
-    width: 90%;
+    width: 100%;
     margin-top: 40px;
   }
+    @media (max-width: 360px) {
+    max-width: 90%;
+
+  }
+    
+
 `;
 
 const SliderWrapper = styled.div<{ translateX: number }>`
@@ -43,13 +49,10 @@ const SliderWrapper = styled.div<{ translateX: number }>`
 `;
 
 const Slide = styled.div<{ background: string }>`
-  width: 100%;
+  width: 70%;
   height: auto;
   background-image: url(${({ background }) => background});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
+  background-size: cover;  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   cursor: pointer; /* Add pointer cursor to indicate clickability */
@@ -68,8 +71,20 @@ const Slide = styled.div<{ background: string }>`
 
   @media (max-width: 480px) {
     height: 150px;
+    width: 90%;  /* Adjust width to prevent cutting */
+  }
+
+  @media (max-width: 375px) {
+    height: 140px;
+    width: 100%;  /* Make sure it takes full width on small screens */
+  }
+
+  @media (max-width: 360px) {
+    height: 130px;
+    width: 100%;  /* Full width to prevent cropping */
   }
 `;
+
 
 const DotsContainer = styled.div`
   display: flex;

@@ -72,9 +72,7 @@ export default function Tripdetailspage() {
       {location == "singapore" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Singapore} /> : ""}
       {location == "mauritius" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Mauritius} /> : ""}
       {location == "malaysia" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Malaysia} /> : ""}
-
       {location == "maldives" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Maldives} /> : ""}
-
       {location == "japan" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Japan} /> : ""}
       {location == "hongkong" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Hongkong} /> : ""}
       {location == "baku" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Baku} /> : ""}

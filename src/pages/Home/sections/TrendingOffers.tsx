@@ -22,16 +22,11 @@ import "swiper/css/navigation";
 
 const SliderContainer = styled.div`
   position: relative;
-  margin: -2rem 15rem 0;  /* Move it up by 2rem */
-  @media (max-width: 1340px) {
-    margin: 0 5rem;
-  }
-  @media (max-width: 1080px) {
-    margin: 0 3rem;
-  }
-  @media (max-width: 768px) {
-    margin: -1.5rem 2rem 0; /* Smaller shift for mobile */
-  }
+  overflow: hidden;
+  margin: 0 15rem;
+  @media (max-width: 1340px) { margin: 0 5rem; }
+  @media (max-width: 1080px) { margin: 0 3rem; }
+  @media (max-width: 768px) { margin: 0 1rem; }
 `;
 
 const Card = styled.div`

@@ -51,10 +51,8 @@ const TitleFrame = styled.div`
   color: black;
   font-size: 24px;
   font-weight: bold;
-  padding: 15px 40px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+
 `;
 
 const CarouselContainer = styled.div`

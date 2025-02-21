@@ -11,9 +11,9 @@ import Dubai from "../../../assets/PopularDestination/Dubai.png";
 import Europe from "../../../assets/PopularDestination/Europe.png";
 import HongKong from "../../../assets/PopularDestination/Hong kong.png";
 import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
-import Singapore from "../../../assets/PopularDestination/Singapore.png";
 import Thailand from "../../../assets/PopularDestination/Thailand.png";
 import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
+import Singapore from "../../../assets/PopularDestination/Singapore.png";
 
 // Styled components
 const Container = styled.div`
@@ -115,7 +115,6 @@ type Destination = {
 // Destination data
 const popularDestinationsData: Destination[] = [
   { name: "Malaysia", imgUrl: Malaysia },
-  { name: "Singapore", imgUrl: Singapore },
   { name: "Thailand", imgUrl: Thailand },
   { name: "Vietnam", imgUrl: Vietnam },
   { name: "Australia", imgUrl: Australia },
@@ -123,6 +122,7 @@ const popularDestinationsData: Destination[] = [
   { name: "Dubai", imgUrl: Dubai },
   { name: "Europe", imgUrl: Europe },
   { name: "HongKong", imgUrl: HongKong },
+  { name: "Singapore", imgUrl: Singapore },
 ];
 
 export default function PopularDestinations() {
@@ -131,8 +131,10 @@ export default function PopularDestinations() {
   const navigate = useNavigate();
 
   const handleRedirect = (destination: string) => {
+    console.log(`Navigating to: /${destination.toLowerCase()}`);
     navigate(`/${destination.toLowerCase()}`);
   };
+  
 
   return (
     <Container>

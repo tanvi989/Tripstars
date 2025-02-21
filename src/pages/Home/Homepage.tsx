@@ -34,7 +34,6 @@ export default function HomePage() {
       <SwipeableSlider/>
       <TrendingOffers title="Trending Offers"/>
       {/* <SwipeableSlider/> */}
-     
       {/* <CardSection 
         title="Trending Offers"
       /> */}

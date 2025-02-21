@@ -31,7 +31,6 @@ const SliderContainer = styled.section`
   height: 60vh;
 
   @media (max-width: 768px) {
-
   }
 
   @media (max-width: 360px) { /* iPhone SE */
@@ -70,7 +69,7 @@ const SearchBarWrapper = styled.div`
   }
 
   @media (max-width: 375px) { /* iPhone SE */
-    top: 52%;
+    top: 45%;
     width: 85%;
   }
   @media (max-width: 375px) {
@@ -103,52 +102,44 @@ const HeroText = styled.h1`
   }
 `;
 const RatingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;  /* Change from flex to grid */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
   gap: 12px;
   padding: 10px 0;
   max-width: 90%;
   margin: 0 auto;
-  flex-wrap: wrap;
 
   @media (max-width: 480px) { /* Samsung Galaxy */
-    display: grid;
     grid-template-columns: repeat(2, 1fr); /* Force 2 items per row */
-    gap: 10px;
-    max-width: 80%;
+    gap: 0.5rem;
   }
 
-@media (max-width: 375px) { /* iPhone SE */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ensures each item stays readable */
-  gap: 6px;
-  max-width: 95%;
-}
-
+  @media (max-width: 375px) { /* iPhone SE */
+    grid-template-columns: repeat(2, 1fr); /* Ensures two per row */
+    gap: 0.5rem;
+    max-width: 25%;
+  }
 `;
 
 const RatingItem = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 6px;
-  font-size: 1rem;
+
   color: #fff;
   background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
-  padding: 8px 14px;
   border-radius: 8px;
   min-width: 140px;
   text-align: center;
 
-@media (max-width: 375px) { /* iPhone SE */
-  font-size: 0.9rem;
-  padding: 6px 10px;
-  min-width: 120px; /* Prevent collapse */
-  width: auto; /* Avoid stretching */
-}
-
+  @media (max-width: 375px) { /* iPhone SE */
+    font-size: 11px;
+    padding: 6px 10px;
+    gap: 0.5rem;
+    min-width: 120px; /* Prevent collapse */
+    width: auto; /* Avoid stretching */
+    font-size: 13px;
+  }
 `;
-
 
 
 // HeroSection Component
@@ -190,7 +181,7 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay text and SearchBar */}
       <SearchBarWrapper>
-        <HeroText>Find Your Dream Destination</HeroText>
+        <HeroText>Find Your Dream Destination!</HeroText>
         <SearchBar />
       </SearchBarWrapper>
 

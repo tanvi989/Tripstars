@@ -6,46 +6,70 @@ const RatingBarContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgb(0, 0, 0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: center; /* Centers the content horizontally */
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1rem;
+  justify-content: center;
   align-items: center;
-  gap: 2rem; /* Adds space between the items */
   z-index: 1;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 1rem; /* Reduces gap for smaller screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 11px;
+    gap: 0.5rem;
+    min-width: 120px;
+    width: auto;
+
+    /* Shift first row slightly to the left */
+    & > div:nth-child(1),
+    & > div:nth-child(2) {
+      margin-left: -60px;
+    }
   }
 `;
 
 const InfoItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between icon and text */
+  gap: 1rem;
+  justify-content: center;
 
   .icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1.5rem; /* Circle size */
-    height: 1.5rem;
-    background-color: #ffd700; /* Golden background */
-    border-radius: 50%; /* Makes the background circular */
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #ffd700;
+    border-radius: 50%;
     position: relative;
 
     span {
-      color: #fff; /* White checkmark color */
-      font-size: 0.8rem; /* Small checkmark size */
+      color: #fff;
+      font-size: 0.7rem;
       font-weight: bold;
     }
   }
 
   span {
     color: #fff;
-    font-size: 0.9rem; /* Text size */
-    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: 0.9rem; /* Increased font size for desktop */
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem; /* Smaller font for tablets */
+    }
+
+    @media (max-width: 375px) {
+      font-size: 0.85rem; /* Even smaller font for very small screens */
+    }
   }
 `;
 
@@ -63,7 +87,7 @@ const RatingBar = () => {
       {infoItems.map((item, index) => (
         <InfoItem key={index}>
           <div className="icon">
-            <span>✓</span> {/* White checkmark inside the icon */}
+            <span>✓</span>
           </div>
           <span>{item.text}</span>
         </InfoItem>

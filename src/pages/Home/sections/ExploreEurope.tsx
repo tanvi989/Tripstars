@@ -15,7 +15,7 @@ const Container = styled.div`
   padding: 0 15rem;
 
   @media (max-width: 1340px) {
-    padding: -1rem 0 5rem;
+    padding: 1rem 0 5rem;
   }
   @media (max-width: 1080px) {
     padding: 0 3rem;
@@ -29,7 +29,7 @@ const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: -1rem; /* Moves cards higher */
+  margin-top: 1rem; /* Moves cards higher */
 
   @media (max-width: 768px) {
     gap: 1rem;
