@@ -177,7 +177,7 @@ export const Bali = [
   {
     title: "Bali Essence",
     image: bali5,
-    pricing: "₹65,500/- Onwards",
+    pricing: "₹65,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -234,7 +234,7 @@ export const Vietnam = [
     ],
   },
   {
-    title: "Vietnam with Spa",
+    title: "Vietnam with Sapa",
     image: Vietnam5,
     pricing: "₹1,22,999/- Onwards",
     info: [
