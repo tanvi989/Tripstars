@@ -4,20 +4,6 @@ import { useSwipeable } from "react-swipeable";
 import SearchBar from "./SearchBar";
 import RatingBar from "./RatingBar";
 
-// Importing images for mobile and desktop
-import australia from "../../../assets/banner/australia.jpg";
-import bali from "../../../assets/banner/bali.jpg";
-import europe from "../../../assets/banner/europe.jpg";
-import hongKong from "../../../assets/banner/hong-kong.jpg";
-import vietnam from "../../../assets/banner/vietnam.jpg";
-
-// Mobile images
-import australiaMobile from "../../../assets/banner/mobile web banner/australia.jpg";
-import baliMobile from "../../../assets/banner/mobile web banner/bali.jpg";
-import europeMobile from "../../../assets/banner/mobile web banner/europe.jpg";
-import hongKongMobile from "../../../assets/banner/mobile web banner/hong kong.jpg";
-import vietnamMobile from "../../../assets/banner/mobile web banner/vietnam.jpg";
-
 // Define types for styled component props
 type SlideProps = {
   bgImage: string;
@@ -31,13 +17,9 @@ const SliderContainer = styled.section`
   height: 60vh;
 
   @media (max-width: 768px) {
-  }
-
-  @media (max-width: 360px) { /* iPhone SE */
-    height: 45vh;
+    height: 50vh; /* Adjust height for smaller screens */
   }
 `;
-
 
 const Slide = styled.div<SlideProps>`
   width: 100%;
@@ -53,7 +35,6 @@ const Slide = styled.div<SlideProps>`
 `;
 
 // Wrapper for search bar and text
-// Adjusted Search Bar Wrapper
 const SearchBarWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -61,26 +42,14 @@ const SearchBarWrapper = styled.div`
   transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
-  width: 80%;
 
   @media (max-width: 768px) {
-    top: 52%;
-    width: 90%;
+    top: 60%; /* Adjust position on smaller screens */
+    width: 90%; /* Ensure content fits within the screen */
   }
-
-  @media (max-width: 375px) { /* iPhone SE */
-    top: 45%;
-    width: 85%;
-  }
-  @media (max-width: 375px) {
-  display: flex;
-  flex-direction: column; /* Stack elements instead of squeezing */
-  align-items: center;
-}
-
 `;
 
-// Adjusted HeroText (if text looks too big)
+// Styled text above the search bar
 const HeroText = styled.h1`
   font-size: 2rem;
   color: #fff;
@@ -88,77 +57,31 @@ const HeroText = styled.h1`
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: 375px) {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+    margin-bottom: 15px; /* Adjust spacing */
   }
 `;
-const RatingContainer = styled.div`
-  display: grid;  /* Change from flex to grid */
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-  gap: 12px;
-  padding: 10px 0;
-  max-width: 90%;
-  margin: 0 auto;
-
-  @media (max-width: 480px) { /* Samsung Galaxy */
-    grid-template-columns: repeat(2, 1fr); /* Force 2 items per row */
-    gap: 0.5rem;
-  }
-
-  @media (max-width: 375px) { /* iPhone SE */
-    grid-template-columns: repeat(2, 1fr); /* Ensures two per row */
-    gap: 0.5rem;
-    max-width: 25%;
-  }
-`;
-
-const RatingItem = styled.div`
-  display: flex;
-  gap: 6px;
-
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
-  border-radius: 8px;
-  min-width: 140px;
-  text-align: center;
-
-  @media (max-width: 375px) { /* iPhone SE */
-    font-size: 11px;
-    padding: 6px 10px;
-    gap: 0.5rem;
-    min-width: 120px; /* Prevent collapse */
-    width: auto; /* Avoid stretching */
-    font-size: 13px;
-  }
-`;
-
 
 // HeroSection Component
 const HeroSection: React.FC = () => {
-  // Default desktop images and mobile images
-  const desktopImages = [australia, bali, europe, hongKong, vietnam];
-  const mobileImages = [australiaMobile, baliMobile, europeMobile, hongKongMobile, vietnamMobile];
-  
+  const images = [
+    "https://images.emtcontent.com/holiday-img/home-img/rajasthan-banner-home.png",
+    "https://images.emtcontent.com/holiday-img/home-img/kerala_newbb.png",
+    "https://images.emtcontent.com/holiday-img/home-img/dubai_newbb.png",
+    "https://images.emtcontent.com/holiday-img/home-img/europe-banner-home.webp",
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? desktopImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === desktopImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -168,10 +91,6 @@ const HeroSection: React.FC = () => {
     preventScrollOnSwipe: true,
     trackMouse: true, // Optional: Enables swipe on desktop using mouse drag
   });
-
-  // Detect screen size to decide which image set to use
-  const isMobile = window.innerWidth <= 768;
-  const images = isMobile ? mobileImages : desktopImages;
 
   return (
     <SliderContainer {...swipeHandlers}>
