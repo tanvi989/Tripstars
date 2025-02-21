@@ -15,12 +15,10 @@ import Video7 from "../../assets/Videos/Testimonial/7.mp4";
 // Video details with tags and descriptions
 const videoData = [
   {
-    title: "Aishwarya's Dubai Vacation",
+    title: "Aishwarya's Bali Vacation",
     tags: ["Dubai", "Skyline", "Luxury", "Shopping", "Cultural Moments"],
     description: "Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh.Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh. Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh .Take an unforgettable Dubai trip with Pickyourtrail, just like Aishwarya Rajesh ",
-  
-  
-  },          
+  },
   {
     title: "Dubai's Iconic Landmarks",
     tags: ["Landmarks", "Shopping", "Culture"],
@@ -134,7 +132,7 @@ const VideoContainer = styled.div`
 const Video = styled.video`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: ;
   cursor: pointer;
 `;
 const PlayPauseButton = styled.button<{ show: boolean }>`
@@ -213,6 +211,62 @@ const Text = styled.p`
   font-size: 1.2rem;
   line-height: 1.6;
 `;
+const Overlay = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.5rem;
+`;
+
+const OverlayTitle = styled.h3`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
+const OverlayDescription = styled.p`
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 90%;
+`;
+
+const OverlayTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+`;
+
+const OverlayTag = styled.span`
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+`;
+
+const ViewButton = styled.button`
+  background: #00c853;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+  
+  &:hover {
+    background: #009624;
+  }
+`;
+
 
 const VideoScroller: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -306,6 +360,20 @@ const handleShare = () => {
   muted={isMuted} // Controlled mute state
 />
 
+<Overlay>
+  <OverlayTitle>{videoData[index].title}</OverlayTitle>
+  <OverlayDescription>
+    {videoData[index].description.length > 80
+      ? `${videoData[index].description.substring(0, 80)}...`
+      : videoData[index].description}
+  </OverlayDescription>
+  <OverlayTags>
+    {videoData[index].tags.map((tag, i) => (
+      <OverlayTag key={i}>{tag}</OverlayTag>
+    ))}
+  </OverlayTags>
+  <ViewButton>View Packages</ViewButton>
+</Overlay>
 
 
 
@@ -342,11 +410,5 @@ const handleShare = () => {
     </Container>
   );
 };
-
-
-
-
-
-
 
 export default VideoScroller;

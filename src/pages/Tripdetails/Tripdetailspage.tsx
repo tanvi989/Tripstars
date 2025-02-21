@@ -20,7 +20,7 @@ import Choose_your from "./sections/Choose_your";
 import PopularDestinations from "../Home/sections/PopularDestinations";
 import PopularDestinations2 from "./sections/DestinationProps";
 import StaticReviews from "./sections/StaticReviews";
-import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali-banner.jpg";
+import baliImg13 from "../../assets/Tripdetails/bali/ThingsToDoInBali/bali_banner.png";
 import baliImg14 from "../../assets/Tripdetails/bali/ThingsToDoInBali/mobile-banner-bali.jpg";
 
 type LocationKey = keyof typeof destinationsData;
