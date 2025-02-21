@@ -21,9 +21,7 @@ const SliderContainer = styled.div`
   @media (max-width: 1080px) {
     margin: 0 3rem;
   }
-  @media (max-width: 768px) {
-    margin: -1rem 1rem 0; /* Smaller shift for mobile */
-  }
+
 `;
 
 const Card = styled.div`
@@ -57,6 +55,7 @@ const PricingTag = styled.div`
 
   @media (max-width: 768px) {
     font-size: 9px;
+
   }
 `;
 
@@ -97,7 +96,7 @@ const SectionTitle = styled.div`
   @media (max-width: 1080px) {
   }
   @media (max-width: 768px) {
-    padding-top: 2rem;
+    padding-top: rem;
     padding-bottom: 1rem;
   }
 `;

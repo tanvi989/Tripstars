@@ -7,7 +7,7 @@ const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
   width: 600px;
-  height: 64px;
+  height: 45px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 50px;
@@ -46,8 +46,8 @@ const SearchInput = styled.input`
 const SearchButton = styled.button`
   background: #EF6614;
   color: #fff;
-  width: 169px;
-  height: 64px;
+  width: 120px;
+  height: 45px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

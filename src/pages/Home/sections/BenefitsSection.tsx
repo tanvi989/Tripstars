@@ -57,17 +57,16 @@ const Section = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+
 `;
 
 const Description = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
-  margin-bottom: 50px;
-  max-width: 600px;
-  margin: 0 auto;
+
+  margin: 10px auto;
 `;
 
 const Card = styled.div`

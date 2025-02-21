@@ -113,14 +113,11 @@ import malaysia6 from "../assets/Tripdetails/new/malaysia/Malaysia 6.jpg"
 //singapore
 
 import singapore1 from   "../assets/Tripdetails/new/singapore/singapore 1.jpg"
-
 import singapore2 from   "../assets/Tripdetails/new/singapore/singapore 2.jpg"
-
 import singapore3 from   "../assets/Tripdetails/new/singapore/singapore 3.jpg"
-
 import singapore4 from   "../assets/Tripdetails/new/singapore/singapore 6.jpg"
-
 import singapore5 from   "../assets/Tripdetails/new/singapore/singapore 5.jpg";
+
 //maldives
 import maldives1 from "../assets/Tripdetails/new/maldives/Maldives 1.jpg";
 import maldives2 from "../assets/Tripdetails/new/maldives/Maldives 2.jpg";
@@ -180,7 +177,7 @@ export const Bali = [
   {
     title: "Bali Essence",
     image: bali5,
-    pricing: "₹65,500/- Onwards",
+    pricing: "₹65,499/- Onwards",
     info: [
       { icon: "https://img.icons8.com/material-outlined/24/FAB005/calendar--v1.png", text: "5N/6D" },
       { icon: "https://img.icons8.com/ios-glyphs/30/FAB005/airplane-mode-on.png", text: "Flight" },
@@ -237,7 +234,7 @@ export const Vietnam = [
     ],
   },
   {
-    title: "Vietnam with Spa",
+    title: "Vietnam with Sapa",
     image: Vietnam5,
     pricing: "₹1,22,999/- Onwards",
     info: [
