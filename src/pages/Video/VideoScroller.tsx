@@ -172,16 +172,16 @@ const PlayPauseButton = styled.button<{ show: boolean }>`
 // Overlay appears only on small screens
 const Overlay = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 85px;
   left: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 0.5rem;
+
 
   @media (min-width: 1024px) {
     display: none;

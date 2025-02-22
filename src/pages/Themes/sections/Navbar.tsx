@@ -178,7 +178,6 @@ const Navbar = () => {
               <li>Beach</li>
             </DropdownMenu>
           </NavItem>
-
           <NavItem>Fgfgfgfg</NavItem>
 
           <NavItem>
