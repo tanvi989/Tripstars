@@ -42,12 +42,14 @@ const Title = styled.h2`
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #d5c156;
+  color:rgb(92, 20, 11);
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {
     font-size: 2rem;
   }
+
+
 `;
 
 const VideoCard = styled.div`
