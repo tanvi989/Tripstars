@@ -37,7 +37,6 @@ const SeeAllButton = styled.button`
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
   &:hover {
     background-color: #004999;
   }
@@ -73,7 +72,7 @@ const CardImage = styled.img`
 `;
 
 const CardTitle = styled.h3`
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #444;
   text-align: center;
   margin: 0.8rem 0;

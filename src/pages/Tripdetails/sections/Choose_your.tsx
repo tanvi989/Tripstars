@@ -89,7 +89,7 @@ const Overlay = styled.div`
   bottom: 0;
   width: 100%;
   height: 80px;
- background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -105,9 +105,8 @@ const Icon = styled.img`
 const CategoryName = styled.span`
   color: white;
   font-family:'Dancing Script';
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-left: 10px;
+  font-size: 1.2rem;
+
 `;
 
 // Type definition for destinations

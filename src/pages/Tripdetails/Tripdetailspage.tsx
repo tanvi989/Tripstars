@@ -10,6 +10,9 @@ import { destinationsData } from "./data";
 import CardSection from "./sections/CardSection";
 import FAQ from "./sections/FAQ";
 import ReviewSlider from "./sections/ReviewSlider";
+import VideoTestimonials from "../Home/sections/VideoTestimonials";
+import VideoThumbnail from "../Home/sections/VideoThumbnail";
+import WhyTripstars from "../Home/sections/WhyTripstars";
 import ChooseTravelStyle from "./sections/ChooseTravelStyle";
 import TravelStyleCarousel from "./sections/TravelStyleCarousel";
 import ExploreDestinations from "../Home/sections/ExploreDestinations";
@@ -84,6 +87,11 @@ export default function Tripdetailspage() {
       {location == "australia" ? <TrendingOffers title={`Trending Offers in ${location}`} cards={Australia} /> : ""}
       {/* <TrendingOffers title={`Trending Offers in ${location}`} data={trendingOffers}/> */}
       {/* <CherryBlossomsSection title={`Experience Best Selling Packages in ${location}`}images={cherryBlossoms}/> */}
+      <VideoTestimonials />
+      <VideoThumbnail/>
+      {/* <ImageSlider /> */}
+    {/* <NewComponent /> */}
+      <WhyTripstars />
       {/* <ChooseTravelStyle/> */}
       {/* <TrendingOffers title={`Trending Offers in ${location}`} cards={Bali} /> */}
       {/* <Loader /> */}

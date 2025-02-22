@@ -93,15 +93,15 @@ const NavIcons = styled.div`
 `;
 
 const SectionTitle = styled.div`
-  padding-top: 2rem;
+
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
+  // margin-top: 4rem;
 
   @media (max-width: 1340px) {
-    padding-top: 4rem;
+    // padding-top: 4rem;
     padding-bottom: 1rem;
   }
   @media (max-width: 1080px) {
