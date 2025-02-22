@@ -107,8 +107,8 @@ const RatingCard = styled.div`
 `;
 
 const RatingIcon = styled.img`
-  width: 50px; /* Default size */
-  height: 50px;
+  width: 30px; /* Default size */
+  height: 30px;
 
   @media (max-width: 768px) {
     width: 30px; /* Smaller icons on mobile */
@@ -127,7 +127,7 @@ const RatingStars = styled.div`
 `;
 
 const ReviewCount = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.8;
 
   @media (max-width: 768px) {
