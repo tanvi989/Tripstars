@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home/Homepage";
 import Navbar from "./components/common/Navbar";
+import Themes from "./pages/Themes/Themes";
 import Footer from "./components/common/Footer";
 import Popup from "./components/common/Popup";
+
 import Thirdpage from "./pages/ThirdPage/ThirdPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy/PrivacyPolicyPage";
 //Styles
@@ -35,6 +37,7 @@ function App() {
         <Route path="/cancellation-policy" element={<PrivacyPolicyPage title="Cancellation Policy" />} />
         <Route path="/payment" element={<PaymentPolicies />} />   
         <Route path="/video" element={<VideoScroller />} />   
+        <Route path="/themes" element={<Themes />} /> 
       </Routes>
          {/* Hide Footer only if not on /video */}
          {!isVideoPage && <Footer />}
