@@ -201,7 +201,8 @@ export default function PopularDestinations() {
             <SwiperSlide key={index}>
               <Card onClick={() => handleRedirect(item.name)}>
                 <ImageWrapper>
-                  <img src={item.imgUrl} alt={item.name} />
+                <img src={item.imgUrl} alt={item.name} loading="lazy" />
+
                 </ImageWrapper>
               </Card>
             </SwiperSlide>
