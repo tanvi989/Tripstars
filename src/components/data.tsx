@@ -1,10 +1,10 @@
-import kashmir from "../assets/explore-india/kashmir.jpg";
-import goa from "../assets/explore-india/goa.jpg";
-import andaman from "../assets/explore-india/andaman.jpg";
-import himachal from "../assets/explore-india/himachal.jpg";
-import ladakh from "../assets/explore-india/ladakh.jpg";
-import north from "../assets/explore-india/north-east.jpg";
-import nepal from "../assets/explore-india/nepal.jpg";
+import kashmir from "../assets/explore-india/kashmir.webp";
+import goa from "../assets/explore-india/goa.webp";
+import andaman from "../assets/explore-india/andaman.webp";
+import himachal from "../assets/explore-india/himachal.webp";
+import ladakh from "../assets/explore-india/ladakh.webp";
+import north from "../assets/explore-india/north-east.webp";
+import nepal from "../assets/explore-india/nepal.webp";
 
 
 import bali1 from "../assets/Tripdetails/bali/bali1.jpg"

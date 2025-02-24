@@ -5,15 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 
 // Import your images
-import Australia from "../../../assets/PopularDestination/Australia.png";
-import Bali from "../../../assets/PopularDestination/Bali.png";
-import Dubai from "../../../assets/PopularDestination/Dubai.png";
-import Europe from "../../../assets/PopularDestination/Europe.png";
-import HongKong from "../../../assets/PopularDestination/Hong kong.png";
-import Malaysia from "../../../assets/PopularDestination/Malaysia.png";
-import Thailand from "../../../assets/PopularDestination/Thailand.png";
-import Vietnam from "../../../assets/PopularDestination/Vietnam.png";
-import Singapore from "../../../assets/PopularDestination/Singapore.png";
+import Australia from "../../../assets/PopularDestination/Australia.webp";
+import Bali from "../../../assets/PopularDestination/Bali.webp";
+import Dubai from "../../../assets/PopularDestination/Dubai.webp";
+import Europe from "../../../assets/PopularDestination/Europe.webp";
+import HongKong from "../../../assets/PopularDestination/Hong kong.webp";
+import Malaysia from "../../../assets/PopularDestination/Malaysia.webp";
+import Thailand from "../../../assets/PopularDestination/Thailand.webp";
+import Vietnam from "../../../assets/PopularDestination/Vietnam.webp";
+import Singapore from "../../../assets/PopularDestination/Singapore.webp";
 
 // Styled components
 const Container = styled.div`

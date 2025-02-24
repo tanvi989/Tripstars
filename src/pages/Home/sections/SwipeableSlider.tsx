@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 
 // Example: Import your desired images here
-import banner5 from "../../../assets/advertisebanner/banner-5.jpg";
-import banner2 from "../../../assets/advertisebanner/banner-2.jpg";
-import banner1 from "../../../assets/advertisebanner/banner-1.jpg";
-import banner3 from "../../../assets/advertisebanner/banner-3.jpg";
-import banner4 from "../../../assets/advertisebanner/banner-4.jpg";
+import banner5 from "../../../assets/advertisebanner/banner-5.webp";
+import banner2 from "../../../assets/advertisebanner/banner-2.webp";
+import banner1 from "../../../assets/advertisebanner/banner-1.webp";
+import banner3 from "../../../assets/advertisebanner/banner-3.webp";
+import banner4 from "../../../assets/advertisebanner/banner-4.webp";
 // ...import more as needed
 
 // ----- STYLED COMPONENTS -----

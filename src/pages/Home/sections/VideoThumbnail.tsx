@@ -4,11 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import thumbnil1 from "../../../assets/thumbnil/1.jpg"
-import thumbnil2 from "../../../assets/thumbnil/2.jpg"
-import thumbnil3 from "../../../assets/thumbnil/3.jpg"
-import thumbnil4 from "../../../assets/thumbnil/4.jpg"
-
+import thumbnil1 from "../../../assets/thumbnil/1.webp"
+import thumbnil2 from "../../../assets/thumbnil/2.webp"
+import thumbnil3 from "../../../assets/thumbnil/3.webp"
+import thumbnil4 from "../../../assets/thumbnil/4.webp"
 
 const SliderContainer = styled.div`
   position: relative;

@@ -5,14 +5,14 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import 'swiper/css/navigation';
-import kashmir from "../../../assets/explore-india/kashmir.jpg";
+import kashmir from "../../../assets/explore-india/kashmir.webp";
 // Import Swiper styles
-import goa from "../../../assets/explore-india/goa.jpg";
-import andaman from "../../../assets/explore-india/andaman.jpg";
-import himachal from "../../../assets/explore-india/himachal.jpg";
-import ladakh from "../../../assets/explore-india/ladakh.jpg";
-import north from "../../../assets/explore-india/north-east.jpg";
-import nepal from "../../../assets/explore-india/nepal.jpg";
+import goa from "../../../assets/explore-india/goa.webp";
+import andaman from "../../../assets/explore-india/andaman.webp";
+import himachal from "../../../assets/explore-india/himachal.webp";
+import ladakh from "../../../assets/explore-india/ladakh.webp";
+import north from "../../../assets/explore-india/north-east.webp";
+import nepal from "../../../assets/explore-india/nepal.webp";
 
 import "swiper/css";
 import "swiper/css/navigation";

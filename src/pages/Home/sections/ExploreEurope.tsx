@@ -156,7 +156,7 @@ const ExploreEurope: React.FC = () => {
               style={{ cursor: "pointer" }}
             >
               <ImageWrapper>
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} loading="lazy"/>
               </ImageWrapper>
               <div className="box_title">{item.name}</div>
             </SwiperSlide>

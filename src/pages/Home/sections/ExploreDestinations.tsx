@@ -4,12 +4,12 @@ import React from "react"; // Import React explicitly
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import local images from the assets folder
-import EuropeImage from "../../../assets/explore-destination/europe.jpg";
-import AustraliaImage from "../../../assets/explore-destination/australia.jpg";
-import JapanImage from "../../../assets/explore-destination/japan.jpg";
-import NewZealandImage from "../../../assets/explore-destination/new-zealand.jpg";
-import TurkeyImage from "../../../assets/explore-destination/turkey.jpg";
-import SouthAfricaImage from "../../../assets/explore-destination/south-africa.jpg";
+import EuropeImage from "../../../assets/explore-destination/europe.webp";
+import AustraliaImage from "../../../assets/explore-destination/australia.webp";
+import JapanImage from "../../../assets/explore-destination/japan.webp";
+import NewZealandImage from "../../../assets/explore-destination/new-zealand.webp";
+import TurkeyImage from "../../../assets/explore-destination/turkey.webp";
+import SouthAfricaImage from "../../../assets/explore-destination/south-africa.webp";
 
 const Container = styled.div`
   padding: 0 15rem;
@@ -193,7 +193,7 @@ export default function ExploreDestinations() {
       <MainContent>
         <UpperContent>
           <ImageWrapper onClick={() => handleCardClick(cards[0].url)}>
-            <img src={cards[0].image} alt={cards[0].location} />
+            <img src={cards[0].image} alt={cards[0].location} loading="lazy"/>
             <OverlayText>
               {cards[0].location}
               <br />
@@ -201,7 +201,7 @@ export default function ExploreDestinations() {
             </OverlayText>
           </ImageWrapper>
           <ImageWrapper onClick={() => handleCardClick(cards[1].url)}>
-            <img src={cards[1].image} alt={cards[1].location} />
+            <img src={cards[1].image} alt={cards[1].location} loading="lazy"/>
             <OverlayText>
               {cards[1].location}
               <br />
@@ -212,7 +212,7 @@ export default function ExploreDestinations() {
         <BottomContent>
           {cards.slice(2).map((card, index) => (
             <ImageWrapper key={index} onClick={() => handleCardClick(card.url)}>
-              <img src={card.image} alt={card.location} />
+              <img src={card.image} alt={card.location} loading="lazy"/>
               <OverlayText>
                 {card.location}
                 <br />
@@ -227,7 +227,7 @@ export default function ExploreDestinations() {
           {cards.map((item, index) => (
             <SwiperSlide key={index}>
               <MobileCard onClick={() => handleCardClick(item.url)}>
-                <img src={item.image} alt={item.location} />
+                <img src={item.image} alt={item.location} loading="lazy"/>
                 <MobileOverlayText>
                   {item.location}
                   <br />
