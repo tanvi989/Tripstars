@@ -6,15 +6,15 @@ import RatingBar from "./RatingBar";
 
 // Importing images for mobile and desktop
 
-import europe from "../../../assets/banner/europe.jpg";
+import europe from "../../../assets/banner/europe.webp";
 
 
 // Mobile images
-import australiaMobile from "../../../assets/banner/mobile web banner/australia.jpg";
-import baliMobile from "../../../assets/banner/mobile web banner/bali.jpg";
-import europeMobile from "../../../assets/banner/mobile web banner/europe.jpg";
-import hongKongMobile from "../../../assets/banner/mobile web banner/hong kong.jpg";
-import vietnamMobile from "../../../assets/banner/mobile web banner/vietnam.jpg";
+// import australiaMobile from "../../../assets/banner/mobile web banner/australia.webp";
+// import baliMobile from "../../../assets/banner/mobile web banner/bali.jpg";
+import europeMobile from "../../../assets/banner/mobile web banner/europe.webp";
+// import hongKongMobile from "../../../assets/banner/mobile web banner/hong kong.jpg";
+// import vietnamMobile from "../../../assets/banner/mobile web banner/vietnam.jpg";
 
 // Define types for styled component props
 type SlideProps = {
@@ -153,7 +153,7 @@ const RatingItem = styled.div`
 const HeroSection: React.FC = () => {
   // Default desktop images and mobile images
   const desktopImages = [europe];
-  const mobileImages = [australiaMobile, baliMobile, europeMobile, hongKongMobile, vietnamMobile];
+  const mobileImages = [europeMobile];
   
   const [currentIndex, setCurrentIndex] = useState(0);
   
