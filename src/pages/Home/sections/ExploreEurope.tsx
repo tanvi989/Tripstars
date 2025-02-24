@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-import Australia from "../../../assets/images/ExploreEurope/Australia 1.png";
-import Eiffel from "../../../assets/images/ExploreEurope/eiffel.png";
-import Japan from "../../../assets/images/ExploreEurope/Japan 1.png";
-import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.png";
+import Australia from "../../../assets/images/ExploreEurope/Australia 1.webp";
+import Eiffel from "../../../assets/images/ExploreEurope/eiffel.webp";
+import Japan from "../../../assets/images/ExploreEurope/Japan 1.webp";
+import Swiss from "../../../assets/images/ExploreEurope/Swiss 1.webp";
 
 // Styled-components for styling
 const Container = styled.div`

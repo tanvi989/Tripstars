@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React from "react"; // Import React explicitly
-import Logo1 from "../../../assets/images/logo/brandLogos/Singapore.png";
-import Logo2 from "../../../assets/images/logo/brandLogos/Untitled design (14).png";
-import Logo3 from "../../../assets/images/logo/brandLogos/Untitled design (16).png";
-import Logo4 from "../../../assets/images/logo/brandLogos/Untitled design (17).png";
-import Logo5 from "../../../assets/images/logo/brandLogos/Untitled design (18).png";
-import Logo6 from "../../../assets/images/logo/brandLogos/Untitled design (19).png";
-import Logo7 from "../../../assets/images/logo/brandLogos/Untitled design (20).png";
-import Logo8 from "../../../assets/images/logo/brandLogos/Untitled design (21).png";
+import Logo1 from "../../../assets/images/logo/brandLogos/Singapore.webp";
+import Logo2 from "../../../assets/images/logo/brandLogos/Untitled design (14).webp";
+import Logo3 from "../../../assets/images/logo/brandLogos/Untitled design (16).webp";
+import Logo4 from "../../../assets/images/logo/brandLogos/Untitled design (17).webp";
+import Logo5 from "../../../assets/images/logo/brandLogos/Untitled design (18).webp";
+import Logo6 from "../../../assets/images/logo/brandLogos/Untitled design (19).webp";
+import Logo7 from "../../../assets/images/logo/brandLogos/Untitled design (20).webp";
+import Logo8 from "../../../assets/images/logo/brandLogos/Untitled design (21).webp";
 import { Autoplay } from "swiper/modules";
 
 const Container = styled.div`

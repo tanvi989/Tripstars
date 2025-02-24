@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Img1 from "../../../assets/images/WhyTripstars/15k Customers.png";
-import Img2 from "../../../assets/images/WhyTripstars/Award.png";
-import Img3 from "../../../assets/images/WhyTripstars/Customer service.png";
-import Img4 from "../../../assets/images/WhyTripstars/Experience.png";
-import Img5 from "../../../assets/images/WhyTripstars/Google Rating.png";
+import Img1 from "../../../assets/images/WhyTripstars/15k Customers.webp";
+import Img2 from "../../../assets/images/WhyTripstars/Award.webp";
+import Img3 from "../../../assets/images/WhyTripstars/Customer service.webp";
+import Img4 from "../../../assets/images/WhyTripstars/Experience.webp";
+import Img5 from "../../../assets/images/WhyTripstars/Google Rating.webp";
 
 const Container = styled.div`
   padding: 0 15rem;
